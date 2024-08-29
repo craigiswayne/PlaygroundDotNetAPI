@@ -1,6 +1,11 @@
 # playground-dotnet-api
 
-# Getting Started
+## Endpoints
+* https://localhost:7068/swagger/index.html
+
+---
+
+## Getting Started
 ```
 dotnet clean && dotnet nuget locals all --clear
 dotnet restore
@@ -31,7 +36,7 @@ dotnet watch run --project=$PROJECT_FILE
 ```shell
 mkdir playground-dotnet-api
 cd playground-dotnet-api
-dotnet new webapi --framework net7.0
+dotnet new webapi --framework net8.0
 git init
 dotnet new gitignore
 mkdir -p playground-dotnet-api-tests
