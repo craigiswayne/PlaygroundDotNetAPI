@@ -5,29 +5,36 @@
 
 ---
 
-## Getting Started
+### Getting Started
 ```
-dotnet clean && dotnet nuget locals all --clear
+dotnet clean
+dotnet nuget locals all --clear
 dotnet restore
 dotnet build --no-restore
+dotnet test --no-build --verbosity normal
+
+#ENVIRONMENT_NAME="Development";
+ENVIRONMENT_NAME="UAT"
 PROJECT_FILE="PlaygroundDotNetAPI/PlaygroundDotNetAPI.csproj"
-dotnet watch run --project=$PROJECT_FILE
+dotnet watch run --environment=$ENVIRONMENT_NAME --project=$PROJECT_FILE;
+# see here: https://learn.microsoft.com/en-us/aspnet/core/fundamentals/environments?view=aspnetcore-7.0
 ```
 
-```
-# Clean
-dotnet clean && dotnet nuget locals all --clear
-# Restore dependencies
+### Testing a Compiled App
+Testing out the DLL / compiled app
+
+```bash
+dotnet clean
+#dotnet nuget locals all --clear
+
 dotnet restore
-# Build
 dotnet build --no-restore
-# Test
-dotnet test --no-build --verbosity normal
-# Run
-PROJECT_FILE="PlaygroundDotNetAPI/PlaygroundDotNetAPI.csproj"
-dotnet run --project=$PROJECT_FILE
-# or for hot reload
-dotnet watch run --project=$PROJECT_FILE
+dotnet publish
+DLL_PATH="PlaygroundDotNetAPI/bin/Release/net8.0/PlaygroundDotNetAPI.dll"
+#ENVIRONMENT_NAME="UAT";
+#ENVIRONMENT_NAME="Release";
+#dotnet $DLL_PATH -- --no-build --environment=$ENVIRONMENT_NAME;
+dotnet $DLL_PATH -- --no-build;
 ```
 
 ---
@@ -197,3 +204,5 @@ dotnet ef database update --context MyDbContextSqLite -v
 * test caching
 * restrict by ip
 * no build warnings in pipeline
+* Add app Insights to the project
+* use allowed hosts

@@ -7,11 +7,25 @@ using PlaygroundDotNetAPI.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
-var allowedOrigins = builder.Configuration.GetRequiredSection("AllowedOrigins").Get<string[]>();
-if (allowedOrigins == null || allowedOrigins.Length == 0)
+foreach (var kvp in builder.Configuration.AsEnumerable())
 {
-    throw new Exception("No AllowedOrigins specified");
+    Console.WriteLine($"{kvp.Key}: {kvp.Value}");
 }
+
+string[] allowedOrigins = [];
+try
+{
+    allowedOrigins = builder.Configuration.GetRequiredSection("AllowedOrigins").Get<string[]>();
+}
+catch (Exception ex) {
+    Console.WriteLine("ASPNETCORE_ENVIRONMENT:");
+    Console.WriteLine(Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT"));
+    Console.WriteLine(ex);
+}
+//if (allowedOrigins.Length == 0)
+//{
+//    throw new Exception("No AllowedOrigins specified");
+//}
 
 var connectionStringSqlite = builder.Configuration.GetConnectionString("DefaultConnection");
 var connectionType = builder.Configuration.GetSection("Db").GetValue<string>("Type");
