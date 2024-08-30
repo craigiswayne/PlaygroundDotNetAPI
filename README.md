@@ -196,3 +196,4 @@ dotnet ef database update --context MyDbContextSqLite -v
 * use caching
 * test caching
 * restrict by ip
+* no build warnings in pipeline
