@@ -1,11 +1,16 @@
-# playground-dotnet-api
+# Playground DotNet API
 
-# Getting Started
+## Endpoints
+* https://localhost:7137/swagger/index.html
+
+---
+
+## Getting Started
 ```
 dotnet clean && dotnet nuget locals all --clear
 dotnet restore
 dotnet build --no-restore
-PROJECT_FILE="playground-dotnet-api/playground-dotnet-api.csproj"
+PROJECT_FILE="PlaygroundDotNetAPI/PlaygroundDotNetAPI.csproj"
 dotnet watch run --project=$PROJECT_FILE
 ```
 
@@ -19,7 +24,7 @@ dotnet build --no-restore
 # Test
 dotnet test --no-build --verbosity normal
 # Run
-PROJECT_FILE="playground-dotnet-api/playground-dotnet-api.csproj"
+PROJECT_FILE="PlaygroundDotNetAPI/PlaygroundDotNetAPI.csproj"
 dotnet run --project=$PROJECT_FILE
 # or for hot reload
 dotnet watch run --project=$PROJECT_FILE
@@ -29,13 +34,34 @@ dotnet watch run --project=$PROJECT_FILE
 
 ### Scaffolding
 ```shell
-mkdir playground-dotnet-api
-cd playground-dotnet-api
-dotnet new webapi --framework net7.0
+name="PlaygroundDotNetAPI"
+# mkdir $name
+dotnet new sln -o $name
+cd $name
+dotnet new webapi --framework net8.0
 git init
 dotnet new gitignore
-mkdir -p playground-dotnet-api-tests
-dotnet new nunit
+
+# mkdir -p Controllers
+# cd Controllers
+# dotnet new class -n WeatherForecastController
+
+# https://learn.microsoft.com/en-us/aspnet/core/fundamentals/tools/dotnet-aspnet-codegenerator?view=aspnetcore-8.0
+dotnet tool install -g dotnet-aspnet-codegenerator
+
+dotnet add package Microsoft.VisualStudio.Web.CodeGeneration.Design
+dotnet aspnet-codegenerator area Controller
+
+
+# https://learn.microsoft.com/en-us/dotnet/core/testing/unit-testing-with-dotnet-test
+#dotnet new xunit -o "$name".Tests
+# create a controller
+#dotnet add "./$name.Tests/$name.Tests.csproj" reference "./$name/$name.csproj"
+#dotnet sln add "./$name.Tests/$name.Tests.csproj"
+
+dotnet new nunit -o "$name".Tests
+dotnet add "./$name.Tests/$name.Tests.csproj" reference "./$name/$name.csproj"
+dotnet sln add "./$name.Tests/$name.Tests.csproj"
 ```
 
 ---
@@ -92,7 +118,7 @@ see `Middleware/SecurityHeaders.cs` for contents
 In `Program.cs`
 
 ```c#
-using playground_dotnet_api.Middleware;
+using PlaygroundDotNetAPI.Middleware;
 ...
 
 var builder = WebApplication.CreateBuilder(args);
@@ -130,7 +156,7 @@ touch .github/workflows/build_and_test.yml
 ### Migration
 Create Migration
 ```shell
-cd playground-dotnet-api
+cd PlaygroundDotNetAPI
 dotnet tool install --global dotnet-ef
 dotnet ef migrations add Initial -o Migrations --context MyDbContextSqLite -v
 ```
@@ -160,3 +186,13 @@ dotnet ef database update --context MyDbContextSqLite -v
 * [Seed DB](https://www.youtube.com/watch?v=z-Hll4Xddjs)
 * [Sqlite & Entity Framework Core](https://www.youtube.com/watch?v=z-Hll4Xddjs)
 * [Registering Services](https://www.youtube.com/watch?v=sSq3GtriFuM)
+* [CORS](https://learn.microsoft.com/en-us/aspnet/core/security/cors?view=aspnetcore-7.0#np)
+
+### TODO:
+* when saving test artifacts, save to the computed dotnet version
+* deploy to azure
+* run docker
+* test cors
+* use caching
+* test caching
+* restrict by ip

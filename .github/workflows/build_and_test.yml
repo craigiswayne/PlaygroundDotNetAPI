@@ -1,19 +1,52 @@
 name: Build and Test
 
-on: [push]
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    types: [opened, reopened, edited]
+    branches: [develop]
 
 jobs:
   build_and_test:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        dotnet-version: [ '8.0.x' ]
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
+
       - name: Setup dotnet
         uses: actions/setup-dotnet@v3
         with:
-          dotnet-version: '6.0.x'
+          dotnet-version: ${{ matrix.dotnet-version }}
+
+      - name: Display dotnet version
+        id: dotnet_version
+        run: dotnet --version
+
+      - uses: actions/cache@v3
+        with:
+          path: ~/.nuget/packages
+          # Look to see if there is a cache hit for the corresponding requirements file
+          key: ${{ runner.os }}-nuget-${{ matrix.dotnet-version }}
+          restore-keys: |
+            ${{ runner.os }}-nuget
+
       - name: Install dependencies
         run: dotnet restore
+
       - name: Build
-        run: dotnet build
+        run: dotnet build --no-restore
+
       - name: Test with the dotnet CLI
-        run: dotnet test
+        run: dotnet test --logger html --verbosity normal --results-directory "TestResults-${{ matrix.dotnet-version }}"
+
+      - name: Upload dotnet test results
+        uses: actions/upload-artifact@v3
+        with:
+          name: dotnet-results-${{ matrix.dotnet-version }}
+          path: TestResults-${{ matrix.dotnet-version }}
+        # Use always() to always run this step to publish test results when there are test failures
+        if: ${{ always() }}
