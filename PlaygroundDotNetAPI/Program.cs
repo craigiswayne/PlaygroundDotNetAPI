@@ -7,10 +7,19 @@ using PlaygroundDotNetAPI.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
+Console.WriteLine("Printing args start");
+foreach (var kvp in args.AsEnumerable())
+{
+    Console.WriteLine($"{kvp}");
+}
+Console.WriteLine("Printing args end");
+
+Console.WriteLine("Printing Configuration start");
 foreach (var kvp in builder.Configuration.AsEnumerable())
 {
     Console.WriteLine($"{kvp.Key}: {kvp.Value}");
 }
+Console.WriteLine("Printing Configuration end");
 
 string[] allowedOrigins = [];
 try

@@ -30,7 +30,7 @@ dotnet clean
 dotnet restore
 dotnet build --no-restore
 dotnet publish
-DLL_PATH="PlaygroundDotNetAPI/bin/Release/net8.0/PlaygroundDotNetAPI.dll"
+DLL_PATH="PlaygroundDotNetAPI/bin/Release/net8.0/publish/PlaygroundDotNetAPI.dll"
 #ENVIRONMENT_NAME="UAT";
 #ENVIRONMENT_NAME="Release";
 #dotnet $DLL_PATH -- --no-build --environment=$ENVIRONMENT_NAME;
