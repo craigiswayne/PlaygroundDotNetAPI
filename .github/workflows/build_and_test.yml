@@ -22,7 +22,6 @@ jobs:
         with:
           dotnet-version: ${{ matrix.dotnet-version }}
 
-
       - name: Display dotnet version
         id: dotnet_version
         run: dotnet --version

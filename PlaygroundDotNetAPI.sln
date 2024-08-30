@@ -3,9 +3,14 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34728.123
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlaygroundDotNetAPI", "PlaygroundDotNetAPI\PlaygroundDotNetAPI.csproj", "{6CF740DB-20F3-4473-9B5C-3C3C000094B1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PlaygroundDotNetAPI", "PlaygroundDotNetAPI\PlaygroundDotNetAPI.csproj", "{6CF740DB-20F3-4473-9B5C-3C3C000094B1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlaygroundDotNetAPI.Tests", "PlaygroundDotNetAPI.Tests\PlaygroundDotNetAPI.Tests.csproj", "{E5FF7A73-454A-4858-A89A-5FB611F4A0BA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PlaygroundDotNetAPI.Tests", "PlaygroundDotNetAPI.Tests\PlaygroundDotNetAPI.Tests.csproj", "{E5FF7A73-454A-4858-A89A-5FB611F4A0BA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{5254A11B-3950-4103-848D-88A255B9A4E4}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

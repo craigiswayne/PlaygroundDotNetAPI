@@ -7,8 +7,13 @@ using PlaygroundDotNetAPI.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
-var connectionStringSqlite = builder.Configuration.GetConnectionString("DefaultConnection");
+var allowedOrigins = builder.Configuration.GetRequiredSection("AllowedOrigins").Get<string[]>();
+if (allowedOrigins == null || allowedOrigins.Length == 0)
+{
+    throw new Exception("No AllowedOrigins specified");
+}
 
+var connectionStringSqlite = builder.Configuration.GetConnectionString("DefaultConnection");
 var connectionType = builder.Configuration.GetSection("Db").GetValue<string>("Type");
 if (connectionType == "sqlite")
 {
@@ -16,6 +21,18 @@ if (connectionType == "sqlite")
 }
 
 builder.Services.AddScoped<IPokedexService, PokedexService>();
+
+builder.WebHost.UseKestrel(option => option.AddServerHeader = false);
+
+var corsPolicy = "DefaultPolicy";
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy(name: corsPolicy,
+        policy =>
+        {
+            policy.WithOrigins(allowedOrigins);
+        });
+});
 
 // Add services to the container.
 builder.Services.AddControllers();
@@ -55,6 +72,9 @@ if (app.Environment.IsDevelopment())
 app.UseSecurityHeaders();
 app.UseRateLimiter();
 app.UseHttpsRedirection();
+app.UseRouting();
+// https://learn.microsoft.com/en-us/aspnet/core/security/cors?view=aspnetcore-8.0
+app.UseCors(corsPolicy);
 app.UseAuthorization();
 
 app.MapControllers();

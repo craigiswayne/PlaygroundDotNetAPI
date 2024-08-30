@@ -186,7 +186,13 @@ dotnet ef database update --context MyDbContextSqLite -v
 * [Seed DB](https://www.youtube.com/watch?v=z-Hll4Xddjs)
 * [Sqlite & Entity Framework Core](https://www.youtube.com/watch?v=z-Hll4Xddjs)
 * [Registering Services](https://www.youtube.com/watch?v=sSq3GtriFuM)
+* [CORS](https://learn.microsoft.com/en-us/aspnet/core/security/cors?view=aspnetcore-7.0#np)
 
 ### TODO:
 * when saving test artifacts, save to the computed dotnet version
 * deploy to azure
+* run docker
+* test cors
+* use caching
+* test caching
+* restrict by ip
