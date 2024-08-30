@@ -15,21 +15,23 @@ jobs:
       matrix:
         dotnet-version: [ '8.0.x' ]
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - name: Setup dotnet
-        uses: actions/setup-dotnet@v3
+        uses: actions/setup-dotnet@4
         with:
           dotnet-version: ${{ matrix.dotnet-version }}
 
+
       - name: Display dotnet version
+        id: dotnet_version
         run: dotnet --version
 
       - uses: actions/cache@v3
         with:
           path: ~/.nuget/packages
           # Look to see if there is a cache hit for the corresponding requirements file
-          key: ${{ runner.os }}-nuget-${{ hashFiles('**/packages.lock.json') }}
+          key: ${{ runner.os }}-nuget-${{ matrix.dotnet-version }}
           restore-keys: |
             ${{ runner.os }}-nuget
 

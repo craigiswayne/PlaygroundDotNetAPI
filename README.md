@@ -186,3 +186,7 @@ dotnet ef database update --context MyDbContextSqLite -v
 * [Seed DB](https://www.youtube.com/watch?v=z-Hll4Xddjs)
 * [Sqlite & Entity Framework Core](https://www.youtube.com/watch?v=z-Hll4Xddjs)
 * [Registering Services](https://www.youtube.com/watch?v=sSq3GtriFuM)
+
+### TODO:
+* when saving test artifacts, save to the computed dotnet version
+* deploy to azure
