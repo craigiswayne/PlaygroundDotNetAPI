@@ -38,6 +38,9 @@ jobs:
       - name: Build
         run: dotnet build --no-restore
 
+      - name: Test with the dotnet CLI
+        run: dotnet test --logger html --verbosity normal --results-directory "TestResults-${{ matrix.dotnet-version }}"
+
       - name: Upload dotnet test results
         uses: actions/upload-artifact@v3
         with:
