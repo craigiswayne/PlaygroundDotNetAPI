@@ -1,6 +1,6 @@
 ﻿using System.Collections.Specialized;
 
-namespace playground_dotnet_api.Middleware;
+namespace PlaygroundDotNetAPI.Middleware;
 
 public class SecurityHeadersMiddleware
 {

@@ -1,7 +1,7 @@
-using playground_dotnet_api.Data;
-using playground_dotnet_api.Models;
+using PlaygroundDotNetAPI.Data;
+using PlaygroundDotNetAPI.Models;
 
-namespace playground_dotnet_api.Services;
+namespace PlaygroundDotNetAPI.Services;
 
 public interface IPokedexService
 {
@@ -11,7 +11,7 @@ public interface IPokedexService
 public class PokedexService: IPokedexService
 {
     private readonly MyDbContextSqLite _dbContext;
-    
+
     public PokedexService(MyDbContextSqLite dbContext)
     {
         _dbContext = dbContext;

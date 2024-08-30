@@ -1,7 +1,7 @@
 using Microsoft.EntityFrameworkCore;
-using playground_dotnet_api.Models;
+using PlaygroundDotNetAPI.Models;
 
-namespace playground_dotnet_api.Data;
+namespace PlaygroundDotNetAPI.Data;
 
 public class MyDbContextSqLite : DbContext
 {

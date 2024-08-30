@@ -1,7 +1,7 @@
-# playground-dotnet-api
+# Playground DotNet API
 
 ## Endpoints
-* https://localhost:7068/swagger/index.html
+* https://localhost:7137/swagger/index.html
 
 ---
 
@@ -10,7 +10,7 @@
 dotnet clean && dotnet nuget locals all --clear
 dotnet restore
 dotnet build --no-restore
-PROJECT_FILE="playground-dotnet-api/playground-dotnet-api.csproj"
+PROJECT_FILE="PlaygroundDotNetAPI/PlaygroundDotNetAPI.csproj"
 dotnet watch run --project=$PROJECT_FILE
 ```
 
@@ -24,7 +24,7 @@ dotnet build --no-restore
 # Test
 dotnet test --no-build --verbosity normal
 # Run
-PROJECT_FILE="playground-dotnet-api/playground-dotnet-api.csproj"
+PROJECT_FILE="PlaygroundDotNetAPI/PlaygroundDotNetAPI.csproj"
 dotnet run --project=$PROJECT_FILE
 # or for hot reload
 dotnet watch run --project=$PROJECT_FILE
@@ -34,13 +34,35 @@ dotnet watch run --project=$PROJECT_FILE
 
 ### Scaffolding
 ```shell
-mkdir playground-dotnet-api
-cd playground-dotnet-api
+name="PlaygroundDotNetAPI"
+# mkdir $name
+dotnet new sln -o $name
+cd $name
 dotnet new webapi --framework net8.0
 git init
 dotnet new gitignore
-mkdir -p playground-dotnet-api-tests
-dotnet new nunit
+
+# mkdir -p Controllers
+# cd Controllers
+# dotnet new class -n WeatherForecastController
+
+# https://learn.microsoft.com/en-us/aspnet/core/fundamentals/tools/dotnet-aspnet-codegenerator?view=aspnetcore-8.0
+dotnet tool install -g dotnet-aspnet-codegenerator
+
+dotnet add package Microsoft.VisualStudio.Web.CodeGeneration.Design
+dotnet aspnet-codegenerator area Controller
+
+
+# https://learn.microsoft.com/en-us/dotnet/core/testing/unit-testing-with-dotnet-test
+#dotnet new xunit -o "$name".Tests
+# create a controller
+#dotnet add "./$name.Tests/$name.Tests.csproj" reference "./$name/$name.csproj"
+#dotnet sln add "./$name.Tests/$name.Tests.csproj"
+
+#mkdir -p PlaygroundDotNetAPI.Tests
+dotnet new nunit -o "$name".Tests
+dotnet add "./$name.Tests/$name.Tests.csproj" reference "./$name/$name.csproj"
+dotnet sln add "./$name.Tests/$name.Tests.csproj"
 ```
 
 ---
@@ -97,7 +119,7 @@ see `Middleware/SecurityHeaders.cs` for contents
 In `Program.cs`
 
 ```c#
-using playground_dotnet_api.Middleware;
+using PlaygroundDotNetAPI.Middleware;
 ...
 
 var builder = WebApplication.CreateBuilder(args);
@@ -135,7 +157,7 @@ touch .github/workflows/build_and_test.yml
 ### Migration
 Create Migration
 ```shell
-cd playground-dotnet-api
+cd PlaygroundDotNetAPI
 dotnet tool install --global dotnet-ef
 dotnet ef migrations add Initial -o Migrations --context MyDbContextSqLite -v
 ```
