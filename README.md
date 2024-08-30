@@ -59,7 +59,6 @@ dotnet aspnet-codegenerator area Controller
 #dotnet add "./$name.Tests/$name.Tests.csproj" reference "./$name/$name.csproj"
 #dotnet sln add "./$name.Tests/$name.Tests.csproj"
 
-#mkdir -p PlaygroundDotNetAPI.Tests
 dotnet new nunit -o "$name".Tests
 dotnet add "./$name.Tests/$name.Tests.csproj" reference "./$name/$name.csproj"
 dotnet sln add "./$name.Tests/$name.Tests.csproj"
