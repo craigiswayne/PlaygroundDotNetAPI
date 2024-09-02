@@ -6,7 +6,7 @@
 ---
 
 ### Getting Started
-```
+```shell
 dotnet clean
 dotnet nuget locals all --clear
 dotnet restore
@@ -28,12 +28,18 @@ dotnet clean
 #dotnet nuget locals all --clear
 
 dotnet restore
+
+# Will create a debug package
+# see ./PlaygroundDotNetAPI/bin/Debug
 dotnet build --no-restore
+
+# Creates the release package
 dotnet publish
 DLL_PATH="PlaygroundDotNetAPI/bin/Release/net8.0/publish/PlaygroundDotNetAPI.dll"
+ENVIRONMENT_NAME="Development";
 #ENVIRONMENT_NAME="UAT";
 #ENVIRONMENT_NAME="Release";
-#dotnet $DLL_PATH -- --no-build --environment=$ENVIRONMENT_NAME;
+dotnet $DLL_PATH -- --no-build --environment=$ENVIRONMENT_NAME;
 dotnet $DLL_PATH -- --no-build;
 ```
 

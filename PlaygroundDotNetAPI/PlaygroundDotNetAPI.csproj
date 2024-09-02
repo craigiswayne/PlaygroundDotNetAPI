@@ -1,6 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
+    <Version>1.0.0</Version>
     <TargetFramework>net8.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
@@ -16,13 +17,18 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="Data\MyDbContextSqLite.cs">
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    <Compile Update="Services\EmployeeService.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
   </ItemGroup>
-
   <ItemGroup>
     <None Update="Data\sqlite.db">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\sqlite-dev.db">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\sqlite-uat.db">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Update="Data\sqlite.db-shm">

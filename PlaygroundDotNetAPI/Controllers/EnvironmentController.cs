@@ -5,16 +5,10 @@ namespace PlaygroundDotNetAPI.Controllers;
 
 [ApiController]
 [Route("[controller]")]
-public class DebugController : ControllerBase
+public class EnvironmentController(IConfiguration configuration, IWebHostEnvironment hostEnvironment) : ControllerBase
 {
-    private readonly IConfiguration _configuration;
-    private readonly IWebHostEnvironment _hostEnvironment;
-
-    public DebugController(IConfiguration configuration, IWebHostEnvironment hostEnvironment)
-    {
-        _configuration = configuration;
-        _hostEnvironment = hostEnvironment;
-    }
+    private readonly IConfiguration _configuration = configuration;
+    private readonly IWebHostEnvironment _hostEnvironment = hostEnvironment;
 
     [HttpGet]
     [Produces(MediaTypeNames.Application.Json)]
@@ -27,8 +21,8 @@ public class DebugController : ControllerBase
             isProduction = _hostEnvironment.IsProduction(),
             isDevelopment = _hostEnvironment.IsDevelopment(),
             aspNetCoreEnvironment = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT"),
-            //dbType = _configuration.GetRequiredSection("Db").GetValue<string>("Type"),
-            //defaultConnection = _configuration.GetConnectionString("DefaultConnection")
+            dbType = _configuration.GetSection("Db").GetValue<string>("Type"),
+            defaultConnection = _configuration.GetConnectionString("DefaultConnection")
         };
         return env;
     }

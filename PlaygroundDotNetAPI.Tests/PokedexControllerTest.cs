@@ -10,9 +10,9 @@ using PlaygroundDotNetAPI.Controllers;
 namespace PlaygroundDotNetAPI.Tests
 {
     [TestFixture]
-    public class PokedexControllerTests
+    public class EmployeeControllerTests
     {
-        private PokedexController _controller;
+        private EmployeeController _controller;
 
         [SetUp]
         public void Setup()
@@ -26,7 +26,7 @@ namespace PlaygroundDotNetAPI.Tests
             Assert.Fail("Check headers for EVERY call");
             Assert.Fail("Count the items");
             Assert.Fail("Should be 200");
-            Assert.Fail("Should be of type Pokemon");
+            Assert.Fail("Should be of type Employee");
         }
     }
 }

@@ -21,16 +21,8 @@ foreach (var kvp in builder.Configuration.AsEnumerable())
 }
 Console.WriteLine("Printing Configuration end");
 
-string[] allowedOrigins = [];
-try
-{
-    allowedOrigins = builder.Configuration.GetRequiredSection("AllowedOrigins").Get<string[]>();
-}
-catch (Exception ex) {
-    Console.WriteLine("ASPNETCORE_ENVIRONMENT:");
-    Console.WriteLine(Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT"));
-    Console.WriteLine(ex);
-}
+string[] allowedOrigins = builder.Configuration.GetSection("AllowedOrigins").Get<string[]>() ?? [];
+
 //if (allowedOrigins.Length == 0)
 //{
 //    throw new Exception("No AllowedOrigins specified");
@@ -43,7 +35,7 @@ if (connectionType == "sqlite")
     builder.Services.AddDbContext<MyDbContextSqLite>(options => options.UseSqlite(connectionStringSqlite));
 }
 
-builder.Services.AddScoped<IPokedexService, PokedexService>();
+builder.Services.AddScoped<IEmployeeService, EmployeeService>();
 
 builder.WebHost.UseKestrel(option => option.AddServerHeader = false);
 
