@@ -23,10 +23,10 @@ namespace PlaygroundDotNetAPI.Tests
         [Test]
         public void TODO()
         {
-//            Assert.Fail("Check headers for EVERY call");
-//            Assert.Fail("Count the items");
-//            Assert.Fail("Should be 200");
-//            Assert.Fail("Should be of type Employee");
+            Assert.Warn("Check headers for EVERY call");
+            Assert.Warn("Count the items");
+            Assert.Warn("Should be 200");
+            Assert.Warn("Should be of type Employee");
         }
     }
 }

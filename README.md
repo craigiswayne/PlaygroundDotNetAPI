@@ -181,6 +181,10 @@ dotnet ef database update --context MyDbContextSqLite -v
 
 ---
 
+### Federated Login
+
+---
+
 ### Terms
 | Terms      | Short Description                                                                          |
 |------------|--------------------------------------------------------------------------------------------|

@@ -2,8 +2,9 @@ on:
   push:
     branches:
     - feature/azure-deploy
+    - feature/fix-prod-environment
 env:
-  DOTNET_CORE_VERSION: 7.0.x
+  DOTNET_CORE_VERSION: 8.0.x
   CONTAINER_APP_NAME: playdotnetapi-container-app
   CONTAINER_APP_ENVIRONMENT_NAME: managedEnv20240830130926
   RESOURCE_GROUP: DefaultResourceGroup-SUK

@@ -15,7 +15,7 @@ permissions:
   contents: read
 
 env:
-  # prevents outputting senstive info to the pipeline console    
+  # prevents outputting sensitive info to the pipeline console
   AZURE_CORE_OUTPUT: 'none'
 
 jobs:
@@ -26,19 +26,17 @@ jobs:
     env:
       SUBSCRIPTION_ID: 'ad7ba97b-49f2-48c6-80fa-101ab7657e28'
       RESOURCE_LOCATION: 'uksouth'
-      RESOURCE_GROUP_NAME: 'poc-resource-group'
+      RESOURCE_GROUP_NAME: 'DefaultResourceGroup-SUK'
 
     steps:
       - uses: actions/checkout@v4
-  
+
        # https://github.com/Azure/login
       - name: Azure Login
-        uses: azure/login@v2
+        uses: azure/login@v1
         with:
-          client-id: ${{ secrets.SERVICE_PRINCIPLE_CLIENT_ID }}
-          tenant-id: ${{ secrets.SERVICE_PRINCIPLE_TENANT_ID }}
-          subscription-id: ${{ env.SUBSCRIPTION_ID }}
-    
+          creds: ${{ secrets.managedEnv20240830130926_SPN }}
+
   build_and_test:
     runs-on: ubuntu-latest
     strategy:
