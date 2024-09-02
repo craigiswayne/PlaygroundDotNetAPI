@@ -21,7 +21,7 @@ public class EnvironmentController(IConfiguration configuration, IWebHostEnviron
             isProduction = _hostEnvironment.IsProduction(),
             isDevelopment = _hostEnvironment.IsDevelopment(),
             aspNetCoreEnvironment = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT"),
-            dbType = _configuration.GetSection("Db").GetValue<string>("Type"),
+            dbType = _configuration.GetRequiredSection("Db").GetValue<string>("Type"),
             defaultConnection = _configuration.GetConnectionString("DefaultConnection")
         };
         return env;
