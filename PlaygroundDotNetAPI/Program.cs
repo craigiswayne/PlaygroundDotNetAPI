@@ -21,7 +21,7 @@ foreach (var kvp in builder.Configuration.AsEnumerable())
 }
 Console.WriteLine("Printing Configuration end");
 
-string[] allowedOrigins = builder.Configuration.GetSection("AllowedOrigins").Get<string[]>() ?? [];
+string[] allowedOrigins = builder.Configuration.GetRequiredSection("AllowedOrigins").Get<string[]>() ?? [];
 
 //if (allowedOrigins.Length == 0)
 //{
