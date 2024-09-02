@@ -17,6 +17,7 @@ public class EnvironmentController(IConfiguration configuration, IWebHostEnviron
     {
         var env = new
         {
+            version = _configuration.GetSection("version").Value,
             hostEnvironmentName = _hostEnvironment.EnvironmentName,
             isProduction = _hostEnvironment.IsProduction(),
             isDevelopment = _hostEnvironment.IsDevelopment(),
