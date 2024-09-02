@@ -29,7 +29,7 @@ string[] allowedOrigins = builder.Configuration.GetSection("AllowedOrigins").Get
 //}
 
 var connectionStringSqlite = builder.Configuration.GetConnectionString("DefaultConnection");
-var connectionType = builder.Configuration.GetSection("Db").GetValue<string>("Type");
+var connectionType = builder.Configuration.GetRequiredSection("Db").GetValue<string>("Type");
 if (connectionType == "sqlite")
 {
     builder.Services.AddDbContext<MyDbContextSqLite>(options => options.UseSqlite(connectionStringSqlite));
