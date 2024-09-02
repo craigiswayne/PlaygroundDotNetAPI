@@ -10,16 +10,11 @@ namespace PlaygroundDotNetAPI.Controllers;
 [EnableRateLimiting("fixed-window")]
 // [LogActionFilter] // TODO
 [Route("[controller]")]
-public class EmployeesController : ControllerBase
+public class EmployeesController(IEmployeeService employeeService) : ControllerBase
 {
     // TODO: Custom ControllerBase
     // TODO: Custom ControllerBase for logging
-    private readonly IEmployeeService _employeeService;
-
-    public EmployeeController(IEmployeeService employeeService)
-    {
-        _employeeService = employeeService;
-    }
+    private readonly IEmployeeService _employeeService = employeeService;
 
     [HttpGet]
     [Produces(MediaTypeNames.Application.Json)]

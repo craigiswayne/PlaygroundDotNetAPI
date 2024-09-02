@@ -12,7 +12,7 @@ namespace PlaygroundDotNetAPI.Tests
     [TestFixture]
     public class EmployeeControllerTests
     {
-        private EmployeeController _controller;
+        private EmployeesController _controller;
 
         [SetUp]
         public void Setup()
