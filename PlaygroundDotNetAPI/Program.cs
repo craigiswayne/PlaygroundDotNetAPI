@@ -35,7 +35,9 @@ builder.Services.AddCors(options =>
         });
 });
 
+// Add services to the container.
 builder.Services.AddControllers();
+// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
@@ -60,6 +62,7 @@ builder.Services.AddHsts(options =>
 
 var app = builder.Build();
 
+// Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
@@ -71,7 +74,7 @@ app.UseVersionHeader();
 app.UseRateLimiter();
 app.UseHttpsRedirection();
 app.UseRouting();
-
+// https://learn.microsoft.com/en-us/aspnet/core/security/cors?view=aspnetcore-8.0
 app.UseCors(corsPolicy);
 app.UseAuthorization();
 

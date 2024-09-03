@@ -18,6 +18,8 @@ public class EnvironmentController(IConfiguration configuration, IWebHostEnviron
         var env = new
         {
             hostEnvironmentName = _hostEnvironment.EnvironmentName,
+            allowedOrigins = _configuration.GetSection("AllowedOrigins").Get<List<string>>(),
+            allowedHosts = _configuration.GetValue<string>("AllowedHosts"),
             isProduction = _hostEnvironment.IsProduction(),
             isDevelopment = _hostEnvironment.IsDevelopment(),
             aspNetCoreEnvironment = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT"),

@@ -14,6 +14,6 @@ public class PokedexService(MyDbContextSqLite dbContext) : IPokedexService
 
     public IQueryable<Pokemon> List()
     {
-        return _dbContext.Pokemon.OrderBy(columns => columns.Id).Skip(0).Take(5);
+        return _dbContext.Pokedex.OrderBy(columns => columns.Id).Skip(0).Take(5);
     }
 }

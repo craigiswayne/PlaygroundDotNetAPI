@@ -9,6 +9,6 @@ public class MyDbContextSqLite : DbContext
     {
     }
 
-    public DbSet<Pokemon> Pokemon { get; set; }
+    public DbSet<Pokemon> Pokedex { get; set; }
 
 }
