@@ -1,7 +1,17 @@
 # Playground DotNet API
 
-## Endpoints
+## Contents
+
+### Endpoints / API
 * https://localhost:7137/swagger/index.html
+* https://localhost:7137/environment
+* https://localhost:7137/employees
+
+### Middleware
+* [SecurityHeaders](PlaygroundDotNetAPI/Middleware/SecurityHeaders.cs)
+  * Adds a bunch of recommended security headers
+* [VersionHeader](PlaygroundDotNetAPI/Middleware/VersionHeader.cs)
+  * Adds `Version` header to ALL API Responses
 
 ---
 
@@ -216,3 +226,4 @@ dotnet ef database update --context MyDbContextSqLite -v
 * no build warnings in pipeline
 * Add app Insights to the project
 * use allowed hosts
+* version in headers

@@ -67,6 +67,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseSecurityHeaders();
+app.UseVersionHeader();
 app.UseRateLimiter();
 app.UseHttpsRedirection();
 app.UseRouting();
