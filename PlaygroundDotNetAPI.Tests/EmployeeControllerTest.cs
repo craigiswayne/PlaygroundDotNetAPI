@@ -17,7 +17,7 @@ namespace PlaygroundDotNetAPI.Tests
         [SetUp]
         public void Setup()
         {
-            //_controller = new PokedexController();
+            //_controller = new EmployeesController();
         }
 
         [Test]

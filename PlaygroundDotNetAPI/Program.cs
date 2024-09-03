@@ -7,20 +7,6 @@ using PlaygroundDotNetAPI.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
-Console.WriteLine("Printing args start");
-foreach (var kvp in args.AsEnumerable())
-{
-    Console.WriteLine($"{kvp}");
-}
-Console.WriteLine("Printing args end");
-
-Console.WriteLine("Printing Configuration start");
-foreach (var kvp in builder.Configuration.AsEnumerable())
-{
-    Console.WriteLine($"{kvp.Key}: {kvp.Value}");
-}
-Console.WriteLine("Printing Configuration end");
-
 string[] allowedOrigins = builder.Configuration.GetRequiredSection("AllowedOrigins").Get<string[]>() ?? [];
 
 //if (allowedOrigins.Length == 0)
@@ -49,10 +35,7 @@ builder.Services.AddCors(options =>
         });
 });
 
-// Add services to the container.
 builder.Services.AddControllers();
-
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
@@ -77,7 +60,6 @@ builder.Services.AddHsts(options =>
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
@@ -88,7 +70,7 @@ app.UseSecurityHeaders();
 app.UseRateLimiter();
 app.UseHttpsRedirection();
 app.UseRouting();
-// https://learn.microsoft.com/en-us/aspnet/core/security/cors?view=aspnetcore-8.0
+
 app.UseCors(corsPolicy);
 app.UseAuthorization();
 
