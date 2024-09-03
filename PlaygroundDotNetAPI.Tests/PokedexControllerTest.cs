@@ -22,6 +22,7 @@ namespace PlaygroundDotNetAPI.Tests
             Assert.Warn("Count the items");
             Assert.Warn("Should be 200");
             Assert.Warn("Should be of type Pokemon");
+            Assert.Warn("TODO: test only lowercase URLs");
 
             var _endpoints = new List<(Type, MethodInfo)>(); // All endpoints in my project
             var asm = Assembly.GetExecutingAssembly();

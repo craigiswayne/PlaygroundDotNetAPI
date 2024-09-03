@@ -226,4 +226,4 @@ dotnet ef database update --context MyDbContextSqLite -v
 * no build warnings in pipeline
 * Add app Insights to the project
 * use allowed hosts
-* version in headers
+* versioning from pipeline

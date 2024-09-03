@@ -8,11 +8,10 @@ using PlaygroundDotNetAPI.Services;
 var builder = WebApplication.CreateBuilder(args);
 
 string[] allowedOrigins = builder.Configuration.GetRequiredSection("AllowedOrigins").Get<string[]>() ?? [];
-
-//if (allowedOrigins.Length == 0)
-//{
-//    throw new Exception("No AllowedOrigins specified");
-//}
+if (allowedOrigins.Length == 0)
+{
+    throw new Exception("No AllowedOrigins specified");
+}
 
 var connectionStringSqlite = builder.Configuration.GetConnectionString("DefaultConnection");
 var connectionType = builder.Configuration.GetRequiredSection("Db").GetValue<string>("Type");
@@ -21,6 +20,10 @@ if (connectionType == "sqlite")
     builder.Services.AddDbContext<MyDbContextSqLite>(options => options.UseSqlite(connectionStringSqlite));
 }
 
+builder.Services.Configure<RouteOptions>(options =>
+{
+   options.LowercaseUrls = true;
+});
 builder.Services.AddScoped<IPokedexService, PokedexService>();
 
 builder.WebHost.UseKestrel(option => option.AddServerHeader = false);
