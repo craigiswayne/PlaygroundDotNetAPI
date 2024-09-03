@@ -2,7 +2,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace PlaygroundDotNetAPI.Models;
 
-public class Employee
+public class Pokemon
 {
     [Key]
     public int Id  { get; set; }

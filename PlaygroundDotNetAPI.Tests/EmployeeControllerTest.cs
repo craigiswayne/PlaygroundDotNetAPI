@@ -5,14 +5,14 @@ using PlaygroundDotNetAPI.Controllers;
 namespace PlaygroundDotNetAPI.Tests
 {
     [TestFixture]
-    public class EmployeeControllerTests
+    public class PokedexControllerTests
     {
-        private EmployeesController _controller;
+        private PokedexController _controller;
 
         [SetUp]
         public void Setup()
         {
-            //_controller = new EmployeesController();
+            //_controller = new PokedexController();
         }
 
         [Test]
@@ -21,7 +21,7 @@ namespace PlaygroundDotNetAPI.Tests
             Assert.Warn("Check headers for EVERY call");
             Assert.Warn("Count the items");
             Assert.Warn("Should be 200");
-            Assert.Warn("Should be of type Employee");
+            Assert.Warn("Should be of type Pokemon");
 
             var _endpoints = new List<(Type, MethodInfo)>(); // All endpoints in my project
             var asm = Assembly.GetExecutingAssembly();

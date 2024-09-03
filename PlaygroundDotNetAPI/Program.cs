@@ -21,7 +21,7 @@ if (connectionType == "sqlite")
     builder.Services.AddDbContext<MyDbContextSqLite>(options => options.UseSqlite(connectionStringSqlite));
 }
 
-builder.Services.AddScoped<IEmployeeService, EmployeeService>();
+builder.Services.AddScoped<IPokedexService, PokedexService>();
 
 builder.WebHost.UseKestrel(option => option.AddServerHeader = false);
 
