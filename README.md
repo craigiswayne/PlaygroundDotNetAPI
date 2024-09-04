@@ -270,3 +270,4 @@ This will ensure ALL the data in the `OnModelCreating` method is seeded to the D
 * singular pipeline
 * try catch when we cannot connect to a db
 * custom events in app insights
+* multiple environments / slots
