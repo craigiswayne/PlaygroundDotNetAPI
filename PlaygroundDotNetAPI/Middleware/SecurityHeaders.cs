@@ -31,7 +31,7 @@ public class SecurityHeadersMiddleware
                 continue;
             }
 
-            context.Response.Headers.Add(header, headersToAdd[header]);
+            context.Response.Headers.Append(header, headersToAdd[header]);
         }
 
         string[] headersToRemove = new string[]{

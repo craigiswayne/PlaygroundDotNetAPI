@@ -1,33 +1,56 @@
 # Playground DotNet API
 
-## Endpoints
+## Contents
+
+### Endpoints / API
 * https://localhost:7137/swagger/index.html
+* https://localhost:7137/environment
+* https://localhost:7137/pokedex
+
+### Middleware
+* [SecurityHeaders](PlaygroundDotNetAPI/Middleware/SecurityHeaders.cs)
+  * Adds a bunch of recommended security headers
+* [VersionHeader](PlaygroundDotNetAPI/Middleware/VersionHeader.cs)
+  * Adds `Version` header to ALL API Responses
 
 ---
 
-## Getting Started
-```
-dotnet clean && dotnet nuget locals all --clear
+### Getting Started
+```shell
+dotnet clean
+dotnet nuget locals all --clear
 dotnet restore
 dotnet build --no-restore
+dotnet test --no-build --verbosity normal
+
+#ENVIRONMENT_NAME="Development";
+ENVIRONMENT_NAME="UAT"
 PROJECT_FILE="PlaygroundDotNetAPI/PlaygroundDotNetAPI.csproj"
-dotnet watch run --project=$PROJECT_FILE
+dotnet watch run --environment=$ENVIRONMENT_NAME --project=$PROJECT_FILE;
+# see here: https://learn.microsoft.com/en-us/aspnet/core/fundamentals/environments?view=aspnetcore-7.0
 ```
 
-```
-# Clean
-dotnet clean && dotnet nuget locals all --clear
-# Restore dependencies
+### Testing a Compiled App
+Testing out the DLL / compiled app
+
+```bash
+dotnet clean
+#dotnet nuget locals all --clear
+
 dotnet restore
-# Build
+
+# Will create a debug package
+# see ./PlaygroundDotNetAPI/bin/Debug
 dotnet build --no-restore
-# Test
-dotnet test --no-build --verbosity normal
-# Run
-PROJECT_FILE="PlaygroundDotNetAPI/PlaygroundDotNetAPI.csproj"
-dotnet run --project=$PROJECT_FILE
-# or for hot reload
-dotnet watch run --project=$PROJECT_FILE
+
+# Creates the release package
+dotnet publish
+DLL_PATH="PlaygroundDotNetAPI/bin/Release/net8.0/publish/PlaygroundDotNetAPI.dll"
+ENVIRONMENT_NAME="Development";
+#ENVIRONMENT_NAME="UAT";
+#ENVIRONMENT_NAME="Release";
+dotnet $DLL_PATH -- --no-build --environment=$ENVIRONMENT_NAME;
+dotnet $DLL_PATH -- --no-build;
 ```
 
 ---
@@ -168,6 +191,10 @@ dotnet ef database update --context MyDbContextSqLite -v
 
 ---
 
+### Federated Login
+
+---
+
 ### Terms
 | Terms      | Short Description                                                                          |
 |------------|--------------------------------------------------------------------------------------------|
@@ -190,9 +217,15 @@ dotnet ef database update --context MyDbContextSqLite -v
 
 ### TODO:
 * when saving test artifacts, save to the computed dotnet version
-* deploy to azure
+* deploy to azure web app
 * run docker
 * test cors
 * use caching
 * test caching
 * restrict by ip
+* no build warnings in pipeline
+* Add app Insights to the project
+* use allowed hosts
+* versioning from pipeline
+* singular pipeline
+* try catch when we cannot connect to a db

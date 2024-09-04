@@ -10,16 +10,11 @@ namespace PlaygroundDotNetAPI.Controllers;
 [EnableRateLimiting("fixed-window")]
 // [LogActionFilter] // TODO
 [Route("[controller]")]
-public class PokedexController : ControllerBase
+public class PokedexController(IPokedexService pokedexService) : ControllerBase
 {
     // TODO: Custom ControllerBase
     // TODO: Custom ControllerBase for logging
-    private readonly IPokedexService _pokedexService;
-
-    public PokedexController(IPokedexService pokedexService)
-    {
-        _pokedexService = pokedexService;
-    }
+    private readonly IPokedexService _pokedexService = pokedexService;
 
     [HttpGet]
     [Produces(MediaTypeNames.Application.Json)]
