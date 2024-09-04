@@ -1,17 +1,15 @@
 # Playground DotNet API
 
-## Contents
-
-### Endpoints / API
-* https://localhost:7137/swagger/index.html
-* https://localhost:7137/environment
-* https://localhost:7137/pokedex
-
-### Middleware
-* [SecurityHeaders](PlaygroundDotNetAPI/Middleware/SecurityHeaders.cs)
-  * Adds a bunch of recommended security headers
-* [VersionHeader](PlaygroundDotNetAPI/Middleware/VersionHeader.cs)
-  * Adds `Version` header to ALL API Responses
+* Endpoints
+  * https://localhost:7137/swagger/index.html
+  * https://localhost:7137/environment
+  * https://localhost:7137/pokedex
+* Middleware
+  * [SecurityHeaders](PlaygroundDotNetAPI/Middleware/SecurityHeaders.cs)
+    * Adds a bunch of recommended security headers
+  * [VersionHeader](PlaygroundDotNetAPI/Middleware/VersionHeader.cs)
+    * Adds `Version` header to ALL API Responses
+* Telemetry Microsoft Azure App Insights
 
 ---
 
@@ -186,18 +184,50 @@ See: https://learn.microsoft.com/en-us/azure/azure-monitor/app/asp-net-core?tabs
 
 ----
 
+### Database
+* Connecting a database
+
+----
+
 ### Migration
 Create Migration
 ```shell
 cd PlaygroundDotNetAPI
-dotnet tool install --global dotnet-ef
-dotnet ef migrations add Initial -o Migrations --context MyDbContextSqLite -v
+# you only need to do these once
+# dotnet tool install --global dotnet-ef
+# dotnet add package Microsoft.EntityFrameworkCore.Design
+dotnet ef migrations add Initial
+# dotnet ef migrations remove
 ```
 
-Update Migration
+Update Database / Run migration
 ```shell
-dotnet ef database update --context MyDbContextSqLite -v
+dotnet ef database update
 ```
+
+#### Seeding data into database
+https://learn.microsoft.com/en-us/ef/core/modeling/data-seeding
+
+see the `OnModelCreating` in the DB Context
+
+When you run the database update, it will create the data specified in the `OnModelCreating`
+
+If you've added more data to `OnModelCreating`, you'll need to create an additional migration
+
+Then run the update again
+
+
+#### Starting fresh
+```shell
+dotnet ef database drop
+dotnet migrations remove
+# this only removes the last run migration
+# to remove multiple migrations, run it as many times until there aren't any left
+# then create the migration again
+```
+
+Notes: You can create multiple migrations, then finally run the database update. 
+This will ensure ALL the data in the `OnModelCreating` method is seeded to the DB
 
 ---
 
@@ -239,3 +269,4 @@ dotnet ef database update --context MyDbContextSqLite -v
 * versioning from pipeline
 * singular pipeline
 * try catch when we cannot connect to a db
+* custom events in app insights
