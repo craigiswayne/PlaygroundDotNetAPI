@@ -16,7 +16,10 @@ public class MyDbContextSqLite(DbContextOptions<MyDbContextSqLite> options) : Db
             new Pokemon { Id = 3, Name = "Venusaur" },
             new Pokemon { Id = 4, Name = "Charmander" },
             new Pokemon { Id = 5, Name = "Charmeleon" },
-            new Pokemon { Id = 6, Name = "Charizard" }
+            new Pokemon { Id = 6, Name = "Charizard" },
+            new Pokemon { Id = 7, Name = "Squirtle" },
+            new Pokemon { Id = 8, Name = "Wartortle" },
+            new Pokemon { Id = 9, Name = "Blastoise" }
         );
     }
 
