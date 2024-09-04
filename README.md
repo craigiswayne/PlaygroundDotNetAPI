@@ -5,7 +5,7 @@
 ### Endpoints / API
 * https://localhost:7137/swagger/index.html
 * https://localhost:7137/environment
-* https://localhost:7137/employees
+* https://localhost:7137/pokedex
 
 ### Middleware
 * [SecurityHeaders](PlaygroundDotNetAPI/Middleware/SecurityHeaders.cs)
@@ -217,7 +217,7 @@ dotnet ef database update --context MyDbContextSqLite -v
 
 ### TODO:
 * when saving test artifacts, save to the computed dotnet version
-* deploy to azure
+* deploy to azure web app
 * run docker
 * test cors
 * use caching
@@ -227,3 +227,5 @@ dotnet ef database update --context MyDbContextSqLite -v
 * Add app Insights to the project
 * use allowed hosts
 * versioning from pipeline
+* singular pipeline
+* try catch when we cannot connect to a db

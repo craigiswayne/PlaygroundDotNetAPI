@@ -15,18 +15,7 @@ public class VersionHeaderMiddleware
 
     public async Task InvokeAsync(HttpContext context)
     {
-        NameValueCollection headersToAdd = new NameValueCollection();
-        headersToAdd["X-Version"] = _configuration["Version"];
-
-        foreach (string header in headersToAdd)
-        {
-            if (context.Response.Headers.ContainsKey(header)){
-                continue;
-            }
-
-            context.Response.Headers.Append(header, headersToAdd[header]);
-        }
-
+        context.Response.Headers.Append("X-Version", _configuration["Version"]);
         await _next(context);
     }
 }

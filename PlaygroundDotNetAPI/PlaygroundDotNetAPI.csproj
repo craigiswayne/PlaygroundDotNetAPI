@@ -19,12 +19,6 @@
     <None Update="Data\sqlite.db">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="Data\sqlite-dev.db">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Data\sqlite-uat.db">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
     <None Update="Data\sqlite.db-wal">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
