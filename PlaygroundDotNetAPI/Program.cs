@@ -38,6 +38,9 @@ builder.Services.AddCors(options =>
         });
 });
 
+// The following line enables Application Insights telemetry collection.
+builder.Services.AddApplicationInsightsTelemetry();
+
 // Add services to the container.
 builder.Services.AddControllers();
 

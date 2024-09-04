@@ -176,6 +176,16 @@ touch .github/workflows/build_and_test.yml
 ```
 ----
 
+### Microsoft Azure Application Insights
+See: https://learn.microsoft.com/en-us/azure/azure-monitor/app/asp-net-core?tabs=netcorenew
+
+* add `builder.Services.AddApplicationInsightsTelemetry();` to `Program.cs`
+* add the `<PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.8" />` dependency in the project
+* add the connection string to your `appsettings.json`
+* done :)
+
+----
+
 ### Migration
 Create Migration
 ```shell
@@ -214,6 +224,7 @@ dotnet ef database update --context MyDbContextSqLite -v
 * [Sqlite & Entity Framework Core](https://www.youtube.com/watch?v=z-Hll4Xddjs)
 * [Registering Services](https://www.youtube.com/watch?v=sSq3GtriFuM)
 * [CORS](https://learn.microsoft.com/en-us/aspnet/core/security/cors?view=aspnetcore-7.0#np)
+* [Microsoft Azure Application Insights](https://learn.microsoft.com/en-us/azure/azure-monitor/app/asp-net-core?tabs=netcorenew)
 
 ### TODO:
 * when saving test artifacts, save to the computed dotnet version
@@ -224,7 +235,6 @@ dotnet ef database update --context MyDbContextSqLite -v
 * test caching
 * restrict by ip
 * no build warnings in pipeline
-* Add app Insights to the project
 * use allowed hosts
 * versioning from pipeline
 * singular pipeline
