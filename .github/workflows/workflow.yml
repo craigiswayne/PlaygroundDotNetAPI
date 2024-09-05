@@ -1,0 +1,120 @@
+name: Build and Test
+
+on:
+  push:
+    branches:
+      - main
+    paths-ignore:
+      - '**/*.md'
+  pull_request:
+    types: [opened, reopened, edited]
+    branches: [develop]
+
+permissions:
+  id-token: write
+  contents: read
+
+env:
+  # prevents outputting sensitive info to the pipeline console
+  AZURE_CORE_OUTPUT: 'none'
+
+jobs:
+  build_and_test:
+    name: "Build & Test"
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        dotnet-version: [ '8.0.x' ]
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup dotnet
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: ${{ matrix.dotnet-version }}
+
+      - name: Display dotnet version
+        id: dotnet_version
+        run: dotnet --version
+
+      - uses: actions/cache@v3
+        with:
+          path: ~/.nuget/packages
+          # Look to see if there is a cache hit for the corresponding requirements file
+          key: ${{ runner.os }}-nuget-${{ matrix.dotnet-version }}
+          restore-keys: |
+            ${{ runner.os }}-nuget
+
+      - name: Install dependencies
+        run: dotnet restore
+
+      - name: Build
+        run: dotnet build --no-restore
+
+      - name: Test with the dotnet CLI
+        run: dotnet test --logger html --verbosity normal --results-directory "TestResults-${{ matrix.dotnet-version }}"
+
+      - name: Upload dotnet test results
+        uses: actions/upload-artifact@v3
+        with:
+          name: dotnet-results-${{ matrix.dotnet-version }}
+          path: TestResults-${{ matrix.dotnet-version }}
+        # Use always() to always run this step to publish test results when there are test failures
+        if: ${{ always() }}
+
+  infrastructure:
+    name: "Create Infrastructure"
+    needs: [build_and_test]
+    runs-on: ubuntu-latest
+
+    env:
+      SUBSCRIPTION_ID: 'ad7ba97b-49f2-48c6-80fa-101ab7657e28'
+      RESOURCE_LOCATION: 'uksouth'
+      RESOURCE_GROUP_NAME: 'DefaultResourceGroup-SUK'
+
+    steps:
+      - uses: actions/checkout@v4
+
+      # https://github.com/Azure/login
+      - name: Azure Login
+        uses: azure/login@v1
+        with:
+          creds: ${{ secrets.managedEnv20240830130926_SPN }}
+
+  deploy:
+    name: "Deploy"
+    needs: [infrastructure]
+    runs-on: ubuntu-latest
+    if:  github.ref == 'refs/heads/develop'
+    env:
+      DOTNET_CORE_VERSION: 8.0.x
+      CONTAINER_APP_NAME: playdotnetapi-container-app
+      CONTAINER_APP_ENVIRONMENT_NAME: managedEnv20240830130926
+      RESOURCE_GROUP: DefaultResourceGroup-SUK
+      CONTAINER_REGISTRY_NAME: registry20240830131312
+      CONTAINER_REGISTRY_LOGIN_SERVER: registry20240830131312.azurecr.io
+    steps:
+      - name: Checkout source code
+        uses: actions/checkout@v4
+
+      - name: Setup .NET SDK
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: ${{ env.DOTNET_CORE_VERSION }}
+
+      - name: Azure login
+        uses: azure/login@v1
+        with:
+          creds: ${{ secrets.managedEnv20240830130926_SPN }}
+
+      - name: Container App deploy
+        uses: azure/container-apps-deploy-action@v1
+        with:
+          appSourcePath: ${{ github.workspace }}
+          acrName: ${{ env.CONTAINER_REGISTRY_NAME }}
+          acrUsername: ${{ secrets.registry20240830131312_USERNAME_69F7 }}
+          acrPassword: ${{ secrets.registry20240830131312_PASSWORD_69F7 }}
+          imageToBuild: ${{ env.CONTAINER_REGISTRY_LOGIN_SERVER }}/${{ env.CONTAINER_APP_NAME }}:${{ github.sha }}
+          containerAppName: ${{ env.CONTAINER_APP_NAME }}
+          containerAppEnvironment: ${{ env.CONTAINER_APP_ENVIRONMENT_NAME }}
+          resourceGroup: ${{ env.RESOURCE_GROUP }}

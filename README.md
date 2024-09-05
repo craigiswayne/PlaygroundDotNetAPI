@@ -274,18 +274,20 @@ This will revert the database to that point in time.
 * [Microsoft Azure Application Insights](https://learn.microsoft.com/en-us/azure/azure-monitor/app/asp-net-core?tabs=netcorenew)
 
 ### TODO:
-* when saving test artifacts, save to the computed dotnet version
+* deploy arm templates / infrastructure
 * deploy to azure web app
+* create an azure database
+* when saving test artifacts, save to the computed dotnet version
 * test cors
 * use caching
 * test caching
 * restrict by ip
 * no build warnings in pipeline
 * use allowed hosts
-* versioning from pipeline
-* singular pipeline
 * try catch when we cannot connect to a db
 * custom events in app insights
 * multiple environments / slots
 * `dotnet ef migrations has-pending-model-changes`
 * e2e testing with dotnet
+* versioning from pipeline
+* reusableWorkflowCallJob in github workflow
