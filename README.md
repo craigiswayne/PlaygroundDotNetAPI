@@ -1,21 +1,29 @@
 # Playground DotNet API
 
-## Contents
-
-### Endpoints / API
-* https://localhost:7137/swagger/index.html
-* https://localhost:7137/environment
-* https://localhost:7137/pokedex
-
-### Middleware
-* [SecurityHeaders](PlaygroundDotNetAPI/Middleware/SecurityHeaders.cs)
-  * Adds a bunch of recommended security headers
-* [VersionHeader](PlaygroundDotNetAPI/Middleware/VersionHeader.cs)
-  * Adds `Version` header to ALL API Responses
+* Endpoints
+  * https://localhost:7137/swagger/index.html
+  * https://localhost:7137/environment
+  * https://localhost:7137/pokedex
+* Middleware
+  * [SecurityHeaders](PlaygroundDotNetAPI/Middleware/SecurityHeaders.cs)
+    * Adds a bunch of recommended security headers
+  * [VersionHeader](PlaygroundDotNetAPI/Middleware/VersionHeader.cs)
+    * Adds `Version` header to ALL API Responses
+* Telemetry Microsoft Azure App Insights
 
 ---
 
 ### Getting Started
+
+#### with Docker
+```shell
+docker build --no-cache --progress=plain -f PlaygroundDotNetAPI/Dockerfile . -t playgrounddotnetapi &> build.log
+docker run -it --rm -p 4201:8080 --name playgrounddotnetapi_sample playgrounddotnetapi
+# open http://localhost:4201/environment
+```
+
+
+#### With Local DLL
 ```shell
 dotnet clean
 dotnet nuget locals all --clear
@@ -186,18 +194,57 @@ See: https://learn.microsoft.com/en-us/azure/azure-monitor/app/asp-net-core?tabs
 
 ----
 
+### Database
+* Connecting a database
+
+----
+
 ### Migration
 Create Migration
 ```shell
 cd PlaygroundDotNetAPI
-dotnet tool install --global dotnet-ef
-dotnet ef migrations add Initial -o Migrations --context MyDbContextSqLite -v
+# you only need to do these once
+# dotnet tool install --global dotnet-ef
+# dotnet add package Microsoft.EntityFrameworkCore.Design
+dotnet ef migrations add Initial
+# dotnet ef migrations remove
+# this removes the last applied migration
 ```
 
-Update Migration
+Update Database / Run migration
 ```shell
-dotnet ef database update --context MyDbContextSqLite -v
+dotnet ef database update
 ```
+
+#### Seeding data into database
+https://learn.microsoft.com/en-us/ef/core/modeling/data-seeding
+
+see the `OnModelCreating` in the DB Context
+
+When you run the database update, it will create the data specified in the `OnModelCreating`
+
+If you've added more data to `OnModelCreating`, you'll need to create an additional migration
+
+Then run the update again
+
+
+#### Starting fresh
+```shell
+dotnet ef database drop
+dotnet migrations remove
+# this only removes the last run migration
+# to remove multiple migrations, run it as many times until there aren't any left
+# then create the migration again
+```
+
+Notes: Migrations are NOT automatically applied when deploying
+
+Notes: You can create multiple migrations, then finally run the database update. 
+This will ensure ALL the data in the `OnModelCreating` method is seeded to the DB
+
+Note: To revert to a previous migration, run `dotnet ef migrations list`, then choose the migration you want to revert to.
+Then run `dotnet ef database update $MIGRATION_NAME`.
+This will revert the database to that point in time.
 
 ---
 
@@ -229,7 +276,6 @@ dotnet ef database update --context MyDbContextSqLite -v
 ### TODO:
 * when saving test artifacts, save to the computed dotnet version
 * deploy to azure web app
-* run docker
 * test cors
 * use caching
 * test caching
@@ -239,3 +285,7 @@ dotnet ef database update --context MyDbContextSqLite -v
 * versioning from pipeline
 * singular pipeline
 * try catch when we cannot connect to a db
+* custom events in app insights
+* multiple environments / slots
+* `dotnet ef migrations has-pending-model-changes`
+* e2e testing with dotnet
