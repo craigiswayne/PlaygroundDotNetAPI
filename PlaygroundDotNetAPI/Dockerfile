@@ -7,13 +7,17 @@ EXPOSE 8080
 EXPOSE 8081
 
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
+ENV PATH $PATH:/root/.dotnet/tools
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
 COPY ["PlaygroundDotNetAPI/PlaygroundDotNetAPI.csproj", "PlaygroundDotNetAPI/"]
 RUN dotnet restore "./PlaygroundDotNetAPI/PlaygroundDotNetAPI.csproj"
 COPY . .
 WORKDIR "/src/PlaygroundDotNetAPI"
+RUN dotnet tool install --global dotnet-ef
+RUN dotnet-ef database update -p ./PlaygroundDotNetAPI.csproj
 RUN dotnet build "./PlaygroundDotNetAPI.csproj" -c $BUILD_CONFIGURATION -o /app/build
+
 
 FROM build AS publish
 ARG BUILD_CONFIGURATION=Release

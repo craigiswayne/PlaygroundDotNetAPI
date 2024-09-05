@@ -14,6 +14,17 @@
 ---
 
 ### Getting Started
+
+#### with Docker
+```shell
+docker build -f PlaygroundDotNetAPI/Dockerfile . -t playgrounddotnetapi
+docker run -it --rm -p 4201:8080 --name playgrounddotnetapi_sample playgrounddotnetapi
+#docker build --no-cache --progress=plain -f PlaygroundDotNetAPI/Dockerfile . -t playgrounddotnetapi &> build.log
+
+# open http://localhost:4201/environment
+```
+
+
 ```shell
 dotnet clean
 dotnet nuget locals all --clear
@@ -226,8 +237,14 @@ dotnet migrations remove
 # then create the migration again
 ```
 
+#Notes: Migrations are automatically applied when deploying
+
 Notes: You can create multiple migrations, then finally run the database update. 
 This will ensure ALL the data in the `OnModelCreating` method is seeded to the DB
+
+Note: To revert to a previous migration, run `dotnet ef migrations list`, then choose the migration you want to revert to.
+Then run `dotnet ef database update $MIGRATION_NAME`.
+This will revert the database to that point in time.
 
 ---
 
@@ -271,3 +288,4 @@ This will ensure ALL the data in the `OnModelCreating` method is seeded to the D
 * try catch when we cannot connect to a db
 * custom events in app insights
 * multiple environments / slots
+* `dotnet ef migrations has-pending-model-changes`
