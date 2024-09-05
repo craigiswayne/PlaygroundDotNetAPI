@@ -3,7 +3,7 @@ name: "Container App Deploy"
 on:
   push:
     branches:
-    - develop
+    - main
 env:
   DOTNET_CORE_VERSION: 8.0.x
   CONTAINER_APP_NAME: playdotnetapi-container-app

@@ -86,7 +86,14 @@ jobs:
     name: "Deploy"
     needs: [infrastructure]
     runs-on: ubuntu-latest
-    if:  github.ref == 'refs/heads/develop'
+#    if:  github.ref == 'refs/heads/develop'
+    env:
+      DOTNET_CORE_VERSION: 8.0.x
+      CONTAINER_APP_NAME: playdotnetapi-container-app
+      CONTAINER_APP_ENVIRONMENT_NAME: managedEnv20240830130926
+      RESOURCE_GROUP: DefaultResourceGroup-SUK
+      CONTAINER_REGISTRY_NAME: registry20240830131312
+      CONTAINER_REGISTRY_LOGIN_SERVER: registry20240830131312.azurecr.io
     steps:
       - name: Checkout source code
         uses: actions/checkout@v4
