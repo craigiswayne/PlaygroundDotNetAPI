@@ -284,7 +284,6 @@ This will revert the database to that point in time.
 * restrict by ip
 * no build warnings in pipeline
 * use allowed hosts
-* singular pipeline
 * try catch when we cannot connect to a db
 * custom events in app insights
 * multiple environments / slots
