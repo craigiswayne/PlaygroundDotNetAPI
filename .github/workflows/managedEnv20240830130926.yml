@@ -4,7 +4,6 @@ on:
   push:
     branches:
     - develop
-    - feature/database-migrations
 env:
   DOTNET_CORE_VERSION: 8.0.x
   CONTAINER_APP_NAME: playdotnetapi-container-app

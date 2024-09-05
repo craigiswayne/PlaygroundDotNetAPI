@@ -17,14 +17,13 @@
 
 #### with Docker
 ```shell
-docker build -f PlaygroundDotNetAPI/Dockerfile . -t playgrounddotnetapi
+docker build --no-cache --progress=plain -f PlaygroundDotNetAPI/Dockerfile . -t playgrounddotnetapi &> build.log
 docker run -it --rm -p 4201:8080 --name playgrounddotnetapi_sample playgrounddotnetapi
-#docker build --no-cache --progress=plain -f PlaygroundDotNetAPI/Dockerfile . -t playgrounddotnetapi &> build.log
-
 # open http://localhost:4201/environment
 ```
 
 
+#### With Local DLL
 ```shell
 dotnet clean
 dotnet nuget locals all --clear
@@ -209,6 +208,7 @@ cd PlaygroundDotNetAPI
 # dotnet add package Microsoft.EntityFrameworkCore.Design
 dotnet ef migrations add Initial
 # dotnet ef migrations remove
+# this removes the last applied migration
 ```
 
 Update Database / Run migration
@@ -237,7 +237,7 @@ dotnet migrations remove
 # then create the migration again
 ```
 
-#Notes: Migrations are automatically applied when deploying
+Notes: Migrations are NOT automatically applied when deploying
 
 Notes: You can create multiple migrations, then finally run the database update. 
 This will ensure ALL the data in the `OnModelCreating` method is seeded to the DB
@@ -276,7 +276,6 @@ This will revert the database to that point in time.
 ### TODO:
 * when saving test artifacts, save to the computed dotnet version
 * deploy to azure web app
-* run docker
 * test cors
 * use caching
 * test caching
@@ -289,3 +288,4 @@ This will revert the database to that point in time.
 * custom events in app insights
 * multiple environments / slots
 * `dotnet ef migrations has-pending-model-changes`
+* e2e testing with dotnet
