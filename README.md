@@ -259,6 +259,40 @@ This will revert the database to that point in time.
 
 ----
 
+### Infrastructure
+```mermaid
+flowchart TD
+Subscription --> Resource_Group[Resource Group]
+
+Resource_Group --> Azure_Container_Registry[Azure Container Registry]
+Resource_Group --> Container_App[Container App]
+
+Azure_Container_Registry --> Repositories
+Repositories --> Docker_Images[Docker Images]
+
+Azure_Container_App_Environment[Azure Container App Environment]
+
+Container_App --> Docker_Images
+Container_App --> Azure_Container_App_Environment
+```
+
+### Data Flow Diagram Current
+```mermaid
+flowchart TD
+  User --> Internet --> Container_App
+```
+
+### Data Flow Diagram Proposed
+```mermaid
+flowchart TD
+  User --> Internet --> Gateway[WAF enabled Application Gateway]
+  Gateway --> Endpoints[Service Endpoints]
+  Endpoints --> Web_App[Web App]
+```
+
+
+----
+
 ### References:
 * https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-net
 * [Project Structure](https://learn.microsoft.com/en-us/aspnet/core/tutorials/first-web-api?view=aspnetcore-7.0&tabs=visual-studio-mac#add-a-model-class)

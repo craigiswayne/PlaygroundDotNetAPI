@@ -6,6 +6,8 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <UserSecretsId>b1975863-78d4-4740-89e5-bba465f298be</UserSecretsId>
     <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    <Authors>Craig Wayne</Authors>
+    <Company>Private</Company>
   </PropertyGroup>
 
   <ItemGroup>

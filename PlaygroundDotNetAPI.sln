@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PlaygroundDotNetAPI.Tests",
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{5254A11B-3950-4103-848D-88A255B9A4E4}"
 	ProjectSection(SolutionItems) = preProject
+		.azure = .azure
+		.github = .github
 		README.md = README.md
 	EndProjectSection
 EndProject
