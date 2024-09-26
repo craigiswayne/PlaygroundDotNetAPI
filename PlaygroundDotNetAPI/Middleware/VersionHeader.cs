@@ -22,7 +22,7 @@ public class VersionHeaderMiddleware
 
 public static class VersionHeaderMiddlewareExtensions
 {
-    public static IApplicationBuilder UseVersionHeader(this IApplicationBuilder builder)
+    public static IApplicationBuilder AddVersionHeaderToResponses(this IApplicationBuilder builder)
     {
         return builder.UseMiddleware<VersionHeaderMiddleware>();
     }

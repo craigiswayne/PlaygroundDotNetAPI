@@ -1,14 +1,14 @@
 ﻿using System.Net.Mime;
 using Microsoft.AspNetCore.Mvc;
+using PlaygroundDotNetAPI.Attributes;
 
 namespace PlaygroundDotNetAPI.Controllers;
 
 [ApiController]
+[DisableLogActionFilter]
 [Route("[controller]")]
 public class EnvironmentController(IConfiguration configuration, IWebHostEnvironment hostEnvironment) : ControllerBase
 {
-    private readonly IConfiguration _configuration = configuration;
-    private readonly IWebHostEnvironment _hostEnvironment = hostEnvironment;
 
     [HttpGet]
     [Produces(MediaTypeNames.Application.Json)]
@@ -17,14 +17,14 @@ public class EnvironmentController(IConfiguration configuration, IWebHostEnviron
     {
         var env = new
         {
-            hostEnvironmentName = _hostEnvironment.EnvironmentName,
-            allowedOrigins = _configuration.GetSection("AllowedOrigins").Get<List<string>>(),
-            allowedHosts = _configuration.GetValue<string>("AllowedHosts"),
-            isProduction = _hostEnvironment.IsProduction(),
-            isDevelopment = _hostEnvironment.IsDevelopment(),
+            hostEnvironmentName = hostEnvironment.EnvironmentName,
+            allowedOrigins = configuration.GetSection("AllowedOrigins").Get<List<string>>(),
+            allowedHosts = configuration.GetValue<string>("AllowedHosts"),
+            isProduction = hostEnvironment.IsProduction(),
+            isDevelopment = hostEnvironment.IsDevelopment(),
             aspNetCoreEnvironment = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT"),
-            dbType = _configuration.GetRequiredSection("Db").GetValue<string>("Type"),
-            defaultConnection = _configuration.GetConnectionString("DefaultConnection")
+            dbType = configuration.GetRequiredSection("Db").GetValue<string>("Type"),
+            defaultConnection = configuration.GetConnectionString("DefaultConnection")
         };
         return env;
     }
