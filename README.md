@@ -13,7 +13,7 @@
 
 ---
 
-### Getting Started
+## Getting Started
 
 #### with Docker
 ```shell
@@ -21,7 +21,6 @@ docker build --no-cache --progress=plain -f PlaygroundDotNetAPI/Dockerfile . -t 
 docker run -it --rm -p 4201:8080 --name playgrounddotnetapi_sample playgrounddotnetapi
 # open http://localhost:4201/environment
 ```
-
 
 #### With Local DLL
 ```shell
@@ -38,7 +37,7 @@ dotnet watch run --environment=$ENVIRONMENT_NAME --project=$PROJECT_FILE;
 # see here: https://learn.microsoft.com/en-us/aspnet/core/fundamentals/environments?view=aspnetcore-7.0
 ```
 
-### Testing a Compiled App
+#### Testing a Compiled App
 Testing out the DLL / compiled app
 
 ```bash
@@ -63,7 +62,7 @@ dotnet $DLL_PATH -- --no-build;
 
 ---
 
-### Scaffolding
+## Scaffolding
 ```shell
 name="PlaygroundDotNetAPI"
 # mkdir $name
@@ -97,16 +96,15 @@ dotnet sln add "./$name.Tests/$name.Tests.csproj"
 
 ---
 
-### Rate Limiting
+## Rate Limiting
 Requires .NET 7
 
 Resources:
 * https://www.youtube.com/watch?v=bOfOo3Zsfx0&t=1396s
 * https://www.infoworld.com/article/3696320/how-to-use-the-rate-limiting-algorithms-in-aspnet-core.html
 
-Program.cs
-
 ```c#
+// Program.cs
 using System.Threading.RateLimiting;
 using Microsoft.AspNetCore.RateLimiting;
 
@@ -136,7 +134,7 @@ using Microsoft.AspNetCore.RateLimiting;
 
 ----
 
-### Security Headers
+## Security Headers
 Because there's a few headers we need to add, we'll create a middleware implementation
 
 ```shell
@@ -156,15 +154,11 @@ var builder = WebApplication.CreateBuilder(args);
 // add the below
 builder.WebHost.UseKestrel(option => option.AddServerHeader = false);
 
-//
-
 builder.Services.AddHsts(options =>
 {
     options.IncludeSubDomains = true;
     options.MaxAge = TimeSpan.FromDays(365);
 });
-
-//
 
 // before app.MapControllers();
 app.UseSecurityHeaders();
@@ -177,29 +171,80 @@ Resources:
 
 ---
 
-### GitHub Actions
+## GitHub Actions
 ```shell
 mkdir -p .github/workflows
 touch .github/workflows/build_and_test.yml
 ```
 ----
 
-### Microsoft Azure Application Insights
+## Microsoft Azure Application Insights
 See: https://learn.microsoft.com/en-us/azure/azure-monitor/app/asp-net-core?tabs=netcorenew
 
-* add `builder.Services.AddApplicationInsightsTelemetry();` to `Program.cs`
-* add the `<PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.8" />` dependency in the project
-* add the connection string to your `appsettings.json`
-* done :)
+in `appsettings.json`
+
+```json
+{
+  "ApplicationInsights": {
+    "ConnectionString": "CONNECTION_STRING_FROM_AZURE"
+  }  
+}
+```
+
+```shell
+dotnet add PlaygroundDotNetAPI/PlaygroundDotNetAPI.csproj package Microsoft.EntityFrameworkCore
+```
+
+```csharp
+// Program.cs
+// The following line enables Application Insights telemetry collection.
+var appInsightsConnectionString = builder.Configuration.GetRequiredSection("ApplicationInsights").GetValue<string>("ConnectionString");
+builder.Services.AddApplicationInsightsTelemetry(options =>
+{
+    options.ConnectionString = appInsightsConnectionString;
+    options.EnableDebugLogger = true;  // Get real-time logs
+    options.EnableAdaptiveSampling = false;  // Keep all the data, no sampling here
+});
+
+```
+
+Make a request from the swagger page, you'll notice these in the Application Insights Logs
+
+```kql
+requests
+| union customMetrics
+```
+
+### Custom Events
+Have a look at `LogActionFilter.cs`
+
+```csharp
+telemetryClient.TrackEvent("MyCustomEventName",
+  new Dictionary<string, string?>
+  {
+      { "MyPropertyOne", "MyValueOne" },
+      { "MyPropertyTwo", "MyValueTwo" },
+      { "MyPropertyThree", "MyValueThree" },
+      { "Timestamp", DateTime.UtcNow.ToString(CultureInfo.InvariantCulture) }
+  });
+```
+
+----
+## Custom Attributes
+There is a `LogActionFilter.cs` custom attribute that will log some info about API requests
+
+This is turned on globally.
+
+However suppose you wanted to turn if it off for a specific controller, make use of another custom attribute called `[DisabledLogActionFilter]`
 
 ----
 
-### Database
+## Database
 * Connecting a database
 
 ----
 
-### Migration
+## Migration
 Create Migration
 ```shell
 cd PlaygroundDotNetAPI
@@ -285,7 +330,6 @@ This will revert the database to that point in time.
 * no build warnings in pipeline
 * use allowed hosts
 * try catch when we cannot connect to a db
-* custom events in app insights
 * multiple environments / slots
 * `dotnet ef migrations has-pending-model-changes`
 * e2e testing with dotnet

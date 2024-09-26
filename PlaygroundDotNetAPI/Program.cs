@@ -1,13 +1,14 @@
 using System.Threading.RateLimiting;
 using Microsoft.AspNetCore.RateLimiting;
 using Microsoft.EntityFrameworkCore;
+using PlaygroundDotNetAPI.Attributes;
 using PlaygroundDotNetAPI.Data;
 using PlaygroundDotNetAPI.Middleware;
 using PlaygroundDotNetAPI.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
-string[] allowedOrigins = builder.Configuration.GetRequiredSection("AllowedOrigins").Get<string[]>() ?? [];
+var allowedOrigins = builder.Configuration.GetRequiredSection("AllowedOrigins").Get<string[]>() ?? [];
 if (allowedOrigins.Length == 0)
 {
     throw new Exception("No AllowedOrigins specified");
@@ -24,11 +25,12 @@ builder.Services.Configure<RouteOptions>(options =>
 {
    options.LowercaseUrls = true;
 });
+
 builder.Services.AddScoped<IPokedexService, PokedexService>();
 
 builder.WebHost.UseKestrel(option => option.AddServerHeader = false);
 
-var corsPolicy = "DefaultPolicy";
+const string corsPolicy = "DefaultPolicy";
 builder.Services.AddCors(options =>
 {
     options.AddPolicy(name: corsPolicy,
@@ -39,10 +41,20 @@ builder.Services.AddCors(options =>
 });
 
 // The following line enables Application Insights telemetry collection.
-builder.Services.AddApplicationInsightsTelemetry();
+var appInsightsConnectionString = builder.Configuration.GetRequiredSection("ApplicationInsights").GetValue<string>("ConnectionString");
+builder.Services.AddApplicationInsightsTelemetry(options =>
+{
+    options.ConnectionString = appInsightsConnectionString;
+    options.EnableDebugLogger = true;  // Get real-time logs
+    options.EnableAdaptiveSampling = false;  // Keep all dat data, no sampling here
+});
+
 
 // Add services to the container.
-builder.Services.AddControllers();
+builder.Services.AddControllers(options =>
+{
+    options.Filters.Add<LogActionFilter>(); // Globally applying the filter
+});
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
@@ -77,7 +89,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseSecurityHeaders();
-app.UseVersionHeader();
+app.AddVersionHeaderToResponses();
 app.UseRateLimiter();
 app.UseHttpsRedirection();
 app.UseRouting();
