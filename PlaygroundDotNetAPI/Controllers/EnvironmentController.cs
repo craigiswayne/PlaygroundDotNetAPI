@@ -5,7 +5,7 @@ using PlaygroundDotNetAPI.Attributes;
 namespace PlaygroundDotNetAPI.Controllers;
 
 [ApiController]
-[DisableLogActionFilter]
+[DisableApplicationInsightsActionFilter]
 [Route("[controller]")]
 public class EnvironmentController(IConfiguration configuration, IWebHostEnvironment hostEnvironment) : ControllerBase
 {

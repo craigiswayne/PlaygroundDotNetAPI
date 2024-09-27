@@ -8,7 +8,7 @@ namespace PlaygroundDotNetAPI.Attributes;
  * Logs to Azure Application Insights for all request to ANY controller
  * Logs before an after the API Call
  */
-public class LogActionFilter(TelemetryClient telemetryClient, ILogger<LogActionFilter> logger) : ActionFilterAttribute
+public class ApplicationInsightsActionFilter(TelemetryClient telemetryClient, ILogger<ApplicationInsightsActionFilter> logger) : ActionFilterAttribute
 {
     /**
      * Log details before the action executes
@@ -59,12 +59,12 @@ public class LogActionFilter(TelemetryClient telemetryClient, ILogger<LogActionF
     }
 
     /**
-     * Checks if a controller has the [DisableLogActionFilter] Attribute
+     * Checks if a controller has the [DisableApplicationInsightsActionFilter] Attribute
      */
     private static bool IsDisabled(FilterContext context)
     {
         var hasDisableAttribute = context.ActionDescriptor.EndpointMetadata
-            .Any(em => em.GetType() == typeof(DisableLogActionFilter));
+            .Any(em => em.GetType() == typeof(DisableApplicationInsightsActionFilter));
         return hasDisableAttribute;
     }
 
@@ -84,6 +84,7 @@ public class LogActionFilter(TelemetryClient telemetryClient, ILogger<LogActionF
         logger.LogInformation("Action method {ActionName} is executing at {Time}",
             context.ActionDescriptor.DisplayName, DateTime.UtcNow);
 
-        telemetryClient.TrackEvent(customEventName, allProperties);
+        const string className = nameof(ApplicationInsightsActionFilter);
+        telemetryClient.TrackEvent($"[{className}] {customEventName}", allProperties);
     }
 }

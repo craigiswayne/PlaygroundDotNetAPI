@@ -10,10 +10,8 @@ public interface IPokedexService
 
 public class PokedexService(MyDbContextSqLite dbContext) : IPokedexService
 {
-    private readonly MyDbContextSqLite _dbContext = dbContext;
-
     public IQueryable<Pokemon> List()
     {
-        return _dbContext.Pokedex.OrderBy(columns => columns.Id).Skip(0).Take(10);
+        return dbContext.Pokedex.OrderBy(columns => columns.Id).Skip(0).Take(10);
     }
 }
