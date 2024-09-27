@@ -6,7 +6,7 @@ namespace PlaygroundDotNetAPI.Data;
 
 public class MyDbContextSqLite(DbContextOptions<MyDbContextSqLite> options) : DbContext(options)
 {
-    public DbSet<Pokemon> Pokedex { get; set; }
+    public DbSet<Pokemon> Pokedex { get; init; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

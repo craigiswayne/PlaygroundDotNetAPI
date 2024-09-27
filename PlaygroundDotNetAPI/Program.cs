@@ -7,6 +7,8 @@ using PlaygroundDotNetAPI.Middleware;
 using PlaygroundDotNetAPI.Services;
 
 var builder = WebApplication.CreateBuilder(args);
+// HTTP Logging Part 1/2
+builder.Services.AddHttpLogging(o => { });
 
 var allowedOrigins = builder.Configuration.GetRequiredSection("AllowedOrigins").Get<string[]>() ?? [];
 if (allowedOrigins.Length == 0)
@@ -53,7 +55,7 @@ builder.Services.AddApplicationInsightsTelemetry(options =>
 // Add services to the container.
 builder.Services.AddControllers(options =>
 {
-    options.Filters.Add<LogActionFilter>(); // Globally applying the filter
+    options.Filters.Add<ApplicationInsightsActionFilter>(); // Globally applying the filter
 });
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -80,6 +82,8 @@ builder.Services.AddHsts(options =>
 });
 
 var app = builder.Build();
+// HTTP Logging Part 2/2
+app.UseHttpLogging();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

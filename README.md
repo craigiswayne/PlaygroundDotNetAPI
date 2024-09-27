@@ -178,7 +178,35 @@ touch .github/workflows/build_and_test.yml
 ```
 ----
 
-## Microsoft Azure Application Insights
+## Logging
+
+### HTTP Logging
+
+```csharp
+// Program.cs
+var builder = WebApplication.CreateBuilder(args);
+// HTTP Logging Part 1/2
+builder.Services.AddHttpLogging(o => { });
+//
+var app = builder.Build();
+// HTTP Logging Part 2/2
+app.UseHttpLogging();
+```
+
+And then in `appsettings.json`
+```json
+{
+  "Logging": {
+    "LogLevel": {
+      "Default": "Trace",
+      "Microsoft.AspNetCore": "Trace",
+      "Microsoft.AspNetCore.HttpLogging.HttpLoggingMiddleware": "Trace"
+    }
+  }
+}
+```
+
+### Microsoft Azure Application Insights
 See: https://learn.microsoft.com/en-us/azure/azure-monitor/app/asp-net-core?tabs=netcorenew
 
 in `appsettings.json`
@@ -212,11 +240,11 @@ Make a request from the swagger page, you'll notice these in the Application Ins
 
 ```kql
 requests
-| union customMetrics
+| union *
 ```
 
 ### Custom Events
-Have a look at `LogActionFilter.cs`
+Have a look at `ApplicationInsightsActionFilter.cs`
 
 ```csharp
 telemetryClient.TrackEvent("MyCustomEventName",
@@ -231,11 +259,12 @@ telemetryClient.TrackEvent("MyCustomEventName",
 
 ----
 ## Custom Attributes
-There is a `LogActionFilter.cs` custom attribute that will log some info about API requests
+
+There is a `ApplicationInsightsActionFilter.cs` custom attribute that will log some info about API requests
 
 This is turned on globally.
 
-However suppose you wanted to turn if it off for a specific controller, make use of another custom attribute called `[DisabledLogActionFilter]`
+However suppose you wanted to turn if it off for a specific controller, make use of another custom attribute called `[DisableApplicationInsightsActionFilter]`
 
 ----
 
@@ -317,15 +346,17 @@ This will revert the database to that point in time.
 * [Registering Services](https://www.youtube.com/watch?v=sSq3GtriFuM)
 * [CORS](https://learn.microsoft.com/en-us/aspnet/core/security/cors?view=aspnetcore-7.0#np)
 * [Microsoft Azure Application Insights](https://learn.microsoft.com/en-us/azure/azure-monitor/app/asp-net-core?tabs=netcorenew)
+* [Log Settings](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/logging/?view=aspnetcore-8.0)
 
 ### TODO:
+* test cors
+* use caching
+* test caching
+* code coverage unit tests (https://learn.microsoft.com/en-us/dotnet/core/testing/unit-testing-code-coverage?tabs=windows)
 * deploy arm templates / infrastructure
 * deploy to azure web app
 * create an azure database
 * when saving test artifacts, save to the computed dotnet version
-* test cors
-* use caching
-* test caching
 * restrict by ip
 * no build warnings in pipeline
 * use allowed hosts
@@ -335,3 +366,4 @@ This will revert the database to that point in time.
 * e2e testing with dotnet
 * versioning from pipeline
 * reusableWorkflowCallJob in github workflow
+* test action filter attributes

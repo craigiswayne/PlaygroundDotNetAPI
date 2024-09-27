@@ -1,22 +1,11 @@
-﻿using System.Collections.Specialized;
+﻿namespace PlaygroundDotNetAPI.Middleware;
 
-namespace PlaygroundDotNetAPI.Middleware;
-
-public class VersionHeaderMiddleware
+public class VersionHeaderMiddleware(RequestDelegate next, IConfiguration configuration)
 {
-    private readonly RequestDelegate _next;
-    public IConfiguration _configuration;
-
-    public VersionHeaderMiddleware(RequestDelegate next, IConfiguration configuration)
-    {
-        _next = next;
-        _configuration = configuration;
-    }
-
     public async Task InvokeAsync(HttpContext context)
     {
-        context.Response.Headers.Append("X-Version", _configuration["Version"]);
-        await _next(context);
+        context.Response.Headers.Append("X-Version", configuration["Version"]);
+        await next(context);
     }
 }
 
