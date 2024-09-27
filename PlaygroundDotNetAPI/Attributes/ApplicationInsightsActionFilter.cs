@@ -25,16 +25,11 @@ public class ApplicationInsightsActionFilter(TelemetryClient telemetryClient, IL
     {
         if (IsDisabled(context)) return;
         
-        // logger.LogInformation("Action method {ActionName} has executed at {Time}",
-        // context.ActionDescriptor.DisplayName, DateTime.UtcNow);
         TelemetryTrack("OnActionExecuted", context, new Dictionary<string, string?> {
             { "StatusCode", context.HttpContext.Response.StatusCode.ToString() },
         });
 
-        if (context.Exception != null)
-        {
-            telemetryClient.TrackException(context.Exception);
-        }
+        if (context.Exception != null)  telemetryClient.TrackException(context.Exception);
         
         base.OnActionExecuted(context);
     }

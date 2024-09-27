@@ -327,9 +327,12 @@ This will revert the database to that point in time.
 ---
 
 ### Terms
-| Terms      | Short Description                                                                          |
-|------------|--------------------------------------------------------------------------------------------|
-| Migrations | Basically DB as Code. Allows you to use your code as the source of truth for the DB Schema |
+| Terms      | Short Description                                                                                                         |
+|------------|---------------------------------------------------------------------------------------------------------------------------|
+| Migrations | DB as Code. Allows you to use your code as the source of truth for the DB Schema. You can also seed data using Migrations |
+| Singleton  | Creates single instance of class during applications lifecycle. E.g. Logger                                               |
+| Transient  | New instance of class for every request to it.                                                                            |
+| Scoped     | Only 1 instance of class per request. Useful when state needs to be maintained. E.g. User Session                         |
 
 ----
 
@@ -344,7 +347,7 @@ This will revert the database to that point in time.
 * [Seed DB](https://www.youtube.com/watch?v=z-Hll4Xddjs)
 * [Sqlite & Entity Framework Core](https://www.youtube.com/watch?v=z-Hll4Xddjs)
 * [Registering Services](https://www.youtube.com/watch?v=sSq3GtriFuM)
-* [CORS](https://learn.microsoft.com/en-us/aspnet/core/security/cors?view=aspnetcore-7.0#np)
+* [CORS](https://learn.microsoft.com/en-us/aspnet/core/security/cors?view=aspnetcore-8.0)
 * [Microsoft Azure Application Insights](https://learn.microsoft.com/en-us/azure/azure-monitor/app/asp-net-core?tabs=netcorenew)
 * [Log Settings](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/logging/?view=aspnetcore-8.0)
 

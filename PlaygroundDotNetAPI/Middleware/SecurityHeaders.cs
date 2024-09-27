@@ -2,13 +2,12 @@
 
 namespace PlaygroundDotNetAPI.Middleware;
 
-public class SecurityHeadersMiddleware(RequestDelegate next, IConfiguration configuration)
+public class SecurityHeadersMiddleware(RequestDelegate next, IConfiguration myconfig)
 {
     public async Task InvokeAsync(HttpContext context)
     {
         var headersToAdd = new NameValueCollection
         {
-            ["Access-Control-Allow-Origin"] = configuration["AllowedOrigins"],
             ["Content-Security-Policy"] = "default-src 'self';",
             ["Permissions-Policy"] = "accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), usb=()",
             ["Referrer-Policy"] = "same-origin",
