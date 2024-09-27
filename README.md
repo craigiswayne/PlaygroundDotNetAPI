@@ -259,6 +259,7 @@ telemetryClient.TrackEvent("MyCustomEventName",
 
 ----
 ## Custom Attributes
+
 There is a `ApplicationInsightsActionFilter.cs` custom attribute that will log some info about API requests
 
 This is turned on globally.
