@@ -53,22 +53,25 @@ jobs:
       - name: Build
         run: dotnet build --no-restore
 
-      - name: Test with the dotnet CLI
-        run: dotnet test --logger html --verbosity normal --results-directory "TestResults-${{ matrix.dotnet-version }}"
-
       - name: Publish
         run: dotnet publish -c Release -o ${{env.PUBLISH_PATH}}
 
-      - name: Upload dotnet test results
+      - name: Create Build Artifact
         uses: actions/upload-artifact@v4
         with:
-          name: dotnet-results-${{ matrix.dotnet-version }}
+          name: build-${{ matrix.dotnet-version }}-$GITHUB_SHA
+          path:  ${{env.PUBLISH_PATH}}
+
+      - name: Test with the dotnet CLI
+        run: dotnet test --logger html --verbosity normal --results-directory "TestResults-${{ matrix.dotnet-version }}"
+
+      - name: Upload Test Results
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-results-${{ matrix.dotnet-version }}-$GITHUB_SHA
           path: TestResults-${{ matrix.dotnet-version }}
         # Use always() to always run this step to publish test results when there are test failures
         if: ${{ always() }}
-
-      - name: Create Zip
-        run: Compress-Archive -Path ${{env.PUBLISH_PATH}} -DestinationPath ${{env.PUBLISH_PATH}}/publish.zip
 
   infrastructure:
     name: "Create Infrastructure"
