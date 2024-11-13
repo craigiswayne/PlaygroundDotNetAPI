@@ -19,6 +19,7 @@ env:
   # prevents outputting sensitive info to the pipeline console
   AZURE_CORE_OUTPUT: 'none'
   PUBLISH_PATH: './publish'
+  RUN_UNIQUE_ID: '${{github.run_id}}-${{github.run_attempt}}'
 
 jobs:
   build_and_test:
@@ -59,7 +60,7 @@ jobs:
       - name: Create Build Artifact
         uses: actions/upload-artifact@v4
         with:
-          name: build-${{ matrix.dotnet-version }}-${{ GITHUB_SHA }}
+          name: build-${{ matrix.dotnet-version }}-${{github.run_id}}-${{github.run_attempt}}
           path:  ${{env.PUBLISH_PATH}}
 
       - name: Test with the dotnet CLI
@@ -68,7 +69,7 @@ jobs:
       - name: Upload Test Results
         uses: actions/upload-artifact@v4
         with:
-          name: test-results-${{ matrix.dotnet-version }}-${{ GITHUB_SHA }}
+          name: test-results-${{ matrix.dotnet-version }}-${{github.run_id}}-${{github.run_attempt}}
           path: TestResults-${{ matrix.dotnet-version }}
         # Use always() to always run this step to publish test results when there are test failures
         if: ${{ always() }}
