@@ -75,6 +75,7 @@ jobs:
 
   infrastructure:
     name: "Create Infrastructure"
+    if:  github.ref == 'refs/heads/develop'
     needs: [build_and_test]
     runs-on: ubuntu-latest
 
