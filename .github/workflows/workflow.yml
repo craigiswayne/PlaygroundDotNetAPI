@@ -17,6 +17,7 @@ permissions:
 env:
   # prevents outputting sensitive info to the pipeline console
   AZURE_CORE_OUTPUT: 'none'
+  PUBLISH_PATH: './publish'
 
 jobs:
   build_and_test:
@@ -29,7 +30,7 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Setup dotnet
-        uses: actions/setup-dotnet@v3
+        uses: actions/setup-dotnet@v4
         with:
           dotnet-version: ${{ matrix.dotnet-version }}
 
@@ -41,7 +42,7 @@ jobs:
         with:
           path: ~/.nuget/packages
           # Look to see if there is a cache hit for the corresponding requirements file
-          key: ${{ runner.os }}-nuget-${{ matrix.dotnet-version }}
+          key: ${{ runner.os }}-nuget-${{ matrix.dotnet-version }}-${{ hashFiles('**/*.csproj') }}
           restore-keys: |
             ${{ runner.os }}-nuget
 
@@ -54,13 +55,19 @@ jobs:
       - name: Test with the dotnet CLI
         run: dotnet test --logger html --verbosity normal --results-directory "TestResults-${{ matrix.dotnet-version }}"
 
+      - name: Publish
+        run: dotnet publish -c Release -o ${{env.PUBLISH_PATH}}
+
       - name: Upload dotnet test results
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: dotnet-results-${{ matrix.dotnet-version }}
           path: TestResults-${{ matrix.dotnet-version }}
         # Use always() to always run this step to publish test results when there are test failures
         if: ${{ always() }}
+
+      - name: Create Zip
+        run: Compress-Archive -Path ${{env.PUBLISH_PATH}} -DestinationPath ${{env.PUBLISH_PATH}}/publish.zip
 
   infrastructure:
     name: "Create Infrastructure"
