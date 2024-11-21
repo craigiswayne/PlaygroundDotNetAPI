@@ -57,6 +57,13 @@ jobs:
         if:  github.ref == 'refs/heads/develop'
         run: dotnet publish -c Release -o ${{env.PUBLISH_PATH}}
 
+      # https://docs.github.com/en/actions/writing-workflows/choosing-what-your-workflow-does/storing-and-sharing-data-from-a-workflow
+      - name: Create Build Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: build-${{ matrix.dotnet-version }}-${{github.run_id}}-${{github.run_attempt}}
+          path: ${{env.PUBLISH_PATH}}
+
       - name: Test with the dotnet CLI
         run: dotnet test --logger html --verbosity normal --results-directory "TestResults-${{ matrix.dotnet-version }}"
 
@@ -67,13 +74,6 @@ jobs:
           path: TestResults-${{ matrix.dotnet-version }}
         # Use always() to always run this step to publish test results when there are test failures
         if: ${{ always() }}
-
-      # https://docs.github.com/en/actions/writing-workflows/choosing-what-your-workflow-does/storing-and-sharing-data-from-a-workflow
-      - name: Create Build Artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: build-${{ matrix.dotnet-version }}-${{github.run_id}}-${{github.run_attempt}}
-          path:  ${{env.PUBLISH_PATH}}
 
   infrastructure:
     name: "Create Infrastructure"
