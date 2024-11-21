@@ -1,5 +1,7 @@
 # Playground DotNet API
 
+[![Build and Test](https://github.com/craigiswayne/PlaygroundDotNetAPI/actions/workflows/workflow.yml/badge.svg)](https://github.com/craigiswayne/PlaygroundDotNetAPI/actions/workflows/workflow.yml)
+
 * Endpoints
   * https://localhost:7137/swagger/index.html
   * https://localhost:7137/environment
