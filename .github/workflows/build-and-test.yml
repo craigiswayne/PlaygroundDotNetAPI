@@ -4,7 +4,7 @@ on:
   push:
     branches:
       - main
-      - feature/updating-github-actions
+      - develop
     paths-ignore:
       - '**/*.md'
   pull_request:
@@ -61,12 +61,13 @@ jobs:
         run: dotnet build --no-restore
 
       - name: Publish
-#        if:  github.ref == 'refs/heads/develop' && contains(fromJson('["bar", "foo"]'), github.event.action)
+        if:  github.ref == 'refs/heads/develop'
 #        if:  github.event_name == 'pull_request' && contains(fromJson('["refs/heads/develop", "refs/heads/main"]'), github.ref)
         run: dotnet publish -c Release -o ${{env.PUBLISH_PATH}}
 
       # https://docs.github.com/en/actions/writing-workflows/choosing-what-your-workflow-does/storing-and-sharing-data-from-a-workflow
       - name: Create Build Artifact
+        if:  github.ref == 'refs/heads/develop'
 #        if:  github.ref == 'refs/heads/develop'
         uses: actions/upload-artifact@v4
         with:
