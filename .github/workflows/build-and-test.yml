@@ -19,7 +19,6 @@ env:
   # prevents outputting sensitive info to the pipeline console
   AZURE_CORE_OUTPUT: 'none'
   PUBLISH_PATH: './publish'
-  RUN_UNIQUE_ID: '${{github.run_id}}-${{github.run_attempt}}'
 
 jobs:
   build_and_test:
@@ -29,6 +28,14 @@ jobs:
       matrix:
         dotnet-version: [ '8.0.x' ]
     steps:
+      - name: Set ENV variables
+        run: |
+          echo "REPO_NAME=${GITHUB_REPOSITORY#$GITHUB_REPOSITORY_OWNER/}" >> $GITHUB_ENV
+          echo "UNIQUE_ID=${{ matrix.dotnet-version }}-${{github.run_id}}-${{github.run_attempt}}" >> $GITHUB_ENV
+          echo "REPO_NAME: $REPO_NAME";
+          echo "UNIQUE_ID: $UNIQUE_ID";
+          echo "TIMESTAMP: ${{ github.event.repository.updated_at}}";
+
       - uses: actions/checkout@v4
 
       - name: Setup dotnet
