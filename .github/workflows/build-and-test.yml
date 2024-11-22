@@ -5,6 +5,7 @@ on:
     branches:
       - main
       - develop
+      - feature/dockerize
     paths-ignore:
       - '**/*.md'
   pull_request:
@@ -105,6 +106,10 @@ jobs:
         uses: azure/login@v1
         with:
           creds: ${{ secrets.managedEnv20240830130926_SPN }}
+
+  dockerization:
+    needs: [build_and_test]
+    uses: './_dockerization.yml'
 
   deploy:
     name: "Deploy"

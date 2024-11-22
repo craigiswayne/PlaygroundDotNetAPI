@@ -3,27 +3,14 @@ name: Build and Test
 
 on:
   push:
-    branches:
-      - feature/dockerize
-      - develop
-    paths-ignore:
-      - '**/*.md'
-  pull_request:
-    types: [opened, reopened, edited]
-    branches: [develop]
 
 permissions:
   id-token: write
   contents: read
 
-env:
-  # prevents outputting sensitive info to the pipeline console
-  AZURE_CORE_OUTPUT: 'none'
-  PUBLISH_PATH: './publish'
-
 jobs:
-  dockerize:
-    name: "Dockerize"
+  dockerization:
+    name: "Dockerization"
     runs-on: ubuntu-latest
     steps:
       - name: Checkout source code
