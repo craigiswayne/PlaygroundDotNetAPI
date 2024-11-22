@@ -335,6 +335,15 @@ This will revert the database to that point in time.
 
 ----
 
+### Docker
+```shell
+docker build -t craigiswayne/playground-dotnet-api:latest -f .\Dockerfile .
+docker run -it -p 8282:8080 craigiswayne/playground-dotnet-api
+# browse to http://localhost:8282/environment
+```
+
+----
+
 ### References:
 * https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-net
 * [Project Structure](https://learn.microsoft.com/en-us/aspnet/core/tutorials/first-web-api?view=aspnetcore-7.0&tabs=visual-studio-mac#add-a-model-class)
