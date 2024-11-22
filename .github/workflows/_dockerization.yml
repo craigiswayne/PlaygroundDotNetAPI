@@ -1,12 +1,8 @@
 # https://github.com/marketplace/actions/build-and-push-docker-images
-name: Build and Test
+name: "Dockerization"
 
 on:
-  push:
-
-permissions:
-  id-token: write
-  contents: read
+  workflow_call:
 
 jobs:
   dockerization:
