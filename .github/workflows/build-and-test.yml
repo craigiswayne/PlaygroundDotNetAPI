@@ -87,6 +87,10 @@ jobs:
         # Use always() to always run this step to publish test results when there are test failures
         if: ${{ always() }}
 
+  dockerization:
+    needs: [ build_and_test ]
+    uses: './.github/workflows/_dockerization.yml'
+
   infrastructure:
     name: "Create Infrastructure"
     if:  github.ref == 'refs/heads/develop'
@@ -106,10 +110,6 @@ jobs:
         uses: azure/login@v1
         with:
           creds: ${{ secrets.managedEnv20240830130926_SPN }}
-
-  dockerization:
-    needs: [build_and_test]
-    uses: './.github/workflows/_dockerization.yml'
 
   deploy:
     name: "Deploy"
