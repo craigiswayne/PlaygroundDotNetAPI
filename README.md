@@ -326,15 +326,7 @@ This will revert the database to that point in time.
 |------------|--------------------------------------------------------------------------------------------|
 | Migrations | Basically DB as Code. Allows you to use your code as the source of truth for the DB Schema |
 
-
 ----
-
-### Auth
-
-How to authenticate with Microsoft
-https://learn.microsoft.com/en-us/aspnet/core/security/authentication/social/microsoft-logins?view=aspnetcore-9.0
-
----
 
 ### References:
 * https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-net
