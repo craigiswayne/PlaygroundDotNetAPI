@@ -92,8 +92,7 @@ jobs:
 #    needs: [ build_and_test ]
     uses: './.github/workflows/_dockerization.yml'
     with:
-      DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
-      DOCKERHUB_PASSWORD: ${{ secrets.DOCKERHUB_PASSWORD }}
+      secrets: inherit
 
   infrastructure:
     name: "Create Infrastructure"
