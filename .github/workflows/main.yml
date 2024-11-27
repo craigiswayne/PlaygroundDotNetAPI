@@ -95,7 +95,7 @@ jobs:
   infrastructure_azure:
     if: false
     needs: [ build_and_test ]
-    uses: './.github/workflows/_infrastructure_azure.yml'
+    uses: './.github/workflows/_infrastructure-azure.yml'
     secrets: inherit
 
   deploy:
