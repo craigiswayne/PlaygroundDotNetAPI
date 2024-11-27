@@ -98,9 +98,9 @@ jobs:
     uses: './.github/workflows/_infrastructure-azure.yml'
     secrets: inherit
 
-  deploy:
+  deploy_azure:
     name: "Deploy"
-    needs: [infrastructure]
+    needs: [infrastructure_azure]
     runs-on: ubuntu-latest
     if:  github.ref == 'refs/heads/develop'
     env:
