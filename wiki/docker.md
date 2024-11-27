@@ -1,21 +1,14 @@
 # Docker
 
 ## Goal:
-* [ ] docker build in github pipeline
-* [ ] save docker image as artifact
-
-```shell
-docker build --no-cache --progress=plain -f PlaygroundDotNetAPI/Dockerfile . -t playgrounddotnetapi &> build.log
-docker run -it --rm -p 4201:8080 --name playgrounddotnetapi_sample playgrounddotnetapi
-# open http://localhost:4201/environment
-```
+* [X] docker build in github pipeline
+* [X] save docker image as artifact
+* [X] save docker image to docker hub
 
 ```shell
 docker build -t craigiswayne/playground-dotnet-api:latest -f .\Dockerfile .
-docker run -it -p 8282:8080 craigiswayne/playground-dotnet-api
-docker run --interactive --tty craigiswayne/playground-dotnet-api
-docker run --interactive --tty --publish 8282:8080 craigiswayne/playground-dotnet-api
-# browse to http://localhost:8282/environment
+docker run -it --rm -p 4201:8080 --name playgrounddotnetapi_sample craigiswayne/playground-dotnet-api:latest
+# open http://localhost:4201/environment
 ```
 
 ---
