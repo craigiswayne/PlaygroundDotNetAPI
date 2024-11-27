@@ -5,7 +5,7 @@ on:
     branches:
       - main
       - develop
-      - feature/overriding-appsettings-with-environment-variables
+      - origin/feature/refactor-workflows
     paths-ignore:
       - '**/*.md'
   pull_request:
