@@ -86,6 +86,11 @@ jobs:
         # Use always() to always run this step to publish test results when there are test failures
         if: ${{ always() }}
 
+  dockerization:
+    needs: [ build_and_test ]
+    uses: './.github/workflows/_dockerization.yml'
+    secrets: inherit
+
   infrastructure:
     name: "Create Infrastructure"
     if:  github.ref == 'refs/heads/develop'
