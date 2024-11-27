@@ -31,6 +31,6 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           push: true
-          tags: "${{ github.repository_owner }}/${{ env.REPO_NAME }}:latest"
+          tags: "craigiswayne/playground-dotnet-api:latest"
           secrets: |
             "my_secret=${{ secrets.MY_SECRET }}"
