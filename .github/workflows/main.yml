@@ -103,6 +103,6 @@ jobs:
   azure_deploy:
     name: "Deploy to Azure"
     if: github.ref == 'refs/heads/develop'
-    needs: [ build_and_test ]
+    needs: [ infrastructure_azure ]
     uses: './.github/workflows/_azure-deploy.yml'
     secrets: inherit
