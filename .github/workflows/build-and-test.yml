@@ -91,8 +91,7 @@ jobs:
   dockerization:
 #    needs: [ build_and_test ]
     uses: './.github/workflows/_dockerization.yml'
-    with:
-      secrets: inherit
+    secrets: inherit
 
   infrastructure:
     name: "Create Infrastructure"
