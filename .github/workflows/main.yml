@@ -93,16 +93,16 @@ jobs:
     uses: './.github/workflows/_dockerization.yml'
     secrets: inherit
 
-  infrastructure_azure:
+  azure_infrastructure:
     name: "Infrastructure on Azure"
     if: github.ref == 'refs/heads/develop'
     needs: [ build_and_test ]
-    uses: './.github/workflows/_infrastructure-azure.yml'
+    uses: './.github/workflows/_azure-infrastructure.yml'
     secrets: inherit
 
   azure_deploy:
     name: "Deploy to Azure"
     if: github.ref == 'refs/heads/develop'
-    needs: [ infrastructure_azure ]
+    needs: [ azure_infrastructure ]
     uses: './.github/workflows/_azure-deploy.yml'
     secrets: inherit
