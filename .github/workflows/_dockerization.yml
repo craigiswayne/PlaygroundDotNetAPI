@@ -1,17 +1,8 @@
 # https://github.com/marketplace/actions/build-and-push-docker-images
 name: "Docker"
-description: "Build and push your Docker images helper"
   
 on:
   workflow_call:
-
-inputs:
-  DOCKERHUB_USERNAME:
-    description: "Your username to log into Docker Hub"
-    required: true
-  DOCKERHUB_PASSWORD:
-    description: "Your Personal Access Token to authenticate with Docker Hub"
-    required: true
 
 jobs:
   dockerization:
