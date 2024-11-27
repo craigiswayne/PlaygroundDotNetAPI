@@ -1,0 +1,26 @@
+# https://github.com/marketplace/actions/build-and-push-docker-images
+name: "Docker"
+
+on:
+  workflow_call:
+
+jobs:
+  infrastructure:
+    name: "Create Infrastructure (Azure)"
+    if: github.ref == 'refs/heads/develop'
+    needs: [ build_and_test ]
+    runs-on: ubuntu-latest
+
+    env:
+      SUBSCRIPTION_ID: 'ad7ba97b-49f2-48c6-80fa-101ab7657e28'
+      RESOURCE_LOCATION: 'uksouth'
+      RESOURCE_GROUP_NAME: 'DefaultResourceGroup-SUK'
+
+    steps:
+      - uses: actions/checkout@v4
+
+      # https://github.com/Azure/login
+      - name: Azure Login
+        uses: azure/login@v1
+        with:
+          creds: ${{ secrets.managedEnv20240830130926_SPN }}
