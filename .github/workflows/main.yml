@@ -17,18 +17,18 @@ permissions:
   contents: read
 
 jobs:
-  dotnet:
+  dotnet_build_and_test:
     uses: './.github/workflows/_dotnet.yml'
     secrets: inherit
 
   dockerization:
-    needs: [ dotnet ]
+    needs: [ dotnet_build_and_test ]
     uses: './.github/workflows/_dockerization.yml'
     secrets: inherit
 
   azure_infrastructure:
     name: "Infrastructure on Azure"
-    needs: [ build_and_test ]
+    needs: [ dotnet_build_and_test ]
     uses: './.github/workflows/_azure-infrastructure.yml'
     secrets: inherit
 
