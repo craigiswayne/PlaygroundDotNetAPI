@@ -5,7 +5,7 @@ on:
     branches:
       - main
       - develop
-      - origin/feature/refactor-workflows
+      - feature/refactor-workflows
     paths-ignore:
       - '**/*.md'
   pull_request:
