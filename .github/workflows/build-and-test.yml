@@ -5,7 +5,6 @@ on:
     branches:
       - main
       - develop
-      - feature/dockerize
     paths-ignore:
       - '**/*.md'
   pull_request:
@@ -23,7 +22,6 @@ env:
 
 jobs:
   build_and_test:
-    if: github.ref == 'refs/heads/develop'
     name: "Build & Test"
     runs-on: ubuntu-latest
     strategy:
@@ -89,7 +87,7 @@ jobs:
         if: ${{ always() }}
 
   dockerization:
-#    needs: [ build_and_test ]
+    needs: [ build_and_test ]
     uses: './.github/workflows/_dockerization.yml'
     secrets: inherit
 
