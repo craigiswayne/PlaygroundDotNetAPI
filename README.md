@@ -37,7 +37,6 @@ ENVIRONMENT_NAME="UAT"
 PROJECT_FILE="PlaygroundDotNetAPI/PlaygroundDotNetAPI.csproj"
 dotnet watch run --environment=$ENVIRONMENT_NAME --project=$PROJECT_FILE;
 # see here: https://learn.microsoft.com/en-us/aspnet/core/fundamentals/environments?view=aspnetcore-7.0
-# the version will be in the response headers
 ```
 
 #### Testing a Compiled App

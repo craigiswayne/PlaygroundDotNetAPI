@@ -17,7 +17,6 @@ public class EnvironmentController(IConfiguration configuration, IWebHostEnviron
     {
         var env = new
         {
-            // version is the same value from the appsettings
             // seems to be case-insensitive
             mySecretLowerCase = configuration.GetValue<string>("my_secret"),
             mySecret = configuration.GetValue<string>("MY_SECRET"),

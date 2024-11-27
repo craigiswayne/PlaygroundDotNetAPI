@@ -24,7 +24,8 @@ ARG BUILD_CONFIGURATION=Release
 RUN dotnet publish "./PlaygroundDotNetAPI.csproj" -c $BUILD_CONFIGURATION -o /app/publish /p:UseAppHost=false
 
 FROM base AS final
+ARG MY_SECRET="from-dockerfile"
 WORKDIR /app
 COPY --from=publish /app/publish .
-ENV MY_SECRET="from-dockerfile"
+ENV MY_SECRET="$MY_SECRET"
 ENTRYPOINT ["dotnet", "PlaygroundDotNetAPI.dll"]
