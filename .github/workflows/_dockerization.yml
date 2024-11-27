@@ -23,7 +23,7 @@ jobs:
 
       - name: "Test variables"
         run: |
-          echo "GITHUB_REPOSITORY_OWNER: ${{ GITHUB_REPOSITORY_OWNER }}"
+          echo "GITHUB_REPOSITORY_OWNER: $GITHUB_REPOSITORY_OWNER"
           echo "REPO_NAME: ${{ env.REPO_NAME }}"
 
       # TODO: turn off artifact uploading conditionally
