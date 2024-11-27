@@ -29,10 +29,3 @@ jobs:
           tags: craigiswayne/playground-dotnet-api:latest
           secrets: |
             "my_secret=${{ secrets.MY_SECRET }}"
-            
-      - name: Create Build Artifact
-#        if:  github.ref == 'refs/heads/develop'
-        uses: actions/upload-artifact@v4
-        with:
-          name: build-${{env.UNIQUE_ID}}
-          path: ${{env.PUBLISH_PATH}}
