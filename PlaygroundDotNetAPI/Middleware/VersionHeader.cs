@@ -4,7 +4,7 @@ public class VersionHeaderMiddleware(RequestDelegate next, IConfiguration config
 {
     public async Task InvokeAsync(HttpContext context)
     {
-        context.Response.Headers.Append("X-Version", configuration["Version"]);
+        context.Response.Headers.Append("X-Version", configuration.GetValue<string>("Version"));
         await next(context);
     }
 }

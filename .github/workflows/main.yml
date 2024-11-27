@@ -15,85 +15,19 @@ permissions:
   id-token: write
   contents: read
 
-env:
-  # prevents outputting sensitive info to the pipeline console
-  AZURE_CORE_OUTPUT: 'none'
-  PUBLISH_PATH: './publish'
-
 jobs:
-  build_and_test:
-    name: "Build & Test"
-    runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        dotnet-version: [ '8.0.x' ]
-    steps:
-      - name: Set ENV variables
-        run: |
-          echo "REPO_NAME=${GITHUB_REPOSITORY#$GITHUB_REPOSITORY_OWNER/}" >> $GITHUB_ENV
-          echo "UNIQUE_ID=${{ matrix.dotnet-version }}-${{github.run_id}}-${{github.run_attempt}}" >> $GITHUB_ENV
-          echo "REPO_NAME: $REPO_NAME";
-          echo "UNIQUE_ID: $UNIQUE_ID";
-          echo "TIMESTAMP: ${{ github.event.repository.updated_at}}";
-
-      - uses: actions/checkout@v4
-
-      - name: Setup dotnet
-        uses: actions/setup-dotnet@v4
-        with:
-          dotnet-version: ${{ matrix.dotnet-version }}
-
-      - name: Display dotnet version
-        id: dotnet_version
-        run: dotnet --version
-
-      - uses: actions/cache@v4
-        with:
-          path: ~/.nuget/packages
-          key: ${{ runner.os }}-nuget-${{ matrix.dotnet-version }}-${{ hashFiles('**/*.csproj') }}
-          restore-keys: |
-            ${{ runner.os }}-nuget
-
-      - name: Restore dependencies
-        run: dotnet restore
-
-      - name: Build
-        run: dotnet build --no-restore
-
-      - name: Publish
-        if:  github.ref == 'refs/heads/develop'
-#        if:  github.event_name == 'pull_request' && contains(fromJson('["refs/heads/develop", "refs/heads/main"]'), github.ref)
-        run: dotnet publish -c Release -o ${{env.PUBLISH_PATH}}
-
-      # https://docs.github.com/en/actions/writing-workflows/choosing-what-your-workflow-does/storing-and-sharing-data-from-a-workflow
-      - name: Create Build Artifact
-        if:  github.ref == 'refs/heads/develop'
-#        if:  github.ref == 'refs/heads/develop'
-        uses: actions/upload-artifact@v4
-        with:
-#          name: build-${{ matrix.dotnet-version }}-${{github.run_id}}-${{github.run_attempt}}
-          name: build-${{env.UNIQUE_ID}}
-          path: ${{env.PUBLISH_PATH}}
-
-      - name: Test with the dotnet CLI
-        run: dotnet test --logger html --verbosity normal --results-directory "tests"
-
-      - name: Upload Test Results
-        uses: actions/upload-artifact@v4
-        with:
-          name: tests-${{ env.UNIQUE_ID }}
-          path: tests
-        # Use always() to always run this step to publish test results when there are test failures
-        if: ${{ always() }}
+  dotnet_build_and_test:
+    uses: './.github/workflows/_dotnet.yml'
+    secrets: inherit
 
   dockerization:
-    needs: [ build_and_test ]
+    needs: [ dotnet_build_and_test ]
     uses: './.github/workflows/_dockerization.yml'
     secrets: inherit
 
   azure_infrastructure:
     name: "Infrastructure on Azure"
-    needs: [ build_and_test ]
+    needs: [ dotnet_build_and_test ]
     uses: './.github/workflows/_azure-infrastructure.yml'
     secrets: inherit
 
