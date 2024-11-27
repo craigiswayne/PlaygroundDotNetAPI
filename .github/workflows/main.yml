@@ -22,7 +22,7 @@ jobs:
     secrets: inherit
 
   dockerization:
-    needs: [ build_and_test ]
+    needs: [ dotnet ]
     uses: './.github/workflows/_dockerization.yml'
     secrets: inherit
 
