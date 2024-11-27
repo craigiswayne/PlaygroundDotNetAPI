@@ -5,6 +5,7 @@ on:
     branches:
       - main
       - develop
+      - feature/overriding-appsettings-with-environment-variables
     paths-ignore:
       - '**/*.md'
   pull_request:

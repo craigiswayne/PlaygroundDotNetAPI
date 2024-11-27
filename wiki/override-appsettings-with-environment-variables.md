@@ -12,9 +12,9 @@ But you don't want to store in `appsettings.json`
 let's work with the variable "MY_SECRET"
 
 ### Checks:
-* [ ] Inject when using dotnet cli
-* [ ] Inject when using docker build
-* [ ]
+* [X] Inject when using dotnet cli
+* [X] Inject when using docker build
+* [X] Inject using docker secrets
 * [X] Configuration preference order:
   1. Dockerfile
   2. System Environment variable
