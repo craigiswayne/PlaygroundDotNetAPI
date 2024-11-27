@@ -23,7 +23,7 @@ jobs:
 
       - name: "Test variables"
         run: |
-          echo "GITHUB_REPOSITORY_OWNER: $GITHUB_REPOSITORY_OWNER"
+          echo "GITHUB_REPOSITORY_OWNER: ${{ github.repository_owner }}"
           echo "REPO_NAME: ${{ env.REPO_NAME }}"
 
       # TODO: turn off artifact uploading conditionally
@@ -31,6 +31,6 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           push: true
-          tags: "${{ GITHUB_REPOSITORY_OWNER }}/${{ env.REPO_NAME }}:latest"
+          tags: "${{ github.repository_owner }}/${{ env.REPO_NAME }}:latest"
           secrets: |
             "my_secret=${{ secrets.MY_SECRET }}"
