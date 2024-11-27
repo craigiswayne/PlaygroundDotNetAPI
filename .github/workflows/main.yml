@@ -93,7 +93,7 @@ jobs:
     secrets: inherit
 
   infrastructure_azure:
-    if: false
+    if: github.ref == 'refs/heads/develop'
     needs: [ build_and_test ]
     uses: './.github/workflows/_infrastructure-azure.yml'
     secrets: inherit
