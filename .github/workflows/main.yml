@@ -89,7 +89,7 @@ jobs:
 
   dockerization:
     needs: [ build_and_test ]
-    uses: './.github/partials/_dockerization.yml'
+    uses: './.github/workflows/_dockerization.yml'
     secrets: inherit
 
 #  dockerization:
