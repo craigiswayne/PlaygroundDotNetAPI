@@ -17,13 +17,6 @@
 
 ## Getting Started
 
-#### with Docker
-```shell
-docker build --no-cache --progress=plain -f PlaygroundDotNetAPI/Dockerfile . -t playgrounddotnetapi &> build.log
-docker run -it --rm -p 4201:8080 --name playgrounddotnetapi_sample playgrounddotnetapi
-# open http://localhost:4201/environment
-```
-
 #### With Local DLL
 ```shell
 dotnet clean
