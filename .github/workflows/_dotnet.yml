@@ -29,14 +29,6 @@ jobs:
         dotnet-version: [ '8.0.x' ]
 
     steps:
-      - name: Set ENV variables
-        run: |
-          echo "REPO_NAME=${GITHUB_REPOSITORY#$GITHUB_REPOSITORY_OWNER/}" >> $GITHUB_ENV
-          echo "UNIQUE_ID=${{ matrix.dotnet-version }}-${{github.run_id}}-${{github.run_attempt}}" >> $GITHUB_ENV
-          echo "REPO_NAME: $REPO_NAME";
-          echo "UNIQUE_ID: $UNIQUE_ID";
-          echo "TIMESTAMP: ${{ github.event.repository.updated_at}}";
-
       - uses: actions/checkout@v4
 
       - name: Setup .NET
@@ -48,7 +40,7 @@ jobs:
         id: dotnet_version
         run: dotnet --version
 
-      - name: Cache packages
+      - name: Cache
         uses: actions/cache@v4
         with:
           path: ~/.nuget/packages
@@ -60,7 +52,7 @@ jobs:
         run: dotnet restore
 
       - name: Build
-        run: dotnet build --no-restore {{ inputs.project_path }} --configuration ${{ inputs.configuration }}
+        run: dotnet build --no-restore ${{ inputs.project_path }} --configuration ${{ inputs.configuration }}
 
       - name: Test
         if: inputs.test == true
