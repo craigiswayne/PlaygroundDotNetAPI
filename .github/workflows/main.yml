@@ -23,6 +23,7 @@ jobs:
     with:
       project_path: 'PlaygroundDotNetAPI/PlaygroundDotNetAPI.csproj'
       test: true
+      environment: 'production'
 
   dockerization:
     needs: [ dotnet_build_and_test ]

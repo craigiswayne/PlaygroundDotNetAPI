@@ -19,11 +19,14 @@ on:
         required: false
         type: boolean
         default: true
+      environment:
+        required: false
+        type: string
 
 jobs:
   dotnet_build_test:
     runs-on: ubuntu-latest
-    environment: "production"
+    environment: ${{ inputs.environment }}
     timeout-minutes: 5
     strategy:
       matrix:
