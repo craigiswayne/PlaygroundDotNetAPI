@@ -29,7 +29,7 @@ on:
         default: ''
 
 jobs:
-  dotnet_build_test:
+  dotnet:
     runs-on: ubuntu-latest
     environment: ${{ inputs.environment }}
     timeout-minutes: 5
