@@ -18,7 +18,6 @@ permissions:
 
 jobs:
   dotnet_build_and_test:
-    environment: "production"
     uses: './.github/workflows/_dotnet.yml'
     secrets: inherit
     with:
