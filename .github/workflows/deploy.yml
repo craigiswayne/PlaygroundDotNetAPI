@@ -1,7 +1,16 @@
-name: "Deploy to Staging"
+name: "Deploy"
 
 on:
   workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Environment'
+        type: choice
+        required: true
+        default: 'staging'
+        options:
+          - staging
+          - production
 
 jobs:
   dotnet_build_and_test:
@@ -10,7 +19,7 @@ jobs:
       project_path: 'PlaygroundDotNetAPI/PlaygroundDotNetAPI.csproj'
       test: false
       publish: false
-      environment: staging
+      environment: ${{ inputs.environment }}
 
   dockerization:
     needs: [ dotnet_build_and_test ]
