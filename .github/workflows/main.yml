@@ -7,9 +7,6 @@ on:
       - develop
     paths-ignore:
       - '**/*.md'
-  pull_request:
-    types: [opened, reopened, edited]
-    branches: [develop]
 
 permissions:
   id-token: write
