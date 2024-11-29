@@ -35,6 +35,14 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      # https://docs.github.com/en/actions/managing-workflow-runs-and-deployments/managing-deployments/managing-environments-for-deployment
+      - uses: trstringer/manual-approval@v1
+        if: inputs.environment == 'staging'
+        with:
+          secret: ${{ github.TOKEN }}
+          approvers: craigiswayne
+          minimum-approvals: 1
+
       - name: Setup .NET
         uses: actions/setup-dotnet@v4
         with:
