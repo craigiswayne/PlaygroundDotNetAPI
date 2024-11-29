@@ -20,6 +20,9 @@ jobs:
   dotnet_build_and_test:
     uses: './.github/workflows/_dotnet.yml'
     secrets: inherit
+    with:
+      project: 'PlaygroundDotNetAPI/PlaygroundDotNetAPI.csproj'
+      test: true
 
   dockerization:
     needs: [ dotnet_build_and_test ]
