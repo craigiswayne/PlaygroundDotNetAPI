@@ -24,6 +24,7 @@ jobs:
   dotnet_build_test:
     runs-on: ubuntu-latest
     environment: "production"
+    timeout-minutes: 5
     strategy:
       matrix:
         dotnet-version: [ '8.0.x' ]
