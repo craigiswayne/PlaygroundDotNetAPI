@@ -1,4 +1,4 @@
-name: Main
+name: "Deploy to Staging"
 
 on:
   push:
@@ -8,9 +8,6 @@ on:
       - feature/overriding-appsettings-with-environment-variables
     paths-ignore:
       - '**/*.md'
-  pull_request:
-    types: [opened, reopened, edited]
-    branches: [develop]
 
 permissions:
   id-token: write
