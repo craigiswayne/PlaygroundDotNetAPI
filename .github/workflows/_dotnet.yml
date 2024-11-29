@@ -59,7 +59,7 @@ jobs:
         run: dotnet restore
 
       - name: Build
-        run: dotnet build --no-restore --project ${{ inputs.project_path }} --configuration ${{ inputs.configuration }}
+        run: dotnet build --no-restore {{ inputs.project_path }} --configuration ${{ inputs.configuration }}
 
       - name: Test
         if: inputs.test == true
