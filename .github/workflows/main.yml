@@ -21,7 +21,7 @@ jobs:
     uses: './.github/workflows/_dotnet.yml'
     secrets: inherit
     with:
-      project: 'PlaygroundDotNetAPI/PlaygroundDotNetAPI.csproj'
+      project_path: 'PlaygroundDotNetAPI/PlaygroundDotNetAPI.csproj'
       test: true
 
   dockerization:
