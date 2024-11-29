@@ -56,7 +56,7 @@ jobs:
 
       - name: Test
         if: inputs.test == true
-        run: dotnet test --no-build --verbosity normal
+        run: dotnet test --verbosity normal
 
       - name: Publish
         if: github.ref == 'refs/heads/develop' && github.event.pull_request.merged == true
