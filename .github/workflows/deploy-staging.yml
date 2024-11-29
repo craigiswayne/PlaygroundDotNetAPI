@@ -2,6 +2,14 @@ name: "Deploy to Staging"
 
 on:
   workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Environment'
+        type: choice
+        required: true
+        options:
+          - staging
+          - production
 
 jobs:
   dotnet_build_and_test:
