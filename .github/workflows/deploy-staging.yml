@@ -3,11 +3,6 @@ name: "Deploy to Staging"
 on:
   workflow_dispatch:
 
-permissions:
-  id-token: write
-  contents: read
-  issues: write
-
 jobs:
   dotnet_build_and_test:
     uses: './.github/workflows/_dotnet.yml'
