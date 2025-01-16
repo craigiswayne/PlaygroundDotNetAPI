@@ -1,0 +1,110 @@
+﻿en;cn
+SPIN;旋转
+Balance;余额
+PAYS;支付
+Bet;投注
+Auto Spin;自动旋转
+Turbo Spin;快速旋转
+Game History;游戏历史记录
+BUY;购买
+PLAY;游戏
+FREE SPINS;免费旋转
+Launch Game History to see the results of previous games you've played;启动游戏历史记录以查看您以前玩过的游戏的结果
+Show More;显示更多
+START;开始
+STOP;停止
+Game(s) Ago;局游戏之前
+Some Error Occured, please reload your page;发生某个错误，请重新加载页面
+Round;回合
+ will be charged from your balance; 将从您的余额中扣除
+ Bet will be used in Feature and in game once Feature completes; 赌注将用于特殊环节以及完成特殊环节后的游戏中
+CONFIRM;确认
+CREDIT VALUE;积分值
+HOLD SPACEBAR FOR TURBO SPIN;长按空格键进行加速旋转
+Balance;余额
+WON;赢
+AUTO SPIN;自动旋转
+Number of Spins;旋转次数
+TURBO SPIN ON;开启快速旋转
+TURBO SPIN OFF;关闭快速旋转
+LINES;线
+BET\nMAX;最大\n赌注
+TOTAL WON;总赢利
+UNTIL\nFEATURE;直到中奖
+Time;时间
+Net Position;净位置
+AUTO\nSPIN;自动\n旋转
+CANCEL;取消
+Version;版本
+CONGRATULATIONS!;恭喜！
+You have been awarded;您赢得了
+FREE SPINS!;免费旋转!
+CONTINUE;继续
+Freespins will be played at {0} per spin;免费旋转将以每次旋转{0}进行
+Pause;暂停
+YOU HAVE WON;你赢了
+THIS GAME IS CURRENTLY UNAVAILABLE.;本游戏现在不能玩
+TEMPORARY DIFFICULTIES, PLEASE TRY AGAIN LATER OR CONTACT SUPPORT IF PROBLEM PERSISTS.;暂时遭遇困难，请稍后再试，若问题仍存在， 请联络技术支持。
+YOUR GAME HAS TIMED OUT DUE TO AN EXTENDED PERIOD OF INACTIVITY.\n PLEASE RELOAD THE GAME TO CONTINUE PLAYING.;您的游戏由于长时间没有操作而超时。\n 请重新加载然后继续游戏。
+YOU HAVE BEEN LOGGED OUT.;您已被登出。
+Game exited to limit losses.;为限制损失，已退出游戏。
+This game doesn’t support multiple windows open at once.\n In the event of a disconnection, please allow 60 seconds before re-opening the game so it will resume where you lost connection.;本游戏不支持多个屏幕同时操作。如果掉线，在重开游戏之前请等待60秒（一分钟），游戏会恢复到刚刚掉线时的状态。
+A new game session has been loaded with your account.;已使用你的账户加载新游戏会话
+This game is not available in your country;此游戏在您所在的国家/地区不可用
+WE WERE UNABLE TO PROCESS YOUR SESSION LIMIT REQUEST. THE SESSION LIMIT MESSAGE MAY BE DISPLAYED WHEN YOU RESTART YOUR GAME.;无法处理您的限制请求。当您重新开始游戏时可能会显示该回合的限制讯息。
+CANNOT PROCESS GAME REQUEST DUE TO REALITY CHECK.;进行验证中，暂时无法处理游戏请求。
+YOUR CURRENT SESSION HAS BEEN CLOSED. THIS ACCOUNT HAS BEEN LOCKED.;您的当前回合已被关闭。该帐户已被锁定。
+YOUR SESSION HAS TIMED OUT. PLEASE TRY AGAIN.;登入已超时，请重试
+Network Error;网络错误
+BUY FEATURE ACTIVATED!;购买功能已激活！
+CLICK TO CHANGE BETWEEN COIN AND MONEY VIEW;点击切换代币视图与货币视图
+RTP;RTP
+Max Win;最大赢奖
+Mio.;Mio.
+Max Payout Reached!;已达到最高赔付！
+Replay Initializing;正在初始化重玩
+Replay Has Ended;重玩已结束
+Date;日期
+Play Id;游戏ID
+Win;赢奖
+YOUR ACCOUNT BALANCE IS TOO LOW TO PLACE THIS BET.;您没有足够的余额进行投注！
+Return To Player:;返还玩家:
+Buy Feature:;购买功能:
+UST;UST
+OK;OK
+Bad request;Bad request
+Invalid client IP;Invalid client IP
+Invalid country;Invalid country
+Jurisdiction not found;Jurisdiction not found
+Jurisdiction settings not found;Jurisdiction settings not found
+Invalid operator;Invalid operator
+Game not configured for the operator;Game not configured for the operator
+Game not enabled for the operator;Game not enabled for the operator
+Invalid game;Invalid game
+Invalid game status;Invalid game status
+Currency is not configured for the game;Currency is not configured for the game
+Invalid currency status;Invalid currency status
+Default currency not found;Default currency not found
+Invalid default currency status;Invalid default currency status
+Jurisdiction not configured for the game;Jurisdiction not configured for the game
+Invalid jurisdiction for the game;Invalid jurisdiction for the game
+Language not configured for the game;Language not configured for the game
+Invalid language status;Invalid language status
+Default language not found;Default language not found
+Default language status not valid;Default language status not valid
+Bet levels not found;Bet levels not found
+Integration not found;Integration not found
+Session expired;Session expired
+Game Engine Bad Response;Game Engine Bad Response
+Insufficient funds;Insufficient funds
+Internal error;Internal error
+Message;Message
+Start Balance;Start Balance
+End Balance;End Balance
+Your session has now exceeded;Your session has now exceeded
+You can continue playing the game or review your Game History.;You can continue playing the game or review your Game History.
+HISTORY;HISTORY
+Replay;Replay
+OK;OK
+FEATURES;FEATURES
+Autoplay stopped because loss limit was reached.;Autoplay stopped because loss limit was reached.

@@ -1,0 +1,110 @@
+﻿en;ro
+SPIN;ÎNVÂRTIRE
+Balance;Balance
+PAYS;PLĂTEȘTE
+Bet;Pariu
+Auto Spin;Auto Spin
+Turbo Spin;ÎNVÂRTIRE TURBO
+Game History;Istoricul jocului
+BUY;BUY
+PLAY;JOC
+FREE SPINS;ÎNVÂRTIRI GRATUITE
+Launch Game History to see the results of previous games you've played;Lansați Istoricul jocului pentru a vedea rezultatele jocurilor anterioare pe care le-ați jucat
+Show More;Afișați mai mult
+START;START
+STOP;OPRIRE
+Game(s) Ago;Cu un joc (jocuri) în urmă
+Some Error Occured, please reload your page;A apărut o eroare, reîncărcați pagina
+Round;Runda
+ will be charged from your balance; will be charged from your balance
+ Bet will be used in Feature and in game once Feature completes; Bet will be used in Feature and in game once Feature completes
+CONFIRM;CONFIRM
+CREDIT VALUE;VALOARE CREDIT
+HOLD SPACEBAR FOR TURBO SPIN;HOLD SPACEBAR FOR TURBO SPIN
+Balance;SOLDUL
+WON;CÂȘTIGAT
+AUTO SPIN;ÎNVÂRTIRE AUTOMATĂ
+Number of Spins;Număr de învârtiri
+TURBO SPIN ON;ÎNVÂRTIRE TURBO PORNITĂ
+TURBO SPIN OFF;ÎNVÂRTIRE TURBO OPRITĂ
+LINES;LINII
+BET\nMAX;PARIU\nMAXIM
+TOTAL WON;TOTAL CÂȘTIGAT
+UNTIL\nFEATURE;     PÂNĂ LA\nSECVENȚĂ
+Time;Ora
+Net Position;Poziție netă
+AUTO\nSPIN;ÎNVÂRTIRE\nAUTOMATĂ
+CANCEL;ANULARE
+Version;Versiune
+CONGRATULATIONS!;FELICITĂRI!
+You have been awarded;Ați primit
+FREE SPINS!;FREE SPINS!
+CONTINUE;CONTINUE
+Freespins will be played at {0} per spin;Învârtirile gratuite vor fi jucate la {0} per învârtire
+Pause;Pauză
+YOU HAVE WON;YOU HAVE WON
+THIS GAME IS CURRENTLY UNAVAILABLE.;ACEST JOC ESTE MOMENTAN INDISPONIBIL.
+TEMPORARY DIFFICULTIES, PLEASE TRY AGAIN LATER OR CONTACT SUPPORT IF PROBLEM PERSISTS.;DIFICULTĂȚI TEMPORARE. ÎNCERCAȚI DIN NOU MAI TÂRZIU SAU CONTACTAȚI  SERVICIUL DE ASISTENȚĂ DACĂ PROBLEMA PERSISTĂ.
+YOUR GAME HAS TIMED OUT DUE TO AN EXTENDED PERIOD OF INACTIVITY.\n PLEASE RELOAD THE GAME TO CONTINUE PLAYING.;JOCUL DVS. A EXPIRAT DIN CAUZA UNEI PERIOADE\n PRELUNGITE DE INACTIVITATE. REÎNCĂRCAȚI JOCUL PENTRU A CONTINUA SĂ JUCAȚI.
+YOU HAVE BEEN LOGGED OUT.;AȚI FOST DECONECTAT.
+Game exited to limit losses.;Joc închis pentru a limita pierderile.
+This game doesn’t support multiple windows open at once.\n In the event of a disconnection, please allow 60 seconds before re-opening the game so it will resume where you lost connection.;
+A new game session has been loaded with your account.;
+This game is not available in your country;Acest joc nu este disponibil în țara dvs.
+WE WERE UNABLE TO PROCESS YOUR SESSION LIMIT REQUEST. THE SESSION LIMIT MESSAGE MAY BE DISPLAYED WHEN YOU RESTART YOUR GAME.;NU AM PUTUT PROCESA SOLICITAREA DE LIMITARE A SESIUNII. MESAJUL DE LIMITARE A SESIUNII POATE FI AFIȘAT LA REPORNIREA JOCULUI.
+CANNOT PROCESS GAME REQUEST DUE TO REALITY CHECK.;NU SE POATE PROCESA CEREREA DE JOC DIN CAUZA PROCESULUI DE REVENIRE LA REALITATE.
+YOUR CURRENT SESSION HAS BEEN CLOSED. THIS ACCOUNT HAS BEEN LOCKED.;SESIUNEA DVS. CURENTĂ A FOST ÎNCHISĂ. ACEST CONT A FOST BLOCAT.
+YOUR SESSION HAS TIMED OUT. PLEASE TRY AGAIN.;SESIUNEA DVS. A EXPIRAT. ÎNCERCAȚI DIN NOU.
+Network Error;Eroare de rețea
+BUY FEATURE ACTIVATED!;SECVENȚA CUMPĂRARE ACTIVATĂ!
+CLICK TO CHANGE BETWEEN COIN AND MONEY VIEW;FACEȚI CLIC PENTRU A COMUTA ÎNTRE VIZUALIZAREA CU FISE ȘI VIZUALIZAREA CU BANI
+RTP;RTP
+Max Win;Câștig maxim
+Mio.;Mio.
+Max Payout Reached!;Plată maximă atinsă!
+Replay Initializing;Inițializare reluare
+Replay Has Ended;Reluarea s-a încheiat
+Date;Data
+Play Id;ID de redare
+Win;Câștig
+YOUR ACCOUNT BALANCE IS TOO LOW TO PLACE THIS BET.;SOLDUL CONTULUI DVS. ESTE PREA MIC PENTRU A PLASA ACEST PARIU.
+Return To Player:;Reveniți la jucător:
+Buy Feature:;Secvența Cumpărare:
+UST;UST
+OK;OK
+Bad request;Bad request
+Invalid client IP;Invalid client IP
+Invalid country;Invalid country
+Jurisdiction not found;Jurisdiction not found
+Jurisdiction settings not found;Jurisdiction settings not found
+Invalid operator;Invalid operator
+Game not configured for the operator;Game not configured for the operator
+Game not enabled for the operator;Game not enabled for the operator
+Invalid game;Invalid game
+Invalid game status;Invalid game status
+Currency is not configured for the game;Currency is not configured for the game
+Invalid currency status;Invalid currency status
+Default currency not found;Default currency not found
+Invalid default currency status;Invalid default currency status
+Jurisdiction not configured for the game;Jurisdiction not configured for the game
+Invalid jurisdiction for the game;Invalid jurisdiction for the game
+Language not configured for the game;Language not configured for the game
+Invalid language status;Invalid language status
+Default language not found;Default language not found
+Default language status not valid;Default language status not valid
+Bet levels not found;Bet levels not found
+Integration not found;Integration not found
+Session expired;Session expired
+Game Engine Bad Response;Game Engine Bad Response
+Insufficient funds;Insufficient funds
+Internal error;Internal error
+Message;Message
+Start Balance;Start Balance
+End Balance;End Balance
+Your session has now exceeded;Your session has now exceeded
+You can continue playing the game or review your Game History.;You can continue playing the game or review your Game History.
+HISTORY;HISTORY
+Replay;Replay
+OK;OK
+FEATURES;FEATURES
+Autoplay stopped because loss limit was reached.;Autoplay stopped because loss limit was reached.

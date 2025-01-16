@@ -1,0 +1,110 @@
+﻿en;lt
+SPIN;SUKTI
+Balance;Likutis
+PAYS;IŠMOKOS
+Bet;Statymas
+Auto Spin;Automatinis sukimas
+Turbo Spin;TURBOSUKIMAS
+Game History;Žaidimo istorija
+BUY;PIRKTI
+PLAY;LOŠTI
+FREE SPINS;NEMOKAMI SUKIMAI
+Launch Game History to see the results of previous games you've played;Įjunkite žaidimo istoriją, kad pamatytumėte praėjusių žaistų žaidimų rezultatus
+Show More;Rodyti daugiau
+START;PRADĖTI
+STOP;STABDYTI
+Game(s) Ago;Žaidimas (-ai) prieš
+Some Error Occured, please reload your page;Įvyko klaida, įkelkite puslapį iš naujo
+Round;Raundas
+ will be charged from your balance; bus nuskaityta iš jūsų likučio
+ Bet will be used in Feature and in game once Feature completes; Statymas bus naudojamas veikiant Funkcijai ir lošime, kai Funkcija baigs veikti
+CONFIRM;PATVIRTINTI
+CREDIT VALUE;KREDITO VERTĖ
+HOLD SPACEBAR FOR TURBO SPIN;LAIKYKITE TARPO \nKLAVIŠĄ TURBO SUKIMUI
+Balance;Likutis
+WON;LAIMĖTA
+AUTO SPIN;AUTO SUKIMAS
+Number of Spins;Sukimų Skaičius
+TURBO SPIN ON;TURBOSUKIMAS ĮJUNGTAS
+TURBO SPIN OFF;TURBOSUKIMAS IŠJUNGTAS
+LINES;EILUTĖS
+BET\nMAX;MAKS. \nSTATYMAS
+TOTAL WON;IŠ VISO LAIMĖTA
+UNTIL\nFEATURE;IKI \nFUNKCIJOS
+Time;Laikas
+Net Position;Grynoji pozicija
+AUTO\nSPIN;AUTO\nSUKIMAS
+CANCEL;ATŠAUKTI
+Version;Versija
+CONGRATULATIONS!;SVEIKINAME!
+You have been awarded;Jums suteikta
+FREE SPINS!;NEMOKAMI SUKIMAI!
+CONTINUE;TĘSTI
+Freespins will be played at {0} per spin;Nemokami sukimai bus žaidžiami {0} už vieną sukimą
+Pause;Pauzė
+YOU HAVE WON;LAIMĖJOTE
+THIS GAME IS CURRENTLY UNAVAILABLE.;ŠIS LOŠIMAS DABAR NEGALIMAS.
+TEMPORARY DIFFICULTIES, PLEASE TRY AGAIN LATER OR CONTACT SUPPORT IF PROBLEM PERSISTS.;LAIKINI NESKLANDUMAI, PAMĖGINKITE DAR KARTĄ VĖLIAU, O JEI  PROBLEMA NEDINGSTA, SUSISIEKITE SU PAGALBOS TARNYBA.
+YOUR GAME HAS TIMED OUT DUE TO AN EXTENDED PERIOD OF INACTIVITY.\n PLEASE RELOAD THE GAME TO CONTINUE PLAYING.;JŪSŲ LOŠIMO SKIRTASIS LAIKAS BAIGĖSI, \nNES ILGAI BUVOTE NEAKTYVUS. NORĖDAMI LOŠTI TOLIAU, IŠ NAUJO ĮKELKITE LOŠIMĄ.
+YOU HAVE BEEN LOGGED OUT.;BUVOTE ATJUNGTI.
+Game exited to limit losses.;Žaidimas nutrauktas siekiant apriboti nuostolius.
+This game doesn’t support multiple windows open at once.\n In the event of a disconnection, please allow 60 seconds before re-opening the game so it will resume where you lost connection.;Šis lošimas nepalaiko kelių vienų metu atidarytų langų. Jei nutrūko ryšys, palaukite 60 sekundžių ir tik tada mėginkite vėl atidaryti lošimą, kad galėtumėte tęsti toje vietoje, kurioje buvote nutrūkus ryšiui.
+A new game session has been loaded with your account.;Su jūsų paskyra įkeltas naujas lošimo seansas
+This game is not available in your country;Šis žaidimas nepasiekiamas jūsų šalyje
+WE WERE UNABLE TO PROCESS YOUR SESSION LIMIT REQUEST. THE SESSION LIMIT MESSAGE MAY BE DISPLAYED WHEN YOU RESTART YOUR GAME.;NEPAVYKO APDOROTI JŪSŲ SEANSO APRIBOJIMO UŽKLAUSOS. KAI IŠ NAUJO PALEISITE LOŠIMĄ, GALI BŪTI PARODYTAS SEANSO APRIBOJIMO PRANEŠIMAS.
+CANNOT PROCESS GAME REQUEST DUE TO REALITY CHECK.;DĖL REALYBĖS PATIKROS NEĮMANOMA APDOROTI LOŠIMO UŽKLAUSOS.
+YOUR CURRENT SESSION HAS BEEN CLOSED. THIS ACCOUNT HAS BEEN LOCKED.;JŪSŲ DABARTINIS SEANSAS BUVO UŽDARYTAS. ŠI PASKYRA UŽBLOKUOTA.
+YOUR SESSION HAS TIMED OUT. PLEASE TRY AGAIN.;JŪSŲ SEANSO SKIRTASIS LAIKAS BAIGĖSI. PAMĖGINKITE DAR KARTĄ.
+Network Error;Tinklo klaida
+BUY FEATURE ACTIVATED!;FUNKCIJOS PIRKIMAS SUAKTYVINTAS!
+CLICK TO CHANGE BETWEEN COIN AND MONEY VIEW;SPUSTELĖKITE, JEI NORITE PERJUNGTI MONETŲ IR PINIGŲ RODINĮ
+RTP;RTP
+Max Win;Maksimalus laimėjimas
+Mio.;Mio.
+Max Payout Reached!;Pasiekėte didžiausią išmoką!
+Replay Initializing;Inicijuojamas pakartojimas
+Replay Has Ended;Pakartojimas baigėsi
+Date;Data
+Play Id;Žaidimo ID
+Win;Laimėjimas
+YOUR ACCOUNT BALANCE IS TOO LOW TO PLACE THIS BET.;JŪSŲ PASKYROS LIKUTIS PER MAŽAS, KAD GALĖTUMĖTE PASTATYTI ŠIĄ SUMĄ.
+Return To Player:;Išmokų lošėjams procentas:
+Buy Feature:;Funkcijos Pirkimas:
+UST;UST
+OK;OK
+Bad request;Bad request
+Invalid client IP;Invalid client IP
+Invalid country;Invalid country
+Jurisdiction not found;Jurisdiction not found
+Jurisdiction settings not found;Jurisdiction settings not found
+Invalid operator;Invalid operator
+Game not configured for the operator;Game not configured for the operator
+Game not enabled for the operator;Game not enabled for the operator
+Invalid game;Invalid game
+Invalid game status;Invalid game status
+Currency is not configured for the game;Currency is not configured for the game
+Invalid currency status;Invalid currency status
+Default currency not found;Default currency not found
+Invalid default currency status;Invalid default currency status
+Jurisdiction not configured for the game;Jurisdiction not configured for the game
+Invalid jurisdiction for the game;Invalid jurisdiction for the game
+Language not configured for the game;Language not configured for the game
+Invalid language status;Invalid language status
+Default language not found;Default language not found
+Default language status not valid;Default language status not valid
+Bet levels not found;Bet levels not found
+Integration not found;Integration not found
+Session expired;Session expired
+Game Engine Bad Response;Game Engine Bad Response
+Insufficient funds;Insufficient funds
+Internal error;Internal error
+Message;Message
+Start Balance;Start Balance
+End Balance;End Balance
+Your session has now exceeded;Your session has now exceeded
+You can continue playing the game or review your Game History.;You can continue playing the game or review your Game History.
+HISTORY;HISTORY
+Replay;Replay
+OK;OK
+FEATURES;FEATURES
+Autoplay stopped because loss limit was reached.;Autoplay stopped because loss limit was reached.

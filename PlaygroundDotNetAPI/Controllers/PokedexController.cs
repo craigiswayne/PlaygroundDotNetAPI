@@ -22,9 +22,17 @@ public class PokedexController(IPokedexService pokedexService) : ControllerBase
 
         if (!pokemon.Any())
         {
-            return StatusCode(StatusCodes.Status204NoContent);
+            return NoContent();
         }
 
         return Ok(pokemon);
+    }
+
+    [HttpPatch]
+    [Produces(MediaTypeNames.Application.Json)]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    public ActionResult<Pokemon> Update([FromBody] Pokemon pokemon)
+    {
+        return Ok(pokedexService.Get(pokemon.Id));
     }
 }

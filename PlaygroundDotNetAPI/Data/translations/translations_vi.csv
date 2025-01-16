@@ -1,0 +1,110 @@
+﻿en;vi
+SPIN;VÒNG QUAY
+Balance;Số dư
+PAYS;TRẢ
+Bet;Cược
+Auto Spin;Vòng Quay Tự Động
+Turbo Spin;VÒNG QUAY TURBO
+Game History;Lịch sử ván chơi
+BUY;MUA
+PLAY;CHƠI
+FREE SPINS;QUAY MIỄN PHÍ
+Launch Game History to see the results of previous games you've played;Khởi chạy Lịch sử Ván chơi để xem kết quả của các ván chơi trước đó bạn đã chơi
+Show More;Hiển thị thêm
+START;BẮT ĐẦU
+STOP;DỪNG
+Game(s) Ago;Ván Chơi Trước
+Some Error Occured, please reload your page;Đã xảy ra lỗi, vui lòng tải lại trang của bạn
+Round;Vòng
+ will be charged from your balance; sẽ được tính phí từ số dư của bạn
+ Bet will be used in Feature and in game once Feature completes; Bet sẽ được dùng trong tính năng mau và trong màn chơi sau khi hoàn tất
+CONFIRM;XÁC NHẬN
+CREDIT VALUE;GIÁ TRỊ TÍN DỤNG
+HOLD SPACEBAR FOR TURBO SPIN;GIỮ SPACEBAR \nĐỂ QUAY TURBO
+Balance;Số dư
+WON;THẮNG
+AUTO SPIN;VÒNG QUAY TỰ ĐỘNG
+Number of Spins;Số Lượt Quay
+TURBO SPIN ON;BẬT VÒNG QUAY TURBO
+TURBO SPIN OFF;TẮT VÒNG QUAY TURBO
+LINES;DÒNG
+BET\nMAX;ĐẶTCƯỢC \nTỐI ĐA
+TOTAL WON;TỔNG CHIẾN THẮNG 
+UNTIL\nFEATURE;CHO TOI \nTINH NANG
+Time;Thời gian
+Net Position;Vị thế ròng
+AUTO\nSPIN;VÒNGQUAY\nTỰ ĐỘNG
+CANCEL;KHÔNG ĐẶT
+Version;Phiên bản
+CONGRATULATIONS!;XIN CHÚC MỪNG!
+You have been awarded;Bạn đã được trao thưởng
+FREE SPINS!;QUAY MIỄN PHÍ!
+CONTINUE;TIẾP TỤC
+Freespins will be played at {0} per spin;Vòng quay miễn phí sẽ được chơi ở mức tiền cược {0} mỗi vòng quay
+Pause;Tạm dừng
+YOU HAVE WON;BẠN ĐÃ THẮNG
+THIS GAME IS CURRENTLY UNAVAILABLE.;TRÒ CHƠI NÀY HIỆN KHÔNG CHƠI ĐƯỢC.
+TEMPORARY DIFFICULTIES, PLEASE TRY AGAIN LATER OR CONTACT SUPPORT IF PROBLEM PERSISTS.;LỖI THẠM THỜI, VUI LÒNG THỬ  LẠI SAU HOẶC LIÊN HỆ HỖ TRỢ NẾU VẪN GẶP KHÓ KHĂN.
+YOUR GAME HAS TIMED OUT DUE TO AN EXTENDED PERIOD OF INACTIVITY.\n PLEASE RELOAD THE GAME TO CONTINUE PLAYING.;TRÒ CHƠI CỦA BẠN ĐÃ HẾT HẠN DO KHÔNG HOẠT \nĐỘNG MỘT THỜI GIAN. VUI LÒNG TẢI LẠI TRÒ CHƠI ĐỂ CHƠI TIẾP.
+YOU HAVE BEEN LOGGED OUT.;BẠN ĐÃ ĐĂNG XUẤT.
+Game exited to limit losses.;Đã thoát trò chơi để hạn chế thua lỗ.
+This game doesn’t support multiple windows open at once.\n In the event of a disconnection, please allow 60 seconds before re-opening the game so it will resume where you lost connection.;Game này không hỗ trợ mở nhiều cửa sổ cùng lúcTrong trường hợp bị mất kết nối, vui lòng chờ 60 giây trước khi mở lại trò chơi để hệ thống chạy lại dữ liệu từ thời điểm bị mất kết nối.
+A new game session has been loaded with your account.;Tài khoản của bạn đang tải một lượt chơi mới
+This game is not available in your country;Trò chơi này không khả dụng ở quốc gia của bạn
+WE WERE UNABLE TO PROCESS YOUR SESSION LIMIT REQUEST. THE SESSION LIMIT MESSAGE MAY BE DISPLAYED WHEN YOU RESTART YOUR GAME.;CHÚNG TÔI KHÔNG THỂ XỬ LÝ YÊU CẦU GIỚI HẠN PHIÊN CHƠI CỦA BẠN. TIN NHẮN GIỚI HẠN PHIÊN CHƠI CÓ THỂ HIỂN THỊ KHI BẠN KHỞI ĐÔNG LẠI TRÒ CHƠI.
+CANNOT PROCESS GAME REQUEST DUE TO REALITY CHECK.;KHÔNG THỂ XỬ LÝ YÊU CẦU TRÒ CHƠI VÌ KIỂM TRA THỰC TẾ.
+YOUR CURRENT SESSION HAS BEEN CLOSED. THIS ACCOUNT HAS BEEN LOCKED.;PHIÊN CHƠI HIỆN TẠI CỦA BẠN ĐÃ BỊ ĐÓNG. TÀI KHOẢN NÀY ĐÃ BỊ KHÓA.
+YOUR SESSION HAS TIMED OUT. PLEASE TRY AGAIN.;PHIÊN CHƠI CỦA BẠN ĐÃ HẾT HẠN. VUI LÒNG THỬ LẠI.
+Network Error;Lỗi Mạng
+BUY FEATURE ACTIVATED!;ĐÃ KÍCH HOẠT TÍNH NĂNG MUA!
+CLICK TO CHANGE BETWEEN COIN AND MONEY VIEW;NHẤP ĐỂ THAY ĐỔI GIỮA CHẾ ĐỘ XEM ĐỒNG XU VÀ TIỀN
+RTP;RTP
+Max Win;Chiến Thắng Tối Đa
+Mio.;Mio.
+Max Payout Reached!;Đã Đạt Đến Mức Trả Thưởng Tối Đa!
+Replay Initializing;Phát Lại Đang Bắt Đầu
+Replay Has Ended;Phát lại Đã Kết Thúc
+Date;Ngày
+Play Id;ID Chơi
+Win;Thắng
+YOUR ACCOUNT BALANCE IS TOO LOW TO PLACE THIS BET.;SỐ DƯ TÀI KHOẢN CỦA BẠN QUÁ THẤP ĐỂ ĐẶT CƯỢC NÀY.
+Return To Player:;Quay lại Người chơi:
+Buy Feature:;Tính năng Mua:
+UST;UST
+OK;OK
+Bad request;Bad request
+Invalid client IP;Invalid client IP
+Invalid country;Invalid country
+Jurisdiction not found;Jurisdiction not found
+Jurisdiction settings not found;Jurisdiction settings not found
+Invalid operator;Invalid operator
+Game not configured for the operator;Game not configured for the operator
+Game not enabled for the operator;Game not enabled for the operator
+Invalid game;Invalid game
+Invalid game status;Invalid game status
+Currency is not configured for the game;Currency is not configured for the game
+Invalid currency status;Invalid currency status
+Default currency not found;Default currency not found
+Invalid default currency status;Invalid default currency status
+Jurisdiction not configured for the game;Jurisdiction not configured for the game
+Invalid jurisdiction for the game;Invalid jurisdiction for the game
+Language not configured for the game;Language not configured for the game
+Invalid language status;Invalid language status
+Default language not found;Default language not found
+Default language status not valid;Default language status not valid
+Bet levels not found;Bet levels not found
+Integration not found;Integration not found
+Session expired;Session expired
+Game Engine Bad Response;Game Engine Bad Response
+Insufficient funds;Insufficient funds
+Internal error;Internal error
+Message;Message
+Start Balance;Start Balance
+End Balance;End Balance
+Your session has now exceeded;Your session has now exceeded
+You can continue playing the game or review your Game History.;You can continue playing the game or review your Game History.
+HISTORY;HISTORY
+Replay;Replay
+OK;OK
+FEATURES;FEATURES
+Autoplay stopped because loss limit was reached.;Autoplay stopped because loss limit was reached.

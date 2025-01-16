@@ -1,7 +1,7 @@
 using System.Threading.RateLimiting;
 using Microsoft.AspNetCore.RateLimiting;
 using Microsoft.EntityFrameworkCore;
-using PlaygroundDotNetAPI.Attributes;
+using PlaygroundDotNetAPI.ActionFilters;
 using PlaygroundDotNetAPI.Data;
 using PlaygroundDotNetAPI.Middleware;
 using PlaygroundDotNetAPI.Services;
@@ -16,7 +16,7 @@ if (allowedOrigins.Length == 0)
     throw new Exception("No AllowedOrigins specified");
 }
 
-var connectionStringSqlite = builder.Configuration.GetConnectionString("DefaultConnection");
+var connectionStringSqlite = builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'Default' not found.");
 var connectionType = builder.Configuration.GetRequiredSection("Db").GetValue<string>("Type");
 if (connectionType == "sqlite")
 {
@@ -102,5 +102,7 @@ app.UseCors(corsPolicy);
 app.UseAuthorization();
 
 app.MapControllers();
+
+// Split main translation file into individual files
 
 app.Run();

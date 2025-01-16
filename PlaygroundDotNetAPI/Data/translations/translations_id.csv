@@ -1,0 +1,110 @@
+﻿en;id
+SPIN;PUTAR
+Balance;Saldo
+PAYS;Session expired
+Bet;Taruhan
+Auto Spin;Putar Otomatis
+Turbo Spin;PUTARAN TURBO
+Game History;Riwayat Permainan
+BUY;BELI
+PLAY;MAIN
+FREE SPINS;SPIN GRATIS
+Launch Game History to see the results of previous games you've played;Buka Riwayat Permainan untuk melihat hasil permainan sebelumnya yang telah Anda mainkan
+Show More;Tampilkan Lebih Banyak
+START;MULAI
+STOP;BERHENTI
+Game(s) Ago;Permainan yang Lalu
+Some Error Occured, please reload your page;Terjadi Kesalahan, silakan muat ulang halaman Anda
+Round;Babak
+ will be charged from your balance; akan dikenakan biaya dari saldo Anda
+ Bet will be used in Feature and in game once Feature completes; Taruhan akan digunakan dalam Fitur dan dalam permainan setelah Fitur selesai
+CONFIRM;KONFIRMASI
+CREDIT VALUE;NILAI KREDIT
+HOLD SPACEBAR FOR TURBO SPIN;TEKAN BILAH SPASI UNTUK \n PUTARAN CEPAT
+Balance;Saldo
+WON;KEMENANGAN
+AUTO SPIN;PUTAR OTOMATIS
+Number of Spins;Jumlah Putaran
+TURBO SPIN ON;PUTARAN TURBO NYALA
+TURBO SPIN OFF;PUTARAN TURBO MATI
+LINES;BARIS
+BET\nMAX;MAX \nTARUHAN
+TOTAL WON;JUMLAH HADIAH
+UNTIL\nFEATURE;HINGGA \n FITUR
+Time;Waktu
+Net Position;Posisi Bayaran Bersih
+AUTO\nSPIN;PUTAR\nOTOMATIS
+CANCEL;BATALKAN
+Version;Versi
+CONGRATULATIONS!;CONGRATULATIONS!
+You have been awarded;Anda telah mendapatkan
+FREE SPINS!;SPIN GRATIS!
+CONTINUE;LANJUTKAN
+Freespins will be played at {0} per spin;Putaran gratis akan dimainkan pada {0} per putaran
+Pause;Jeda
+YOU HAVE WON;ANDA TELAH MEMENANGKAN
+THIS GAME IS CURRENTLY UNAVAILABLE.;PERMAINAN IN TIDAK TERSEDIA UNTUK SEMENTARA.
+TEMPORARY DIFFICULTIES, PLEASE TRY AGAIN LATER OR CONTACT SUPPORT IF PROBLEM PERSISTS.;GANGGUAN SEMENTARA, MOHON COBA BEBERAPA SAAT LAGI ATAU  HUBUNGI LAYANAN BANTUAN JIKA MASALAH TETAP BERLANJUT.
+YOUR GAME HAS TIMED OUT DUE TO AN EXTENDED PERIOD OF INACTIVITY.\n PLEASE RELOAD THE GAME TO CONTINUE PLAYING.;PERMAINAN ANDA TELAH TIME OUT DIKARENAKAN OLEH KETIDAKAKTIFAN. \nMOHON MEMUAT PERMAINAN KEMBALI UNTUK MELANJUTKAN PERMAINAN.
+YOU HAVE BEEN LOGGED OUT.;ANDA TELAH DI LOG OUT.
+Game exited to limit losses.;Permainan keluar untuk membatasi kekalahan.
+This game doesn’t support multiple windows open at once.\n In the event of a disconnection, please allow 60 seconds before re-opening the game so it will resume where you lost connection.;Permainan ini tidak mendukung untuk dibuka di banyak jendela secara bersamaan. Apabila terjadi pemutusan sambungan, tolong biarkan selama 60 detik sebelum kembali membuka permainan agar bisa melanjutkan dari saat kamu kehilangan sambungan.
+A new game session has been loaded with your account.;Satu sesi permainan yang baru telah dimuat dengan akun Anda
+This game is not available in your country;Permainan ini tidak tersedia di negara Anda
+WE WERE UNABLE TO PROCESS YOUR SESSION LIMIT REQUEST. THE SESSION LIMIT MESSAGE MAY BE DISPLAYED WHEN YOU RESTART YOUR GAME.;KAMI TIDAK DAPAT MEMPROSES PERMINTAAN BATAS SESI ANDA. PESAN BATAS SESI AKAN DITAMPILKAN KETIKA ANDA MENGULAN PERMAINAN.
+CANNOT PROCESS GAME REQUEST DUE TO REALITY CHECK.;TIDAK DAPAT MEMPROSES PERMINTAAN PERMAINAN DIKARENAKAN OLEH PENGECEKAN REALITA.
+YOUR CURRENT SESSION HAS BEEN CLOSED. THIS ACCOUNT HAS BEEN LOCKED.;SESI ANDA SAAT INI TELAH DITUTUP. AKUN INI TELAH TERKUNCI.
+YOUR SESSION HAS TIMED OUT. PLEASE TRY AGAIN.;SESI ANDA TELAH TIME OUT. MOHON COBA KEMBALI.
+Network Error;Kesalahan Jaringan
+BUY FEATURE ACTIVATED!;FITUR BELI TELAH DIAKTIFKAN!
+CLICK TO CHANGE BETWEEN COIN AND MONEY VIEW;KLIK UNTUK MENGUBAH ANTARA TAMPILAN KOIN DAN UANG
+RTP;RTP
+Max Win;Kemenangan Maksimum
+Mio.;Mio.
+Max Payout Reached!;Bayaran Maksimum Tercapai!
+Replay Initializing;Permainan Ulang Dimulai
+Replay Has Ended;Permainan Ulang Telah Berakhir
+Date;Tanggal
+Play Id;ID Permainan
+Win;Kemenangan
+YOUR ACCOUNT BALANCE IS TOO LOW TO PLACE THIS BET.;SALDO AKUN ANDA TERLALU RENDAH UNTUK MENEMPATKAN TARUHAN INI.
+Return To Player:;Kembali ke Pemain:
+Buy Feature:;Fitur Beli:
+UST;UST
+OK;OK
+Bad request;Bad request
+Invalid client IP;Invalid client IP
+Invalid country;Invalid country
+Jurisdiction not found;Jurisdiction not found
+Jurisdiction settings not found;Jurisdiction settings not found
+Invalid operator;Invalid operator
+Game not configured for the operator;Game not configured for the operator
+Game not enabled for the operator;Game not enabled for the operator
+Invalid game;Invalid game
+Invalid game status;Invalid game status
+Currency is not configured for the game;Currency is not configured for the game
+Invalid currency status;Invalid currency status
+Default currency not found;Default currency not found
+Invalid default currency status;Invalid default currency status
+Jurisdiction not configured for the game;Jurisdiction not configured for the game
+Invalid jurisdiction for the game;Invalid jurisdiction for the game
+Language not configured for the game;Language not configured for the game
+Invalid language status;Invalid language status
+Default language not found;Default language not found
+Default language status not valid;Default language status not valid
+Bet levels not found;Bet levels not found
+Integration not found;Integration not found
+Session expired;Session expired
+Game Engine Bad Response;Game Engine Bad Response
+Insufficient funds;Insufficient funds
+Internal error;Internal error
+Message;Message
+Start Balance;Start Balance
+End Balance;End Balance
+Your session has now exceeded;Your session has now exceeded
+You can continue playing the game or review your Game History.;You can continue playing the game or review your Game History.
+HISTORY;HISTORY
+Replay;Replay
+OK;OK
+FEATURES;FEATURES
+Autoplay stopped because loss limit was reached.;Autoplay stopped because loss limit was reached.

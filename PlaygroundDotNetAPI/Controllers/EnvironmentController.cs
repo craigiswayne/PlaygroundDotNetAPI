@@ -1,6 +1,6 @@
 ﻿using System.Net.Mime;
 using Microsoft.AspNetCore.Mvc;
-using PlaygroundDotNetAPI.Attributes;
+using PlaygroundDotNetAPI.ActionFilters;
 
 namespace PlaygroundDotNetAPI.Controllers;
 

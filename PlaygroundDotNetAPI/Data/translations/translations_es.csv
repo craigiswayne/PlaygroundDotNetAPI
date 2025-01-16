@@ -1,0 +1,110 @@
+﻿en;es
+SPIN;GIRO
+Balance;Saldo
+PAYS;PAGOS
+Bet;Apuesta
+Auto Spin;Autogiro
+Turbo Spin;TURBO GIRO
+Game History;Historial de juego
+BUY;COMPRAR
+PLAY;JUGAR
+FREE SPINS;GIROS GRATIS
+Launch Game History to see the results of previous games you've played;Abre el Historial de juego para ver los resultados de las partidas anteriores
+Show More;Mostrar más
+START;INICIAR
+STOP;PARO
+Game(s) Ago;Partida(s) atrás
+Some Error Occured, please reload your page;Ocurrió un error, vuelve a cargar la página
+Round;Ronda
+ will be charged from your balance; se descontarán de su saldo
+ Bet will be used in Feature and in game once Feature completes; Apuesta se usará en las funcionalidades y características del juego y en el juego cuando se cumplan las  funcionalidades y características
+CONFIRM;CONFIRMAR
+CREDIT VALUE;VALOR DEL CREDITO
+HOLD SPACEBAR FOR TURBO SPIN;ESPERE A LA BARRA DE ESPACIOS \n PARA EL TURBO GIRO
+Balance;Saldo
+WON;GANÓ
+AUTO SPIN;AUTOGIRO
+Number of Spins;Número de Giros
+TURBO SPIN ON;TURBO GIRO ENCENDIDO
+TURBO SPIN OFF;TURBA GIRO APAGADO
+LINES;LÍNEAS
+BET\nMAX;MÁXIMA \nAPUESTA
+TOTAL WON;TOTAL GANADO
+UNTIL\nFEATURE;HASTA LA \nFUNCIÓN
+Time;Hora
+Net Position;Posición neta
+AUTO\nSPIN;AUTO\nGIRO
+CANCEL;CANCELADO
+Version;Versión
+CONGRATULATIONS!;CONGRATULATIONS!
+You have been awarded;Has ganado
+FREE SPINS!;GIROS GRATIS!
+CONTINUE;CONTINUA
+Freespins will be played at {0} per spin;Los giros gratis tienen un valor de {0} por giro
+Pause;Pausar
+YOU HAVE WON;TÚ HAS GANADO
+THIS GAME IS CURRENTLY UNAVAILABLE.;ESTE JUEGO NO ESTÁ DISPONÍBLE ACTUALMENTE
+TEMPORARY DIFFICULTIES, PLEASE TRY AGAIN LATER OR CONTACT SUPPORT IF PROBLEM PERSISTS.;DIFICULTADES TEMPORALES, POR FAVO INTENTE OTRA VEZ MÁS  TARDE O CONTACTE A APOYO SI EL PROBLEMA PERSISTE.
+YOUR GAME HAS TIMED OUT DUE TO AN EXTENDED PERIOD OF INACTIVITY.\n PLEASE RELOAD THE GAME TO CONTINUE PLAYING.;TU JUEGO HA EXPIRADO EN TIEMPO DEBIDO AL PERÍODO EXTENDIDO DE INACTIVIDAD. \nPOR FAVOR RECARGUE EL JUEGO PARA CONTINUAR JUGANDO.
+YOU HAVE BEEN LOGGED OUT.;TU HAS SIDO SACADO.
+Game exited to limit losses.;El juego se cerró para limitar las pérdidas.
+This game doesn’t support multiple windows open at once.\n In the event of a disconnection, please allow 60 seconds before re-opening the game so it will resume where you lost connection.;Éste juego no soporta multiples ventanas abiertas a la vez. En caso de desconexión, espere por 60 segundos, antes de re-abrir el juego así el se reposicionará en donde perdiste la conexión
+A new game session has been loaded with your account.;La sesión de un nuevo juego ha sido cargada con su cuenta
+This game is not available in your country;Este juego no está disponible en tu país
+WE WERE UNABLE TO PROCESS YOUR SESSION LIMIT REQUEST. THE SESSION LIMIT MESSAGE MAY BE DISPLAYED WHEN YOU RESTART YOUR GAME.;ESTUVIMOS INHABILITADOS PARA PROCESAR TU SOLICITUD  DE LÍMITE DE SESIÓN. EL MENSAJE LÍMITE DE SESIÓN PUEDE SER MOSTRADO CUANDO RE-INICIES TU JUEGO.
+CANNOT PROCESS GAME REQUEST DUE TO REALITY CHECK.;NO SE PUEDE PROCESAR EL JUEGO REQUERIDO DEBIDO A LA VERIFICACIÓN DE LA REALIDAD
+YOUR CURRENT SESSION HAS BEEN CLOSED. THIS ACCOUNT HAS BEEN LOCKED.;TU SESIÓN ACTUAL HA SIDO CERRADA. ESTA CUENTA HA SIDO BLOCKEADA.
+YOUR SESSION HAS TIMED OUT. PLEASE TRY AGAIN.;TU SESIÓN HA EXPIRADO EN TIEMPO. POR FAVOR INTENTE OTRA VEZ.
+Network Error;Error de la red
+BUY FEATURE ACTIVATED!;¡COMPRA DE FUNCIONES ACTIVADA!
+CLICK TO CHANGE BETWEEN COIN AND MONEY VIEW;HAZ CLIC PARA CAMBIAR ENTRE LA VISTA DE MONEDAS Y DINERO
+RTP;RTP
+Max Win;Premio máximo
+Mio.;Mio.
+Max Payout Reached!;¡Pago máximo alcanzado!
+Replay Initializing;Iniciando reproducción
+Replay Has Ended;La repetición ha finalizado
+Date;Fecha
+Play Id;ID de juego
+Win;Premio
+YOUR ACCOUNT BALANCE IS TOO LOW TO PLACE THIS BET.;EL SALDO DE TU CUENTA ES MUY BAJO PARA COLOCAR ÉSTA APUESTA.
+Return To Player:;Retorno al jugador:
+Buy Feature:;Comprar Función:
+UST;UST
+OK;OK
+Bad request;Bad request
+Invalid client IP;Invalid client IP
+Invalid country;Invalid country
+Jurisdiction not found;Jurisdiction not found
+Jurisdiction settings not found;Jurisdiction settings not found
+Invalid operator;Invalid operator
+Game not configured for the operator;Game not configured for the operator
+Game not enabled for the operator;Game not enabled for the operator
+Invalid game;Invalid game
+Invalid game status;Invalid game status
+Currency is not configured for the game;Currency is not configured for the game
+Invalid currency status;Invalid currency status
+Default currency not found;Default currency not found
+Invalid default currency status;Invalid default currency status
+Jurisdiction not configured for the game;Jurisdiction not configured for the game
+Invalid jurisdiction for the game;Invalid jurisdiction for the game
+Language not configured for the game;Language not configured for the game
+Invalid language status;Invalid language status
+Default language not found;Default language not found
+Default language status not valid;Default language status not valid
+Bet levels not found;Bet levels not found
+Integration not found;Integration not found
+Session expired;Session expired
+Game Engine Bad Response;Game Engine Bad Response
+Insufficient funds;Insufficient funds
+Internal error;Internal error
+Message;Message
+Start Balance;Start Balance
+End Balance;End Balance
+Your session has now exceeded;Your session has now exceeded
+You can continue playing the game or review your Game History.;You can continue playing the game or review your Game History.
+HISTORY;HISTORY
+Replay;Replay
+OK;OK
+FEATURES;FEATURES
+Autoplay stopped because loss limit was reached.;Autoplay stopped because loss limit was reached.
