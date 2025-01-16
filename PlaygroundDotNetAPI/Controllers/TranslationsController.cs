@@ -15,6 +15,7 @@ public class TranslationsController : ControllerBase
 {
     // TODO
     // split up main csv into translation per lang
+    // order the resulting csv rows ASCENDINGLY, maybe order the main file then you don't have to do it for everyone
     [HttpGet("{languageIso}")]
     [ResponseCache(Duration = TimeHelper.OneMinuteInSeconds, Location = ResponseCacheLocation.Any)]
     [Produces(MediaTypeNames.Application.Json)]
