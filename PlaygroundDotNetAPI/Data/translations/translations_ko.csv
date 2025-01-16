@@ -1,0 +1,110 @@
+﻿en;ko
+SPIN;스핀
+Balance;보유금
+PAYS;페이
+Bet;베팅
+Auto Spin;자동 스핀
+Turbo Spin;터보 스핀
+Game History;게임 기록
+BUY;구매
+PLAY;플레이
+FREE SPINS;프리스핀
+Launch Game History to see the results of previous games you've played;플레이한 이전 게임의 결과를 보려면 게임 기록을 실행하세요
+Show More;더 보기
+START;시작
+STOP;중지
+Game(s) Ago;게임 전
+Some Error Occured, please reload your page;오류가 발생했습니다. 페이지를 새로고침하세요.
+Round;라운드
+ will be charged from your balance;<X>(이)가 잔액에서 청구됩니다.
+ Bet will be used in Feature and in game once Feature completes; 베팅을 사용할 수 있습 피처를 한번 갖추면 피처 및 인게임에서니다.
+CONFIRM;확인
+CREDIT VALUE;크레딧 가치
+HOLD SPACEBAR FOR TURBO SPIN;스페이스 바를 길\n게 눌러 터보 스핀
+Balance;보유금
+WON;우승
+AUTO SPIN;자동 스핀
+Number of Spins;스핀 수
+TURBO SPIN ON;터보 스핀 켜기
+TURBO SPIN OFF;터보 스핀 끄기
+LINES;라인
+BET\nMAX;최대 \n베팅
+TOTAL WON;총 우승
+UNTIL\nFEATURE;기능까지
+Time;시간
+Net Position;순포지션
+AUTO\nSPIN;자동\n스핀
+CANCEL;취소
+Version;버전
+CONGRATULATIONS!;축하합니다!
+You have been awarded;다음 항목을 받았습니다:
+FREE SPINS!;프리스핀!
+CONTINUE;계속하기
+Freespins will be played at {0} per spin;무료 스핀은 스핀당 {0}로 진행됩니다.
+Pause;일시 중지
+YOU HAVE WON;YOU HAVE WON
+THIS GAME IS CURRENTLY UNAVAILABLE.;이 게임은 일반적으로 사용 불가능하다.
+TEMPORARY DIFFICULTIES, PLEASE TRY AGAIN LATER OR CONTACT SUPPORT IF PROBLEM PERSISTS.;일시적인 오류 . 나중에 다시 시도하시거나 이 문제가 계속 지속된다면 '  고객 지원 ' 으로 문의 바랍니다 . 이 게임을 다시 할 수 있습니다 .
+YOUR GAME HAS TIMED OUT DUE TO AN EXTENDED PERIOD OF INACTIVITY.\n PLEASE RELOAD THE GAME TO CONTINUE PLAYING.;당신의 게임은 비활동의 장시간 기간 때문에 밖으로 시기를 정했다.\n 노는 계속되도록 게임에 다시 탄약을 재십시오.
+YOU HAVE BEEN LOGGED OUT.;로그아웃되었습니다
+Game exited to limit losses.;손실을 제한하기 위해 게임을 종료합니다.
+This game doesn’t support multiple windows open at once.\n In the event of a disconnection, please allow 60 seconds before re-opening the game so it will resume where you lost connection.;이 게임 내에서는 한 번에 여러 개의 창을 열 수 없습니다. 연결이 끊어진 경우, 60초 기다렸다가 게임을 다시 시작하세요. 연결이 끊어진 부분부터 다시 시작됩니다.
+A new game session has been loaded with your account.;새 게임 세션이 귀하의 계정으로 로드되었습니다
+This game is not available in your country;귀하의 국가에서 플레이할 수 없는 게임입니다.
+WE WERE UNABLE TO PROCESS YOUR SESSION LIMIT REQUEST. THE SESSION LIMIT MESSAGE MAY BE DISPLAYED WHEN YOU RESTART YOUR GAME.;세션 리미트 요청을 처리할 수 없습니다. 게임을 다시 시작할 때 세션 리미트 메시지나 나올 수 있습니다.
+CANNOT PROCESS GAME REQUEST DUE TO REALITY CHECK.;리얼리티 체크 때문에 게임 요청을 처리할 수 없습니다.
+YOUR CURRENT SESSION HAS BEEN CLOSED. THIS ACCOUNT HAS BEEN LOCKED.;현재 세션이 끝났습니다. 이 계정은 잠겼습니다.
+YOUR SESSION HAS TIMED OUT. PLEASE TRY AGAIN.;세션 시간이 초과되었습니다. 다시 시도하십시오.
+Network Error;네트워크 오류
+BUY FEATURE ACTIVATED!;구매 피처 활성화!
+CLICK TO CHANGE BETWEEN COIN AND MONEY VIEW;클릭하여 코인 뷰 또는 머니 뷰를 선택하세요
+RTP;RTP
+Max Win;최대 상금
+Mio.;Mio.
+Max Payout Reached!;최대 지급액에 도달했습니다!
+Replay Initializing;리플레이 초기화 중
+Replay Has Ended;리플레이가 종료되었습니다
+Date;날짜
+Play Id;플레이 ID
+Win;승리
+YOUR ACCOUNT BALANCE IS TOO LOW TO PLACE THIS BET.;귀하의 차감 잔고액이 너무 적어 이 베팅을 할 수 없습니다.
+Return To Player:;플레이어: {0}(으)로 복귀
+Buy Feature:;기능 구매:
+UST;UST
+OK;OK
+Bad request;Bad request
+Invalid client IP;Invalid client IP
+Invalid country;Invalid country
+Jurisdiction not found;Jurisdiction not found
+Jurisdiction settings not found;Jurisdiction settings not found
+Invalid operator;Invalid operator
+Game not configured for the operator;Game not configured for the operator
+Game not enabled for the operator;Game not enabled for the operator
+Invalid game;Invalid game
+Invalid game status;Invalid game status
+Currency is not configured for the game;Currency is not configured for the game
+Invalid currency status;Invalid currency status
+Default currency not found;Default currency not found
+Invalid default currency status;Invalid default currency status
+Jurisdiction not configured for the game;Jurisdiction not configured for the game
+Invalid jurisdiction for the game;Invalid jurisdiction for the game
+Language not configured for the game;Language not configured for the game
+Invalid language status;Invalid language status
+Default language not found;Default language not found
+Default language status not valid;Default language status not valid
+Bet levels not found;Bet levels not found
+Integration not found;Integration not found
+Session expired;Session expired
+Game Engine Bad Response;Game Engine Bad Response
+Insufficient funds;Insufficient funds
+Internal error;Internal error
+Message;Message
+Start Balance;Start Balance
+End Balance;End Balance
+Your session has now exceeded;Your session has now exceeded
+You can continue playing the game or review your Game History.;You can continue playing the game or review your Game History.
+HISTORY;HISTORY
+Replay;Replay
+OK;OK
+FEATURES;FEATURES
+Autoplay stopped because loss limit was reached.;Autoplay stopped because loss limit was reached.

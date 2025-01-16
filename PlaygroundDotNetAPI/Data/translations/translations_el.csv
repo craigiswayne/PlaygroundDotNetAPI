@@ -1,0 +1,110 @@
+﻿en;et
+SPIN;KEERUTA
+Balance;Saldo
+PAYS;VÕIDAB
+Bet;Panus
+Auto Spin;Automaatkeerutus
+Turbo Spin;TURBOKEERUTUS
+Game History;Mängude ajalugu
+BUY;OSTA
+PLAY;MÄNGI
+FREE SPINS;TASUTA KEERUTUSED
+Launch Game History to see the results of previous games you've played;Käivita mängude ajalugu, et näha eelmiste mängude tulemusi, mida oled mänginud
+Show More;Näita rohkem
+START;ALUSTA
+STOP;PEATA
+Game(s) Ago;Mäng(u) tagasi
+Some Error Occured, please reload your page;Tekkis viga, laadi leht uuesti
+Round;Voor
+ will be charged from your balance; võetakse tasu teie saldolt
+ Bet will be used in Feature and in game once Feature completes; Panust kasutatakse boonusvoorus ja põhimängus pärast boonusvooru lõppemist
+CONFIRM;KINNITA
+CREDIT VALUE;MÄNGUÜHIKU VÄÄRTUS
+HOLD SPACEBAR FOR TURBO SPIN;TURBOKEERUTUSEKS\n HOIDKE ALL TÜHIKUKLAHVI
+Balance;Saldo
+WON;VÕIT
+AUTO SPIN;AUTOKEERUTUS
+Number of Spins;Keerutuste arv
+TURBO SPIN ON;TURBOKEERUTUS SISSE
+TURBO SPIN OFF;TURBOKEERUTUS VÄLJA
+LINES;LIINID
+BET\nMAX;MAKSIMU\nMPANUS
+TOTAL WON;VÕIDUD KOKKU
+UNTIL\nFEATURE;KUNI \nBOONUSENI
+Time;Aeg
+Net Position;Netopositsioon
+AUTO\nSPIN;AUTO\nKEERUTUS
+CANCEL;TÜHISTA
+Version;Versioon
+CONGRATULATIONS!;ÕNNITLEME!
+You have been awarded;Oled saanud auhinna
+FREE SPINS!;TASUTA KEERUTUSED!
+CONTINUE;JÄTKA
+Freespins will be played at {0} per spin;Tasuta spinne mängitakse {0} spinni kohta
+Pause;Peata
+YOU HAVE WON;OLETE VÕITNUD
+THIS GAME IS CURRENTLY UNAVAILABLE.;SEE MÄNG EI OLE HETKEL SAADAVAL.
+TEMPORARY DIFFICULTIES, PLEASE TRY AGAIN LATER OR CONTACT SUPPORT IF PROBLEM PERSISTS.;AJUTINE TÕRGE. PROBLEEMI PÜSIDES PROOVIGE PALUN HILJEM  UUESTI VÕI VÕTKE ÜHENDUST MEIE KLIENDITOEGA.
+YOUR GAME HAS TIMED OUT DUE TO AN EXTENDED PERIOD OF INACTIVITY.\n PLEASE RELOAD THE GAME TO CONTINUE PLAYING.;TEIE MÄNG AEGUS KUNA TE EI TEINUD PIKAAJA VÄLTEL MIDAGI.\n MÄNGIMISE \nJÄTKAMISEKS TULEB MÄNG UUESTI LAADIDA.
+YOU HAVE BEEN LOGGED OUT.;TEID LOGITI VÄLJA.
+Game exited to limit losses.;Mäng lõpetati kaotuste piiramiseks.
+This game doesn’t support multiple windows open at once.\n In the event of a disconnection, please allow 60 seconds before re-opening the game so it will resume where you lost connection.;See mäng ei toeta mitme akna samaaegset avamist. Ühenduse katkemise korral oodake 60 sekundit enne mängu uuesti avamist, et see saaks jätkata ühenduse katkemisele eelnenud hetkest.
+A new game session has been loaded with your account.;Teie kontoga laaditi uus mängusessioon
+This game is not available in your country;See mäng pole sinu riigis saadaval
+WE WERE UNABLE TO PROCESS YOUR SESSION LIMIT REQUEST. THE SESSION LIMIT MESSAGE MAY BE DISPLAYED WHEN YOU RESTART YOUR GAME.;MEIL EI ÕNNESTUNUD TÖÖDELDA TEIE SESSIOONIPIIRANGU PÄRINGUT. MÄNGU TAASALUSTAMISEL VÕIDAKSE TEILE KUVADA SESSIOONI AJAPIIRANGU TEADE.
+CANNOT PROCESS GAME REQUEST DUE TO REALITY CHECK.;EI SAA MÄNGUSOOVI RAHULDADA REAALSUSKONTROLLI TÕTTU.
+YOUR CURRENT SESSION HAS BEEN CLOSED. THIS ACCOUNT HAS BEEN LOCKED.;TEIE MÄNGUSESSIOON SULETI. SEE KONTO ON BLOKEERITUD.
+YOUR SESSION HAS TIMED OUT. PLEASE TRY AGAIN.;TEIE SESSIOON ON AEGUNUD. PALUN PROOVIGE UUESTI.
+Network Error;Võrguviga
+BUY FEATURE ACTIVATED!;OSTETAV VOOR AKTIVEERITUD!
+CLICK TO CHANGE BETWEEN COIN AND MONEY VIEW;KLÕPSA MÜNTIDE JA RAHA VAATE VAHETAMISEKS
+RTP;RTP
+Max Win;Maksimaalne võit
+Mio.;Mio.
+Max Payout Reached!;Maksimaalne väljamakse saavutatud!
+Replay Initializing;Taasesituse alustamine
+Replay Has Ended;Taasesitus on lõppenud
+Date;Kuupäev
+Play Id;Mängu ID
+Win;Võit
+YOUR ACCOUNT BALANCE IS TOO LOW TO PLACE THIS BET.;TEIE SALDO ON LIIGA MADAL SELLE PANUSE TEGEMISEKS.
+Return To Player:;Kasum mängijale:
+Buy Feature:;Ostetav voor:
+UST;UST
+OK;OK
+Bad request;Bad request
+Invalid client IP;Invalid client IP
+Invalid country;Invalid country
+Jurisdiction not found;Jurisdiction not found
+Jurisdiction settings not found;Jurisdiction settings not found
+Invalid operator;Invalid operator
+Game not configured for the operator;Game not configured for the operator
+Game not enabled for the operator;Game not enabled for the operator
+Invalid game;Invalid game
+Invalid game status;Invalid game status
+Currency is not configured for the game;Currency is not configured for the game
+Invalid currency status;Invalid currency status
+Default currency not found;Default currency not found
+Invalid default currency status;Invalid default currency status
+Jurisdiction not configured for the game;Jurisdiction not configured for the game
+Invalid jurisdiction for the game;Invalid jurisdiction for the game
+Language not configured for the game;Language not configured for the game
+Invalid language status;Invalid language status
+Default language not found;Default language not found
+Default language status not valid;Default language status not valid
+Bet levels not found;Bet levels not found
+Integration not found;Integration not found
+Session expired;Session expired
+Game Engine Bad Response;Game Engine Bad Response
+Insufficient funds;Insufficient funds
+Internal error;Internal error
+Message;Message
+Start Balance;Start Balance
+End Balance;End Balance
+Your session has now exceeded;Your session has now exceeded
+You can continue playing the game or review your Game History.;You can continue playing the game or review your Game History.
+HISTORY;HISTORY
+Replay;Replay
+OK;OK
+FEATURES;FEATURES
+Autoplay stopped because loss limit was reached.;Autoplay stopped because loss limit was reached.

@@ -1,0 +1,110 @@
+﻿en;ru
+SPIN;ВРАЩЕНИЕ
+Balance;Баланс
+PAYS;ПЛАТЕЖИ
+Bet;Ставка
+Auto Spin;Авт. Вращ.
+Turbo Spin;ТУРБО ВРАЩЕНИЕ
+Game History;История игры
+BUY;КУПИТЬ
+PLAY;ИГРАТЬ
+FREE SPINS;БЕСП. ВРАЩЕНИЯ
+Launch Game History to see the results of previous games you've played;Запустите Историю игры для просмотра результатов ранее сыгранных вами игр
+Show More;Показать Больше
+START;НАЧАТЬ
+STOP;СТОП
+Game(s) Ago;Игр(ы) назад
+Some Error Occured, please reload your page;Произошла ошибка. Перезагрузите страницу
+Round;Раунд
+ will be charged from your balance; будет снято с вашего баланса
+ Bet will be used in Feature and in game once Feature completes; Ставка будет применяться во время действия функции, а также после ее завершения
+CONFIRM;ПОДТВЕРДИТЬ
+CREDIT VALUE;СТОИМОСТЬ В КРЕДИТАХ
+HOLD SPACEBAR FOR TURBO SPIN;ЗАЖАТЬ «ПРОБЕЛ»: \nТУРБОВРАЩЕНИЕ
+Balance;Баланс
+WON;ВЫИГРЫШ
+AUTO SPIN;АВТ. ВРАЩ.
+Number of Spins;Число вращений
+TURBO SPIN ON;ТУРБО ВРАЩЕНИЕ ВКЛ.
+TURBO SPIN OFF;ТУРБО ВРАЩЕНИЕ ВЫКЛ.
+LINES;ЛИНИИ
+BET\nMAX;МАКС. \nСТАВКА
+TOTAL WON;ИТОГО ВЫИГРЫШЕЙ
+UNTIL\nFEATURE;ДО ФУ\nНКЦИИ
+Time;Время
+Net Position;Нетто-позиция
+AUTO\nSPIN;АВТ.\nВРАЩ.
+CANCEL;ОТМЕНА
+Version;Версия
+CONGRATULATIONS!;ПОЗДРАВЛЯЕМ!
+You have been awarded;Вы получили
+FREE SPINS!;БЕСП. ВРАЩЕНИЯ!
+CONTINUE;ПРОДОЛЖИТЬ
+Freespins will be played at {0} per spin;Бесплатные вращения будут разыграны по {0} за вращение
+Pause;Пауза
+YOU HAVE WON;ВЫ ВЫИГРАЛИ
+THIS GAME IS CURRENTLY UNAVAILABLE.;ЭТА ИГРА СЕЙЧАС НЕДОСТУПНА.
+TEMPORARY DIFFICULTIES, PLEASE TRY AGAIN LATER OR CONTACT SUPPORT IF PROBLEM PERSISTS.;ВРЕМЕННЫЕ ТРУДНОСТИ, ПОПРОБУЙТЕ ЕЩЕ РАЗ ПОЗЖЕ ИЛИ ОБРАТИТЕСЬ  В СЛУЖБУ ПОДДЕРЖКИ, ЕСЛИ ПРОБЛЕМА НЕ ИСЧЕЗАЕТ.
+YOUR GAME HAS TIMED OUT DUE TO AN EXTENDED PERIOD OF INACTIVITY.\n PLEASE RELOAD THE GAME TO CONTINUE PLAYING.;ИЗ-ЗА ПРОДОЛЖИТЕЛЬНОГО БЕЗДЕЙСТВИЯ ВАША ИГРА ЗАВЕРШИЛАСЬ.\n ПЕРЕЗАГРУЗИТЕ ИГРУ, ЧТОБЫ ПРОДОЛЖИТЬ.
+YOU HAVE BEEN LOGGED OUT.;ВЫ ВЫШЛИ ИЗ УЧЕТНОЙ ЗАПИСИ.
+Game exited to limit losses.;Выход из игры для ограничения проигрыша.
+This game doesn’t support multiple windows open at once.\n In the event of a disconnection, please allow 60 seconds before re-opening the game so it will resume where you lost connection.;Эта игра не поддерживает одновременное открытие нескольких окон. В случае разъединения подождите 60 секунд, прежде чем открыть игру заново, и она перезапустится с момента потери соединения.
+A new game session has been loaded with your account.;С вашего аккаунта загружена новая игровая сессия
+This game is not available in your country;Эта игра недоступна в вашей стране
+WE WERE UNABLE TO PROCESS YOUR SESSION LIMIT REQUEST. THE SESSION LIMIT MESSAGE MAY BE DISPLAYED WHEN YOU RESTART YOUR GAME.;У НАС НЕ ПОЛУЧИЛОСЬ ОБРАБОТАТЬ ВАШ ЗАПРОС НА ОГРАНИЧЕНИЕ СЕАНСА. КОГДА ВЫ ПЕРЕЗАПУСТИТЕ ИГРУ, МОЖЕТ ПОЯВИТЬСЯ СООБЩЕНИЕ ОБ ОГРАНИЧЕНИИ СЕАНСА.
+CANNOT PROCESS GAME REQUEST DUE TO REALITY CHECK.;НЕВОЗМОЖНО ОБРАБОТАТЬ ЗАЯВКУ НА ИГРУ ИЗ-ЗА ПРОВЕРКИ РЕАЛЬНЫХ ДАННЫХ.
+YOUR CURRENT SESSION HAS BEEN CLOSED. THIS ACCOUNT HAS BEEN LOCKED.;ВАШ ТЕКУЩИЙ СЕАНС БЫЛ ЗАКРЫТ. ЭТА УЧЕТНАЯ ЗАПИСЬ БЫЛА ЗАБЛОКИРОВАНА.
+YOUR SESSION HAS TIMED OUT. PLEASE TRY AGAIN.;ВАШ СЕАНС ЗАВЕРШЕН. ПОПРОБУЙТЕ ЕЩЕ РАЗ.
+Network Error;Ошибка Сети
+BUY FEATURE ACTIVATED!;ФУНКЦИЯ «КУПИТЬ» АКТИВИРОВАНА!
+CLICK TO CHANGE BETWEEN COIN AND MONEY VIEW;НАЖМИТЕ, ЧТОБЫ ПЕРЕКЛЮЧИТЬСЯ МЕЖДУ ПРОСМОТРОМ МОНЕТ И ДЕНЕГ
+RTP;RTP
+Max Win;Макс. выигрыш
+Mio.;Mio.
+Max Payout Reached!;Достигнута макс. выплата!
+Replay Initializing;Инициализация Переигровки
+Replay Has Ended;Переигровка закончилась
+Date;Дата
+Play Id;ID игры
+Win;Выигрыш
+YOUR ACCOUNT BALANCE IS TOO LOW TO PLACE THIS BET.;БАЛАНС УЧЕТНОЙ ЗАПИСИ НЕДОСТАТОЧЕН ДЛЯ ЭТОЙ СТАВКИ.
+Return To Player:;Процент выплат игрокам:
+Buy Feature:;Купить Функцию:
+UST;UST
+OK;OK
+Bad request;Bad request
+Invalid client IP;Invalid client IP
+Invalid country;Invalid country
+Jurisdiction not found;Jurisdiction not found
+Jurisdiction settings not found;Jurisdiction settings not found
+Invalid operator;Invalid operator
+Game not configured for the operator;Game not configured for the operator
+Game not enabled for the operator;Game not enabled for the operator
+Invalid game;Invalid game
+Invalid game status;Invalid game status
+Currency is not configured for the game;Currency is not configured for the game
+Invalid currency status;Invalid currency status
+Default currency not found;Default currency not found
+Invalid default currency status;Invalid default currency status
+Jurisdiction not configured for the game;Jurisdiction not configured for the game
+Invalid jurisdiction for the game;Invalid jurisdiction for the game
+Language not configured for the game;Language not configured for the game
+Invalid language status;Invalid language status
+Default language not found;Default language not found
+Default language status not valid;Default language status not valid
+Bet levels not found;Bet levels not found
+Integration not found;Integration not found
+Session expired;Session expired
+Game Engine Bad Response;Game Engine Bad Response
+Insufficient funds;Insufficient funds
+Internal error;Internal error
+Message;Message
+Start Balance;Start Balance
+End Balance;End Balance
+Your session has now exceeded;Your session has now exceeded
+You can continue playing the game or review your Game History.;You can continue playing the game or review your Game History.
+HISTORY;HISTORY
+Replay;Replay
+OK;OK
+FEATURES;FEATURES
+Autoplay stopped because loss limit was reached.;Autoplay stopped because loss limit was reached.

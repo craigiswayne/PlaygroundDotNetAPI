@@ -1,0 +1,110 @@
+﻿en;tr
+SPIN;DÖNDÜR
+Balance;Bakiye
+PAYS;ÖDEMELER
+Bet;Bahis
+Auto Spin;Otomatik Dönme
+Turbo Spin;TURBO DÖNDÜRME
+Game History;Oyun Geçmişi
+BUY;SATIN AL
+PLAY;OYNA
+FREE SPINS;ÜCRETSİZ DÖNDÜRME
+Launch Game History to see the results of previous games you've played;Oynadığın önceki oyunların sonuçlarını görmek için Oyun Geçmişini başlat
+Show More;Daha Fazla Göster
+START;BAŞLA
+STOP;DURDUR
+Game(s) Ago;Oyun Önce
+Some Error Occured, please reload your page;Bazı Hatalar Oluştu. Lütfen sayfanızı yeniden yükleyin
+Round;Tur
+ will be charged from your balance; bakiyenizden düşülecek
+ Bet will be used in Feature and in game once Feature completes; Bahis Özellik tamamlandığında hem Özellikte hem de oyun içinde  kullanılacak
+CONFIRM;DOĞRULA
+CREDIT VALUE;KREDI DEĞERI
+HOLD SPACEBAR FOR TURBO SPIN;TURBO DÖNÜŞ İÇİN BOŞLUK\n TUŞUNU BASILI TUTUN
+Balance;Bakiye
+WON;KAZANILAN
+AUTO SPIN;OTO DÖNDÜR
+Number of Spins;Döndürme Sayısı
+TURBO SPIN ON;TURBO DÖNDÜRME AÇIK
+TURBO SPIN OFF;TURBO DÖNDÜRME KAPALI
+LINES;SIRALAR
+BET\nMAX;MAKS. \nBAHİS
+TOTAL WON;TOPLAM KAZANILAN
+UNTIL\nFEATURE;ÖZELLİĞE \nKADAR
+Time;Zaman
+Net Position;Net Pozisyon
+AUTO\nSPIN;OTO\nDÖNDÜR
+CANCEL;İPTAL
+Version;Sürüm
+CONGRATULATIONS!;TEBRİKLER!
+You have been awarded;Kazancınız:
+FREE SPINS!;ÜCRETSİZ DÖNDÜRME!
+CONTINUE;DEVAM
+Freespins will be played at {0} per spin;Ücretsiz döndürmeler, döndürme başına {0} olarak oynanır
+Pause;Duraklat
+YOU HAVE WON;MEVCUT KAZANILAN
+THIS GAME IS CURRENTLY UNAVAILABLE.;BU OYUN ŞU AN MEVCUT DEĞİL.
+TEMPORARY DIFFICULTIES, PLEASE TRY AGAIN LATER OR CONTACT SUPPORT IF PROBLEM PERSISTS.;GEÇİCİ ZORLUKLAR, LÜTFEN DAHA SONRA TEKRAR DENEYİN VE  SORUN DEVAM EDERSE DESTEK EKİBİ İLE İLETİŞİME GEÇİN
+YOUR GAME HAS TIMED OUT DUE TO AN EXTENDED PERIOD OF INACTIVITY.\n PLEASE RELOAD THE GAME TO CONTINUE PLAYING.;OYUNUNUZ UZUN SÜRE ETKİN OLMADIĞINIZ İÇİN ZAMAN AŞIMINA UĞRADI. LÜTFEN OYNAMAYA \nDEVAM ETMEK İÇİN OYUNU YENİDEN YÜKLEYİN.
+YOU HAVE BEEN LOGGED OUT.;ÇIKIŞ YAPTINIZ.
+Game exited to limit losses.;Kayıpları sınırlamak için oyundan çıktınız.
+This game doesn’t support multiple windows open at once.\n In the event of a disconnection, please allow 60 seconds before re-opening the game so it will resume where you lost connection.;Bu oyun aynı anda birden fazla pencereyi desteklemiyor. Bağlantı kesintisi durumunda, oyunu tekrar açmadan önce 60 saniye bekleyin, böylece bağlantıyı kaybettiğiniz yerden devam edebilirsiniz.
+A new game session has been loaded with your account.;Hesabınıza yeni bir oyun oturumu yüklendi
+This game is not available in your country;Bu oyun ülkenizde oynanamaz
+WE WERE UNABLE TO PROCESS YOUR SESSION LIMIT REQUEST. THE SESSION LIMIT MESSAGE MAY BE DISPLAYED WHEN YOU RESTART YOUR GAME.;OTURUM SINIRI TALEBİNİZİ İŞLEMİYORUZ. OYUNUNUZU YENİDEN BAŞLATTIĞINIZDA, OTURUM SINIRI MESAJI GÖRÜNTÜLENEBİLİR.
+CANNOT PROCESS GAME REQUEST DUE TO REALITY CHECK.;GERÇEKLİK KONTROLÜ NEDENİYLE OYUN İSTEĞİ İŞLENEMİYOR.
+YOUR CURRENT SESSION HAS BEEN CLOSED. THIS ACCOUNT HAS BEEN LOCKED.;MEVCUT OTURUMUNUZ KAPANDI. HESABINIZ KİLİTLENDİ.
+YOUR SESSION HAS TIMED OUT. PLEASE TRY AGAIN.;OTURUMUNUZ ZAMAN AŞIMINA UĞRADI. LÜTFEN TEKRAR DENEYİN.
+Network Error;Ağ Hatası
+BUY FEATURE ACTIVATED!;SATIN ALMA ÖZELLİĞİ ETKİNLEŞTİRİLDİ!
+CLICK TO CHANGE BETWEEN COIN AND MONEY VIEW;JETON VE PARA GÖRÜNÜMÜ ARASINDA GEÇİŞ YAPMAK İÇİN TIKLAYIN
+RTP;RTP
+Max Win;Maksimum Kazanç
+Mio.;Mio.
+Max Payout Reached!;Maksimum Kazanca Ulaşıldı!
+Replay Initializing;Yeniden Oynatma Başlatılıyor
+Replay Has Ended;Yeniden Oynatma Sona Erdi
+Date;Tarih
+Play Id;Oyun Kimliği
+Win;Kazanç
+YOUR ACCOUNT BALANCE IS TOO LOW TO PLACE THIS BET.;HESAP BAKİYENİZ BU BAHSİ OYNAMAK İÇİN ÇOK DÜŞÜK
+Return To Player:;Oyuncuya Dönen:
+Buy Feature:;Satın Alma Özelliği:
+UST;UST
+OK;OK
+Bad request;Bad request
+Invalid client IP;Invalid client IP
+Invalid country;Invalid country
+Jurisdiction not found;Jurisdiction not found
+Jurisdiction settings not found;Jurisdiction settings not found
+Invalid operator;Invalid operator
+Game not configured for the operator;Game not configured for the operator
+Game not enabled for the operator;Game not enabled for the operator
+Invalid game;Invalid game
+Invalid game status;Invalid game status
+Currency is not configured for the game;Currency is not configured for the game
+Invalid currency status;Invalid currency status
+Default currency not found;Default currency not found
+Invalid default currency status;Invalid default currency status
+Jurisdiction not configured for the game;Jurisdiction not configured for the game
+Invalid jurisdiction for the game;Invalid jurisdiction for the game
+Language not configured for the game;Language not configured for the game
+Invalid language status;Invalid language status
+Default language not found;Default language not found
+Default language status not valid;Default language status not valid
+Bet levels not found;Bet levels not found
+Integration not found;Integration not found
+Session expired;Session expired
+Game Engine Bad Response;Game Engine Bad Response
+Insufficient funds;Insufficient funds
+Internal error;Internal error
+Message;Message
+Start Balance;Start Balance
+End Balance;End Balance
+Your session has now exceeded;Your session has now exceeded
+You can continue playing the game or review your Game History.;You can continue playing the game or review your Game History.
+HISTORY;HISTORY
+Replay;Replay
+OK;OK
+FEATURES;FEATURES
+Autoplay stopped because loss limit was reached.;Autoplay stopped because loss limit was reached.

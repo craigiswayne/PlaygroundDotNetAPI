@@ -1,0 +1,110 @@
+﻿en;ja
+SPIN;スピン
+Balance;残高
+PAYS;ペイ
+Bet;ベット
+Auto Spin;自動ス ピン
+Turbo Spin;高速旋回
+Game History;ゲーム履歴
+BUY;購入
+PLAY;プレイ
+FREE SPINS;無料旋回
+Launch Game History to see the results of previous games you've played;ゲーム履歴を開いて以前にプレイしたゲームの結果を確認できます
+Show More;詳細表示
+START;開始
+STOP;ストップ
+Game(s) Ago;ゲーム前
+Some Error Occured, please reload your page;エラーが発生しました、ページを再読み込みしてください
+Round;ラウンド
+ will be charged from your balance; はお客様の残高から請求されます。
+ Bet will be used in Feature and in game once Feature completes; ベットは機能で使用され、機能が完了 するとゲームで使用されます。
+CONFIRM;確認
+CREDIT VALUE;クレジットバリュー
+HOLD SPACEBAR FOR TURBO SPIN;ターボスピンを目指し\nてスペースバーをホールドしてください
+Balance;残高
+WON;ウィン
+AUTO SPIN;自動スピン
+Number of Spins;スピンの数
+TURBO SPIN ON;高速旋回オン
+TURBO SPIN OFF;高速旋回オフ
+LINES;ライン
+BET\nMAX;最大ベ\n ット
+TOTAL WON;合計勝利
+UNTIL\nFEATURE;フィーチャ\n ーまで、
+Time;時間
+Net Position;ネットポジション
+AUTO\nSPIN;自動\nスピン
+CANCEL;キャンセル
+Version;バージョン
+CONGRATULATIONS!;CONGRATULATIONS!
+You have been awarded;獲得しました
+FREE SPINS!;無料旋回!
+CONTINUE;続ける
+Freespins will be played at {0} per spin;スピン１回につき{0}でフリースピンをプレイできます
+Pause;一時停止
+YOU HAVE WON;あなたは
+THIS GAME IS CURRENTLY UNAVAILABLE.;このゲームは現在利用できない。
+TEMPORARY DIFFICULTIES, PLEASE TRY AGAIN LATER OR CONTACT SUPPORT IF PROBLEM PERSISTS.;一時的にエラーが生じました。後ほどお試し頂くか、 サポートセンターにお問い合わせください。
+YOUR GAME HAS TIMED OUT DUE TO AN EXTENDED PERIOD OF INACTIVITY.\n PLEASE RELOAD THE GAME TO CONTINUE PLAYING.;あなたのゲームは延長不活動期間\nが原因で時間を計った。
+YOU HAVE BEEN LOGGED OUT.;ログアウトしました。
+Game exited to limit losses.;損失金額を制限するためにゲームを終了しました。
+This game doesn’t support multiple windows open at once.\n In the event of a disconnection, please allow 60 seconds before re-opening the game so it will resume where you lost connection.;このゲームは、同時に開いている複数のウィンドウを対応しません。通信が途切れた際はすぐにゲームを再起動させず、60秒ほどお待ち下さい。そうした場合、通信が途切れた場所からゲームを再開することができます。
+A new game session has been loaded with your account.;新しいゲームセッションがアカウントにロードされました。
+This game is not available in your country;このゲームはお住まいの国ではご利用いただけません
+WE WERE UNABLE TO PROCESS YOUR SESSION LIMIT REQUEST. THE SESSION LIMIT MESSAGE MAY BE DISPLAYED WHEN YOU RESTART YOUR GAME.;セッション制限の要請を処理できませんでした。セッション制限のメッセージがゲームの再開時に表示される可能性があります。
+CANNOT PROCESS GAME REQUEST DUE TO REALITY CHECK.;真偽の確認を理由にゲームを処理できません。
+YOUR CURRENT SESSION HAS BEEN CLOSED. THIS ACCOUNT HAS BEEN LOCKED.;お客様の現在のセッションが終了しました。このアカウントはロックされました。
+YOUR SESSION HAS TIMED OUT. PLEASE TRY AGAIN.;セッションがタイムアウトになりました。もう一度やり直してください
+Network Error;ネットワークエラー
+BUY FEATURE ACTIVATED!;購入機能が起動しました！
+CLICK TO CHANGE BETWEEN COIN AND MONEY VIEW;クリックしてコインビューと\nマネービューを切り替えます
+RTP;RTP
+Max Win;最大賞金
+Mio.;Mio.
+Max Payout Reached!;最大ペイアウトに到達！
+Replay Initializing;リプレイ初期化中
+Replay Has Ended;リプレイ終了
+Date;日付
+Play Id;プレイID
+Win;賞金
+YOUR ACCOUNT BALANCE IS TOO LOW TO PLACE THIS BET.;このベットをするには残高不足です。
+Return To Player:;プレーヤー {0} への払い戻し:
+Buy Feature:;購入機能:
+UST;UST
+OK;OK
+Bad request;Bad request
+Invalid client IP;Invalid client IP
+Invalid country;Invalid country
+Jurisdiction not found;Jurisdiction not found
+Jurisdiction settings not found;Jurisdiction settings not found
+Invalid operator;Invalid operator
+Game not configured for the operator;Game not configured for the operator
+Game not enabled for the operator;Game not enabled for the operator
+Invalid game;Invalid game
+Invalid game status;Invalid game status
+Currency is not configured for the game;Currency is not configured for the game
+Invalid currency status;Invalid currency status
+Default currency not found;Default currency not found
+Invalid default currency status;Invalid default currency status
+Jurisdiction not configured for the game;Jurisdiction not configured for the game
+Invalid jurisdiction for the game;Invalid jurisdiction for the game
+Language not configured for the game;Language not configured for the game
+Invalid language status;Invalid language status
+Default language not found;Default language not found
+Default language status not valid;Default language status not valid
+Bet levels not found;Bet levels not found
+Integration not found;Integration not found
+Session expired;Session expired
+Game Engine Bad Response;Game Engine Bad Response
+Insufficient funds;Insufficient funds
+Internal error;Internal error
+Message;Message
+Start Balance;Start Balance
+End Balance;End Balance
+Your session has now exceeded;Your session has now exceeded
+You can continue playing the game or review your Game History.;You can continue playing the game or review your Game History.
+HISTORY;HISTORY
+Replay;Replay
+OK;OK
+FEATURES;FEATURES
+Autoplay stopped because loss limit was reached.;Autoplay stopped because loss limit was reached.

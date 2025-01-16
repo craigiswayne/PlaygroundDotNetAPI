@@ -13,13 +13,13 @@
     },
     "UAT": {
       "commandName": "Project",
+      "dotnetRunMessages": true,
       "launchBrowser": true,
       "launchUrl": "environment",
       "applicationUrl": "https://localhost:7068;http://localhost:5281",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "UAT"
-      },
-      "dotnetRunMessages": true
+      }
     },
     "PROD": {
       "commandName": "Project",

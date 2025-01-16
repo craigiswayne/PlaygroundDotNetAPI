@@ -19,16 +19,24 @@
 
 #### With Local DLL
 ```shell
-dotnet clean
-dotnet nuget locals all --clear
-dotnet restore
-dotnet build --no-restore
-dotnet test --no-build --verbosity normal
-
 #ENVIRONMENT_NAME="Development";
-ENVIRONMENT_NAME="UAT"
-PROJECT_FILE="PlaygroundDotNetAPI/PlaygroundDotNetAPI.csproj"
+ENVIRONMENT_NAME="UAT";
+PROJECT_NAME="PlaygroundDotNetAPI";
+PROJECT_FILE="$PROJECT_NAME\$PROJECT_NAME.csproj";
+PUBLISH_PATH="publish";
+DLL_PATH="$PUBLISH_PATH\$PROJECT_NAME.dll"
+
+rmdir -r $PUBLISH_PATH;
+dotnet clean
+#dotnet nuget locals all --clear
+dotnet restore $PROJECT_FILE;
+dotnet build $PROJECT_FILE --configuration="$ENVIRONMENT_NAME" --no-restore;
+
+dotnet test --no-build --verbosity normal;
 dotnet watch run --environment=$ENVIRONMENT_NAME --project=$PROJECT_FILE;
+
+dotnet publish $PROJECT_FILE --configuration="$ENVIRONMENT_NAME" --output $PUBLISH_PATH;
+dotnet $DLL_PATH --configuration="$ENVIRONMENT_NAME" --no-build --environment="$ENVIRONMENT_NAME";
 # see here: https://learn.microsoft.com/en-us/aspnet/core/fundamentals/environments?view=aspnetcore-7.0
 ```
 
@@ -174,32 +182,7 @@ touch .github/workflows/build_and_test.yml
 ----
 
 ## Logging
-
-### HTTP Logging
-
-```csharp
-// Program.cs
-var builder = WebApplication.CreateBuilder(args);
-// HTTP Logging Part 1/2
-builder.Services.AddHttpLogging(o => { });
-//
-var app = builder.Build();
-// HTTP Logging Part 2/2
-app.UseHttpLogging();
-```
-
-And then in `appsettings.json`
-```json
-{
-  "Logging": {
-    "LogLevel": {
-      "Default": "Trace",
-      "Microsoft.AspNetCore": "Trace",
-      "Microsoft.AspNetCore.HttpLogging.HttpLoggingMiddleware": "Trace"
-    }
-  }
-}
-```
+* [Console](./wiki/logging-console.md)
 
 ### Microsoft Azure Application Insights
 See: https://learn.microsoft.com/en-us/azure/azure-monitor/app/asp-net-core?tabs=netcorenew
@@ -326,7 +309,21 @@ This will revert the database to that point in time.
 |------------|--------------------------------------------------------------------------------------------|
 | Migrations | Basically DB as Code. Allows you to use your code as the source of truth for the DB Schema |
 
+
 ----
+
+### Auth
+
+How to authenticate with Microsoft
+https://learn.microsoft.com/en-us/aspnet/core/security/authentication/social/microsoft-logins?view=aspnetcore-9.0
+
+To disable auth on a specific endpoint or controller use the following filter
+
+```csharp
+[AllowAnonymous]
+```
+
+---
 
 ### References:
 * https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-net
@@ -344,6 +341,8 @@ This will revert the database to that point in time.
 * [Log Settings](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/logging/?view=aspnetcore-8.0)
 
 ### TODO:
+* show how to use the `[AllowAnonymous]` tag
+* show how to use middleware to catch exceptions from endpoints
 * test cors
 * use caching
 * test caching
@@ -362,3 +361,4 @@ This will revert the database to that point in time.
 * versioning from pipeline
 * reusableWorkflowCallJob in github workflow
 * test action filter attributes
+* Google Tag Tracking

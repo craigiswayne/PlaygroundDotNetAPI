@@ -1,0 +1,110 @@
+﻿en;sv
+SPIN;SPINN
+Balance;Saldo
+PAYS;UTBETALAR
+Bet;Insats
+Auto Spin;Auto snurr
+Turbo Spin;TURBOSPINN
+Game History;Spelhistorik
+BUY;KÖP
+PLAY;SPELA
+FREE SPINS;GRATISSPINN
+Launch Game History to see the results of previous games you've played;Öppna spelhistoriken för att se resultatet av tidigare spel du har spelat
+Show More;Visa mer
+START;START
+STOP;STOPP
+Game(s) Ago;Spel sedan
+Some Error Occured, please reload your page;Ett fel uppstod. Ladda om sidan
+Round;Runda
+ will be charged from your balance; debiteras från ditt saldo
+ Bet will be used in Feature and in game once Feature completes; Insatsen kommer att användas i Feature och i spelet när Feature är klar
+CONFIRM;BEKRÄFTA
+CREDIT VALUE;KREDITVÄRDE
+HOLD SPACEBAR FOR TURBO SPIN;HÅLL MELLANSLAG FÖR TURBO-SPIN
+Balance;Saldo
+WON;VUNNA
+AUTO SPIN;AUTOSPINN
+Number of Spins;Antal spel
+TURBO SPIN ON;TURBOSPINN PÅ
+TURBO SPIN OFF;TURBOSPINN AV
+LINES;LINJER
+BET\nMAX;SATSA \nMAX
+TOTAL WON;VINST TOTALT
+UNTIL\nFEATURE;TILL \nFUNKTION
+Time;Tid
+Net Position;Nettoposition
+AUTO\nSPIN;AUTO\nSPINN
+CANCEL;AVBRYT
+Version;Version
+CONGRATULATIONS!;GRATTIS!
+You have been awarded;Du har tilldelats
+FREE SPINS!;GRATISSPINN!
+CONTINUE;FORTSÄTT
+Freespins will be played at {0} per spin;Gratissnurr spelas med {0} per snurr
+Pause;Paus
+YOU HAVE WON;DU HAR VUNNIT
+THIS GAME IS CURRENTLY UNAVAILABLE.;SPELET ÄR INTE TILLGÄNGLIGT JUST NU.
+TEMPORARY DIFFICULTIES, PLEASE TRY AGAIN LATER OR CONTACT SUPPORT IF PROBLEM PERSISTS.;TILLFÄLLIGT FEL, FÖRSÖK GÄRNA IGEN LITE SENARE  ELLER KONTAKTA SUPPORTEN OM PROBLEMET KVARSTÅR.
+YOUR GAME HAS TIMED OUT DUE TO AN EXTENDED PERIOD OF INACTIVITY.\n PLEASE RELOAD THE GAME TO CONTINUE PLAYING.;DITT SPEL HAR AVBRUTITS TILL FÖLJD AV EN LÄNGRE \nTIDS INAKTIVITET. LÄS IN SPELET PÅ NYTT FÖR ATT FORTSÄTTA SPELA.
+YOU HAVE BEEN LOGGED OUT.;DU HAR BLIVIT UTLOGGAD.
+Game exited to limit losses.;Spelet avslutades för att begränsa förluster.
+This game doesn’t support multiple windows open at once.\n In the event of a disconnection, please allow 60 seconds before re-opening the game so it will resume where you lost connection.;Det här spelet stöder inte flera öppna fönster samtidigt. I händelse av avstängning, vänligen vänta 60 sekunder innan du öppnar spelet igen, så kommer det att fortsätta där du förlorade anslutningen.
+A new game session has been loaded with your account.;En ny spel-session har laddats i ditt konto
+This game is not available in your country;Spelet är inte tillgängligt i ditt land
+WE WERE UNABLE TO PROCESS YOUR SESSION LIMIT REQUEST. THE SESSION LIMIT MESSAGE MAY BE DISPLAYED WHEN YOU RESTART YOUR GAME.;VI KUNDE INTE UTFÖRA DIN BEGÄRAN OM SESSIONSBEGRÄNSNING. ETT MEDDELANDE OM SESSIONSBEGRÄNSNING KAN VISAS NÄR DU STARTAR OM SPELET.
+CANNOT PROCESS GAME REQUEST DUE TO REALITY CHECK.;SPELBEGÄRAN KAN INTE UTFÖRAS PÅ GRUND AV VERKLIGHETSKOLL.
+YOUR CURRENT SESSION HAS BEEN CLOSED. THIS ACCOUNT HAS BEEN LOCKED.;DEN AKTUELLA SESSIONEN HAR AVSLUTATS. DET HÄR KONTOT ÄR LÅST.
+YOUR SESSION HAS TIMED OUT. PLEASE TRY AGAIN.;DIN SESSION HAR AVBRUTITS P.G.A. ATT TIDSGRÄNSEN UPPNÅTTS. FÖRSÖK GÄRNA IGEN.
+Network Error;Nätverksfel
+BUY FEATURE ACTIVATED!;KÖP FUNKTIONEN AKTIVERAD!
+CLICK TO CHANGE BETWEEN COIN AND MONEY VIEW;KLICKA FÖR ATT VÄXLA MELLAN VY FÖR MYNT OCH PENGAR
+RTP;RTP
+Max Win;Maxvinst
+Mio.;Mio.
+Max Payout Reached!;Maximal utbetalning nådd!
+Replay Initializing;Repris initieras
+Replay Has Ended;Repris avslutad
+Date;Datum
+Play Id;Spel-ID
+Win;Vinst
+YOUR ACCOUNT BALANCE IS TOO LOW TO PLACE THIS BET.;DITT KONTOSALDO ÄR FÖR LÅGT FÖR DEN HÄR INSATSEN.
+Return To Player:;Återgå till spelare:
+Buy Feature:;Köpfunktion:
+UST;UST
+OK;OK
+Bad request;Bad request
+Invalid client IP;Invalid client IP
+Invalid country;Invalid country
+Jurisdiction not found;Jurisdiction not found
+Jurisdiction settings not found;Jurisdiction settings not found
+Invalid operator;Invalid operator
+Game not configured for the operator;Game not configured for the operator
+Game not enabled for the operator;Game not enabled for the operator
+Invalid game;Invalid game
+Invalid game status;Invalid game status
+Currency is not configured for the game;Currency is not configured for the game
+Invalid currency status;Invalid currency status
+Default currency not found;Default currency not found
+Invalid default currency status;Invalid default currency status
+Jurisdiction not configured for the game;Jurisdiction not configured for the game
+Invalid jurisdiction for the game;Invalid jurisdiction for the game
+Language not configured for the game;Language not configured for the game
+Invalid language status;Invalid language status
+Default language not found;Default language not found
+Default language status not valid;Default language status not valid
+Bet levels not found;Bet levels not found
+Integration not found;Integration not found
+Session expired;Session expired
+Game Engine Bad Response;Game Engine Bad Response
+Insufficient funds;Insufficient funds
+Internal error;Internal error
+Message;Message
+Start Balance;Start Balance
+End Balance;End Balance
+Your session has now exceeded;Your session has now exceeded
+You can continue playing the game or review your Game History.;You can continue playing the game or review your Game History.
+HISTORY;HISTORY
+Replay;Replay
+OK;OK
+FEATURES;FEATURES
+Autoplay stopped because loss limit was reached.;Autoplay stopped because loss limit was reached.
