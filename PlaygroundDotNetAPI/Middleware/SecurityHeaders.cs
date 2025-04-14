@@ -2,21 +2,12 @@
 
 namespace PlaygroundDotNetAPI.Middleware;
 
-public class SecurityHeadersMiddleware
+public class SecurityHeadersMiddleware(RequestDelegate next, IConfiguration configuration)
 {
-    private readonly RequestDelegate _next;
-    public IConfiguration _configuration;
-
-    public SecurityHeadersMiddleware(RequestDelegate next, IConfiguration configuration)
-    {
-        _next = next;
-        _configuration = configuration;
-    }
-
     public async Task InvokeAsync(HttpContext context)
     {
         NameValueCollection headersToAdd = new NameValueCollection();
-        headersToAdd["Access-Control-Allow-Origin"] = _configuration["AllowedOrigins"];
+        headersToAdd["Access-Control-Allow-Origin"] = configuration["AllowedOrigins"];
         headersToAdd["Content-Security-Policy"] = "default-src 'self';";
         headersToAdd["Permissions-Policy"] = "accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), usb=()";
         headersToAdd["Referrer-Policy"] = "same-origin";
@@ -31,10 +22,10 @@ public class SecurityHeadersMiddleware
                 continue;
             }
 
-            context.Response.Headers.Add(header, headersToAdd[header]);
+            context.Response.Headers.Append(header, headersToAdd[header]);
         }
 
-        string[] headersToRemove = new string[]{
+        string[] headersToRemove = {
             "X-Powered-By",
         };
 
@@ -47,7 +38,7 @@ public class SecurityHeadersMiddleware
         }
 
 
-        await _next(context);
+        await next(context);
     }
 }
 

@@ -7,17 +7,17 @@ EXPOSE 8080
 EXPOSE 8081
 
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
-ARG BUILD_CONFIGURATION=Release
+ARG BUILD_CONFIGURATION=Development
 WORKDIR /src
 COPY ["PlaygroundDotNetAPI/PlaygroundDotNetAPI.csproj", "PlaygroundDotNetAPI/"]
 RUN dotnet restore "./PlaygroundDotNetAPI/PlaygroundDotNetAPI.csproj"
 COPY . .
 WORKDIR "/src/PlaygroundDotNetAPI"
-RUN dotnet build "./PlaygroundDotNetAPI.csproj" -c $BUILD_CONFIGURATION -o /app/build
+RUN dotnet build "./PlaygroundDotNetAPI.csproj" --configuration Development -o /app/build
 
 FROM build AS publish
-ARG BUILD_CONFIGURATION=Release
-RUN dotnet publish "./PlaygroundDotNetAPI.csproj" -c $BUILD_CONFIGURATION -o /app/publish /p:UseAppHost=false
+ARG BUILD_CONFIGURATION=Development
+RUN dotnet publish "./PlaygroundDotNetAPI.csproj" --configuration Development -o /app/publish /p:UseAppHost=false
 
 FROM base AS final
 WORKDIR /app

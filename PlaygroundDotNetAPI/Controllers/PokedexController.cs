@@ -8,7 +8,6 @@ namespace PlaygroundDotNetAPI.Controllers;
 
 [ApiController]
 [EnableRateLimiting("fixed-window")]
-// [LogActionFilter] // TODO
 [Route("[controller]")]
 public class PokedexController(IPokedexService pokedexService) : ControllerBase
 {
