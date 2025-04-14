@@ -10,16 +10,10 @@ namespace PlaygroundDotNetAPI.Controllers;
 [EnableRateLimiting("fixed-window")]
 // [LogActionFilter] // TODO
 [Route("[controller]")]
-public class PokedexController : ControllerBase
+public class PokedexController(IPokedexService pokedexService) : ControllerBase
 {
     // TODO: Custom ControllerBase
     // TODO: Custom ControllerBase for logging
-    private readonly IPokedexService _pokedexService;
-
-    public PokedexController(IPokedexService pokedexService)
-    {
-        _pokedexService = pokedexService;
-    }
 
     [HttpGet]
     [Produces(MediaTypeNames.Application.Json)]
@@ -27,15 +21,23 @@ public class PokedexController : ControllerBase
     [ProducesResponseType(StatusCodes.Status204NoContent)]
     public ActionResult<List<Pokemon>> List()
     {
-        var pokemon = _pokedexService.List();
+        var pokemon = pokedexService.List();
 
         if (!pokemon.Any())
         {
-            return StatusCode(StatusCodes.Status204NoContent);
+            return NoContent();
         }
         else
         {
             return Ok(pokemon);
         }
+    }
+
+    [HttpPatch]
+    [Produces(MediaTypeNames.Application.Json)]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    public ActionResult<Pokemon> Update([FromBody] Pokemon pokemon)
+    {
+        return Ok(pokedexService.Get(pokemon.Id));
     }
 }

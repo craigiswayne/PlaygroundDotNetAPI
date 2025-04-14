@@ -13,7 +13,7 @@ if (allowedOrigins == null || allowedOrigins.Length == 0)
     throw new Exception("No AllowedOrigins specified");
 }
 
-var connectionStringSqlite = builder.Configuration.GetConnectionString("DefaultConnection");
+var connectionStringSqlite = builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'Default' not found.");
 var connectionType = builder.Configuration.GetSection("Db").GetValue<string>("Type");
 if (connectionType == "sqlite")
 {

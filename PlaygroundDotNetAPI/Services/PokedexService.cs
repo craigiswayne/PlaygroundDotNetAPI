@@ -6,19 +6,18 @@ namespace PlaygroundDotNetAPI.Services;
 public interface IPokedexService
 {
     IQueryable<Pokemon> List();
+    ValueTask<Pokemon?> Get(int pokemonId);
 }
 
-public class PokedexService: IPokedexService
+public class PokedexService(MyDbContextSqLite dbContext) : IPokedexService
 {
-    private readonly MyDbContextSqLite _dbContext;
-
-    public PokedexService(MyDbContextSqLite dbContext)
+    public ValueTask<Pokemon?> Get(int pokemonId)
     {
-        _dbContext = dbContext;
+        return dbContext.Pokedex.FindAsync(pokemonId);
     }
-    
+
     public IQueryable<Pokemon> List()
     {
-        return _dbContext.Pokedex.OrderBy(columns => columns.Id).Skip(0).Take(5);
+        return dbContext.Pokedex.OrderBy(columns => columns.Id).Skip(0).Take(5);
     }
 }
