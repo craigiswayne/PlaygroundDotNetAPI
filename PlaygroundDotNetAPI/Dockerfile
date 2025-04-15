@@ -4,11 +4,14 @@ USER app
 WORKDIR /app
 
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
+ENV PATH $PATH:/root/.dotnet/tools
 WORKDIR /src
 COPY ["PlaygroundDotNetAPI/PlaygroundDotNetAPI.csproj", "PlaygroundDotNetAPI/"]
 RUN dotnet restore "PlaygroundDotNetAPI/PlaygroundDotNetAPI.csproj"
 COPY . .
 WORKDIR "/src/PlaygroundDotNetAPI"
+RUN dotnet tool install --global dotnet-ef
+RUN dotnet-ef database update -p ./PlaygroundDotNetAPI.csproj
 RUN dotnet build "PlaygroundDotNetAPI.csproj" --configuration Release -o /app/build
 
 FROM build AS publish
