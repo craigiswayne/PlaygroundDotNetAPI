@@ -1,6 +1,7 @@
 using System.Threading.RateLimiting;
 using Microsoft.AspNetCore.RateLimiting;
 using Microsoft.EntityFrameworkCore;
+using PlaygroundDotNetAPI.ActionFilters;
 using PlaygroundDotNetAPI.Data;
 using PlaygroundDotNetAPI.Middleware;
 using PlaygroundDotNetAPI.Services;
@@ -16,17 +17,21 @@ if (allowedOrigins == null || allowedOrigins.Length == 0)
 }
 
 var connectionStringSqlite = builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'Default' not found.");
-var connectionType = builder.Configuration.GetSection("Db").GetValue<string>("Type");
+var connectionType = builder.Configuration.GetRequiredSection("Db").GetValue<string>("Type");
 if (connectionType == "sqlite")
 {
     builder.Services.AddDbContext<MyDbContextSqLite>(options => options.UseSqlite(connectionStringSqlite));
 }
 
 builder.Services.AddScoped<IPokedexService, PokedexService>();
+builder.Services.Configure<RouteOptions>(options =>
+{
+    options.LowercaseUrls = true;
+});
 
 builder.WebHost.UseKestrel(option => option.AddServerHeader = false);
 
-var corsPolicy = "DefaultPolicy";
+const string corsPolicy = "DefaultPolicy";
 builder.Services.AddCors(options =>
 {
     options.AddPolicy(name: corsPolicy,
@@ -38,6 +43,20 @@ builder.Services.AddCors(options =>
 
 // Add services to the container.
 builder.Services.AddControllers();
+
+// The following line enables Application Insights telemetry collection.
+var appInsightsConnectionString = builder.Configuration.GetRequiredSection("ApplicationInsights").GetValue<string>("ConnectionString");
+builder.Services.AddApplicationInsightsTelemetry(options =>
+{
+    options.ConnectionString = appInsightsConnectionString;
+    options.EnableDebugLogger = true;  // Get real-time logs
+    options.EnableAdaptiveSampling = false;  // Keep all dat data, no sampling here
+});
+
+builder.Services.AddControllers(options =>
+{
+    options.Filters.Add<ApplicationInsightsActionFilter>(); // Globally applying the filter
+});
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
