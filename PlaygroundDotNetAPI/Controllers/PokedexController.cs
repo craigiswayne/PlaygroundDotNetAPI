@@ -11,6 +11,8 @@ namespace PlaygroundDotNetAPI.Controllers;
 [Route("[controller]")]
 public class PokedexController(IPokedexService pokedexService) : ControllerBase
 {
+    // TODO: Custom ControllerBase
+    // TODO: Custom ControllerBase for logging
 
     [HttpGet]
     [Produces(MediaTypeNames.Application.Json)]
@@ -22,9 +24,19 @@ public class PokedexController(IPokedexService pokedexService) : ControllerBase
 
         if (!pokemon.Any())
         {
-            return StatusCode(StatusCodes.Status204NoContent);
+            return NoContent();
         }
+        else
+        {
+            return Ok(pokemon);
+        }
+    }
 
-        return Ok(pokemon);
+    [HttpPatch]
+    [Produces(MediaTypeNames.Application.Json)]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    public ActionResult<Pokemon> Update([FromBody] Pokemon pokemon)
+    {
+        return Ok(pokedexService.Get(pokemon.Id));
     }
 }

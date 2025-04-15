@@ -1,7 +1,7 @@
 using System.Threading.RateLimiting;
 using Microsoft.AspNetCore.RateLimiting;
 using Microsoft.EntityFrameworkCore;
-using PlaygroundDotNetAPI.Attributes;
+using PlaygroundDotNetAPI.ActionFilters;
 using PlaygroundDotNetAPI.Data;
 using PlaygroundDotNetAPI.Middleware;
 using PlaygroundDotNetAPI.Services;
@@ -10,25 +10,24 @@ var builder = WebApplication.CreateBuilder(args);
 // HTTP Logging Part 1/2
 builder.Services.AddHttpLogging(o => { });
 
-var allowedOrigins = builder.Configuration.GetRequiredSection("AllowedOrigins").Get<string[]>() ?? [];
-if (allowedOrigins.Length == 0)
+var allowedOrigins = builder.Configuration.GetRequiredSection("AllowedOrigins").Get<string[]>();
+if (allowedOrigins == null || allowedOrigins.Length == 0)
 {
     throw new Exception("No AllowedOrigins specified");
 }
 
-var connectionStringSqlite = builder.Configuration.GetConnectionString("DefaultConnection");
+var connectionStringSqlite = builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'Default' not found.");
 var connectionType = builder.Configuration.GetRequiredSection("Db").GetValue<string>("Type");
 if (connectionType == "sqlite")
 {
     builder.Services.AddDbContext<MyDbContextSqLite>(options => options.UseSqlite(connectionStringSqlite));
 }
 
+builder.Services.AddScoped<IPokedexService, PokedexService>();
 builder.Services.Configure<RouteOptions>(options =>
 {
-   options.LowercaseUrls = true;
+    options.LowercaseUrls = true;
 });
-
-builder.Services.AddScoped<IPokedexService, PokedexService>();
 
 builder.WebHost.UseKestrel(option => option.AddServerHeader = false);
 
@@ -42,6 +41,9 @@ builder.Services.AddCors(options =>
         });
 });
 
+// Add services to the container.
+builder.Services.AddControllers();
+
 // The following line enables Application Insights telemetry collection.
 var appInsightsConnectionString = builder.Configuration.GetRequiredSection("ApplicationInsights").GetValue<string>("ConnectionString");
 builder.Services.AddApplicationInsightsTelemetry(options =>
@@ -51,8 +53,6 @@ builder.Services.AddApplicationInsightsTelemetry(options =>
     options.EnableAdaptiveSampling = false;  // Keep all dat data, no sampling here
 });
 
-
-// Add services to the container.
 builder.Services.AddControllers(options =>
 {
     options.Filters.Add<ApplicationInsightsActionFilter>(); // Globally applying the filter

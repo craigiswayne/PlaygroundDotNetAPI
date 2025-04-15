@@ -6,17 +6,15 @@ public class SecurityHeadersMiddleware(RequestDelegate next, IConfiguration conf
 {
     public async Task InvokeAsync(HttpContext context)
     {
-        var headersToAdd = new NameValueCollection
-        {
-            ["Access-Control-Allow-Origin"] = configuration["AllowedOrigins"],
-            ["Content-Security-Policy"] = "default-src 'self';",
-            ["Permissions-Policy"] = "accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), usb=()",
-            ["Referrer-Policy"] = "same-origin",
-            ["X-Content-Type-Options"] = "nosniff",
-            ["X-Frame-Options"] = "DENY",
-            ["X-Permitted-Cross-Domain-Policies"] = "none",
-            ["X-Xss-Protection"] = "1; mode=block"
-        };
+        NameValueCollection headersToAdd = new NameValueCollection();
+        headersToAdd["Access-Control-Allow-Origin"] = configuration["AllowedOrigins"];
+        headersToAdd["Content-Security-Policy"] = "default-src 'self';";
+        headersToAdd["Permissions-Policy"] = "accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), usb=()";
+        headersToAdd["Referrer-Policy"] = "same-origin";
+        headersToAdd["X-Content-Type-Options"] = "nosniff";
+        headersToAdd["X-Frame-Options"] = "DENY";
+        headersToAdd["X-Permitted-Cross-Domain-Policies"] = "none";
+        headersToAdd["X-Xss-Protection"] = "1; mode=block";
 
         foreach (string header in headersToAdd)
         {
@@ -27,12 +25,11 @@ public class SecurityHeadersMiddleware(RequestDelegate next, IConfiguration conf
             context.Response.Headers.Append(header, headersToAdd[header]);
         }
 
-        string[] headersToRemove =
-        [
-            "X-Powered-By"
-        ];
+        string[] headersToRemove = {
+            "X-Powered-By",
+        };
 
-        foreach (var header in headersToRemove)
+        foreach (string header in headersToRemove)
         {
             if (!context.Response.Headers.ContainsKey(header)){
                 continue;

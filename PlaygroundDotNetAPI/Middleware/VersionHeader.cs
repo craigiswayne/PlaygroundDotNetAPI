@@ -1,4 +1,4 @@
-﻿namespace PlaygroundDotNetAPI.Middleware;
+namespace PlaygroundDotNetAPI.Middleware;
 
 public class VersionHeaderMiddleware(RequestDelegate next, IConfiguration configuration)
 {
