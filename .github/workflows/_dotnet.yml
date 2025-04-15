@@ -1,0 +1,88 @@
+# https://github.com/marketplace/actions/build-and-push-docker-images
+name: "[.NET] Build & Test"
+
+on:
+  workflow_call:
+    inputs:
+      project_path:
+        required: true
+        type: string
+      configuration:
+        required: false
+        type: string
+        default: 'Release'
+      publish_path:
+        required: false
+        type: string
+        default: './publish'
+      test:
+        required: false
+        type: boolean
+        default: true
+      publish:
+        required: false
+        type: boolean
+        default: true
+      environment:
+        required: false
+        type: string
+        default: ''
+
+jobs:
+  dotnet:
+    runs-on: ubuntu-latest
+    environment: ${{ inputs.environment }}
+    timeout-minutes: 5
+    strategy:
+      matrix:
+        dotnet-version: [ '8.0.x' ]
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: ${{ matrix.dotnet-version }}
+
+      - name: Display dotnet version
+        id: dotnet_version
+        run: dotnet --version
+
+      - name: Cache
+        uses: actions/cache@v4
+        with:
+          path: ~/.nuget/packages
+          key: ${{ runner.os }}-nuget-${{ matrix.dotnet-version }}-${{ hashFiles('**/*.csproj') }}
+          restore-keys: |
+            ${{ runner.os }}-nuget
+
+      - name: Restore dependencies
+        run: dotnet restore
+
+      - name: Build
+        run: dotnet build --no-restore ${{ inputs.project_path }} --configuration ${{ inputs.configuration }}
+
+      - name: Test
+        if: inputs.test == true
+        run: dotnet test --verbosity normal
+
+      - name: Publish
+        if: inputs.publish == true
+        run: dotnet publish --configuration ${{ inputs.configuration }} -o ${{ inputs.publish_path }} --project ${{ inputs.project_path }}
+
+      # https://docs.github.com/en/actions/writing-workflows/choosing-what-your-workflow-does/storing-and-sharing-data-from-a-workflow
+      - name: Create Build Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          #          name: build-${{ matrix.dotnet-version }}-${{github.run_id}}-${{github.run_attempt}}
+          name: build-${{env.UNIQUE_ID}}
+          path: ${{ inputs.project_path }}
+
+      - name: Upload Test Results
+        uses: actions/upload-artifact@v4
+        with:
+          name: tests-${{ env.UNIQUE_ID }}
+          path: tests
+        # Use always() to always run this step to publish test results when there are test failures
+        if: ${{ always() }}

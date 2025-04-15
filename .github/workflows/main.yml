@@ -1,0 +1,35 @@
+name: Main
+
+on:
+  push:
+    branches:
+      - main
+      - develop
+    paths-ignore:
+      - '**/*.md'
+
+permissions:
+  id-token: write
+  contents: read
+
+jobs:
+  dotnet_build_and_test:
+    uses: './.github/workflows/_dotnet.yml'
+    secrets: inherit
+
+  dockerization:
+    needs: [ dotnet_build_and_test ]
+    uses: './.github/workflows/_dockerization.yml'
+    secrets: inherit
+
+  azure_infrastructure:
+    name: "Infrastructure on Azure"
+    needs: [ dotnet_build_and_test ]
+    uses: './.github/workflows/_azure-infrastructure.yml'
+    secrets: inherit
+
+  azure_deploy:
+    name: "Deploy to Azure"
+    needs: [ azure_infrastructure ]
+    uses: './.github/workflows/_azure-deploy.yml'
+    secrets: inherit

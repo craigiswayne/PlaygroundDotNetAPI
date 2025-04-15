@@ -1,0 +1,24 @@
+name: "PR Checks"
+
+on:
+  pull_request:
+    branches:
+      - develop
+    types:
+      - opened
+      - reopened
+      - edited
+    paths-ignore:
+      - '**/*.md'
+
+permissions:
+  id-token: write
+  contents: read
+  issues: write
+
+jobs:
+  dotnet_build_and_test:
+    uses: './.github/workflows/_dotnet.yml'
+    with:
+      project_path: 'PlaygroundDotNetAPI/PlaygroundDotNetAPI.csproj'
+      publish: false
